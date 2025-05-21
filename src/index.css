@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header{
+  /* background-color: red; */
+  height: 120px;
+  width: 100vw;
+  border: 1px solid black;
+}
+
+#header div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
