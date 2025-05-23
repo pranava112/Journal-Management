@@ -15,22 +15,11 @@ const Header = () => {
 
       <div className="header-content">
         <div className="icons">
-          <NavLink to="#" title="Facebook" className="icon">
-            <FaFacebook />
-          </NavLink>
-          <NavLink to="#" title="Twitter" className="icon">
-            <FaTwitter />
-          </NavLink>
-          <NavLink to="#" title="Instagram" className="icon">
-            <FaInstagram />
-          </NavLink>
-          <NavLink to="#" title="LinkedIn" className="icon">
-            <CiLinkedin />
-          </NavLink>
-          <div className="icon phone-wrapper" title="Call">
-            <FaPhone />
-            <span className="phone">+9999999999</span>
-          </div>
+          <NavLink to="#" title="Facebook" className="icon"><FaFacebook /></NavLink>
+          <NavLink to="#" title="Twitter" className="icon"><FaTwitter /></NavLink>
+          <NavLink to="#" title="Instagram" className="icon"><FaInstagram /></NavLink>
+          <NavLink to="#" title="LinkedIn" className="icon"><CiLinkedin /></NavLink>
+          <NavLink className="icon phone-wrapper" title="Call"><FaPhone /><span className="phone">+9999999999</span></NavLink>
           <select className="language-select">
             <option>Select Language</option>
             <option value="en">English</option>
