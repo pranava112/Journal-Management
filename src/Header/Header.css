@@ -8,6 +8,16 @@
   /* height: 135px; */
   height: auto;
   width: auto;
+
+}
+ #header img{
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .title {

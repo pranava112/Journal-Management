@@ -8,10 +8,17 @@ import React from 'react';
 
 const Header = () => {
   return (
+    <>
+    <div>
+      
+    </div>
     <div id="header">
+    <div>
+       <img src="./public/logo.png" alt="logo" />
       <h1 className="title">
-        International Journal Management Science and Business Conclave
+        International Journal Management <br /> of <br /> Science and Business Conclave
       </h1>
+    </div>
 
       <div className="header-content">
         <div className="icons">
@@ -28,6 +35,7 @@ const Header = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

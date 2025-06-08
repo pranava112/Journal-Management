@@ -19,3 +19,18 @@
 
 
 
+
+
+#listofjournal{
+   height: auto;
+   width: 400px;
+   border: 1px solid black;
+   margin: 10px 50px;
+   padding: 20px;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+   background-color: bisque;
+}
