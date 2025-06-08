@@ -14,7 +14,7 @@ const Header = () => {
     </div>
     <div id="header">
     <div>
-       <img src="./public/logo.png" alt="logo" />
+       <img src="./public/logo.jpeg" alt="logo" />
       <h1 className="title">
         International Journal Management <br /> of <br /> Science and Business Conclave
       </h1>
