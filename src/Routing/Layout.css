@@ -1,0 +1,28 @@
+/* 
+// Layout.css
+.layout-body {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.outlet {
+  flex: 1;
+  min-width: 300px;
+  max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+  .layout-body {
+    flex-direction: column;
+  }
+
+  .asidebar {
+    width: 100%;
+  }
+
+  .outlet {
+    width: 100%;
+  }
+} */

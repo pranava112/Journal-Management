@@ -10,9 +10,9 @@ const NavigationBar = () => {
       <NavLink to="/About" title="About" className="nav-link">About Us</NavLink>
       <NavLink to="/Contact" title="Contact" className="nav-link">Contact Us</NavLink>
       <NavLink to="/ListOfJournals" title="List Of Journals" className="nav-link">List Of Journals</NavLink>
-      <NavLink to="/PublicationEthics" title="Publication Ethics" className="nav-link">Publication Ethics</NavLink>
+      {/* <NavLink to="/PublicationEthics" title="Publication Ethics" className="nav-link">Publication Ethics</NavLink> */}
       <NavLink to="/SubmitManuscript" title="Submit Manuscript" className="nav-link">Submit Manuscript</NavLink>
-      <NavLink to="/AuthorGuidelines" title="Author Guidelines" className="nav-link">Author Guidelines</NavLink>
+      {/* <NavLink to="/AuthorGuidelines" title="Author Guidelines" className="nav-link">Author Guidelines</NavLink> */}
     </nav>
   );
 };

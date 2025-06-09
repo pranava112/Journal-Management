@@ -18,7 +18,23 @@
 }
 
 
+.outlet{
+  width: 73.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+
+
+.outlet .outlet1{
+  width: 85%;
+  margin-left: -18%;
+  
+}
 
 
 #listofjournal{

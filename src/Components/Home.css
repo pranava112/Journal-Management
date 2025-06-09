@@ -1,64 +1,36 @@
-.home{
+/* Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  /* margin-left: 240px; Space for aside bar */
+}
+
+.main {
+  background-color: #f44336;
+  color: white;
+  padding: 2rem;
   width: 100%;
-  height: 100vh;
-  background-color: rgba(245, 245, 245, 0.822);
-
+  max-width: 900px;
+  min-height: 100vh;
+  border-radius: 8px;
 }
 
-.home .container{
-  height: inherit;
-  margin-left: 35px;
-  margin-right: 35px;
-  /* border: 2px solid red; */
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .home-container {
+    margin-left: 0;
+    padding: 1rem;
+  }
 
-}
-
-.home .container img{
-    width: 33.33%;
-    height: 250px;
-}
-
-.data{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.author{
-    height: auto;
-    width:60%;
-    border: 1px solid black;
-    margin: 10px;
-    
-
-}
-
-.author h2{
-    background-color: black;
-    color: white;
-    height: auto;
-    padding: 10px;
-}
-.author p{
-    padding: 15px;
-}
-
-.indexes{
-    height: auto;
-    width:40%;
-    border: 1px solid black;
-    /* box-shadow: 1px 1px 1px 1px  inset; */
-    margin: 10px;
-    outline:invert;
-    
-}
-.indexes h2{
-    background-color: black;
-    color: white;
-    height: auto;
-    padding: 10px;
-}
-
-.indexes ul{
-    padding: 15px;
-}
+  .main {
+    width: 100%;
+    min-height: auto;
+  }
+} */
