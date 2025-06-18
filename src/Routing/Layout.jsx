@@ -7,19 +7,23 @@ import React from 'react'
 const Layout = () => {
   return (
     <>
-    <Header/>
+    <section id='background'>
+     <div id='border'>
+       <Header/>
     <NavigationBar/>
    
    
-    <div className='outlet'>
-      <div className='outlet1'>
-        <Outlet/>
-      </div>
+    <section className='outlet'>
       
-      <div className='aside1'>
-         <AsideBar/>
-      </div>
-    </div>
+        <Outlet className='outlet1'/>
+      
+      
+         <AsideBar className='aside1'/>
+    
+    </section>
+     </div>
+    
+    </section>
     
     </>
   )
