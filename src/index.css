@@ -19,7 +19,7 @@
 
 body
 {
-  background: url('background.jpeg')center/ cover #fff;
+  background: url('background.jpeg') no-repeat center center / cover #fff;
 
 background-size: cover
 }
