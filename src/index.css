@@ -17,12 +17,6 @@
   align-items: center;
 }
 
-body
-{
-  background: url('public/background.jpeg') no-repeat center center / cover #fff;
-
-background-size: cover
-}
 
 .outlet{
   width: 73.5%;

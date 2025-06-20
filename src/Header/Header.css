@@ -1,11 +1,11 @@
-/* Header.css */
+/* 
 
 #header {
   padding: 20px;
   background-color: white;
   border-bottom: 2px solid #ddd;
   text-align: center;
-  /* height: 135px; */
+  
   height: auto;
   width: 90%;
   margin-left: 5%;
@@ -83,7 +83,6 @@
   -o-border-radius:;
 }
 
-/* Responsive layout for larger screens */
 @media (min-width: 768px) {
   .header-content {
     flex-direction: row;
@@ -95,4 +94,32 @@
   .icons {
     justify-content: flex-start;
   }
+} */
+
+
+
+#header {
+  height: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #dee2e6;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #495057;
 }
