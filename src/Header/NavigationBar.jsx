@@ -45,6 +45,9 @@ const NavigationBar = () => {
             <Nav.Link as={NavLink} to="/Contact">
               Contact Us
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/EditorialBoard">
+              Editorial Board
+            </Nav.Link>
             <Nav.Link as={NavLink} to="/ListOfJournals">
               List Of Journals
             </Nav.Link>

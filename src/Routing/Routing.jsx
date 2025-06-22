@@ -1,6 +1,7 @@
 import About from '../Header/About'
 import AuthorGuidelines from '../Header/AuthorGuidelines'
 import Contact from '../Header/Contact'
+import EditorialBoard from '../Header/EditorialBoard'
 import ErrorPage from './ErrorPage'
 import Home from '../Components/Home'
 import JournalPolicies from '../Header/JournalPolicies'
@@ -26,7 +27,8 @@ const Routing = createBrowserRouter([
    {path:"/SubmitManuscript",element:<SubmitManuscript/>},
    {path:"/AuthorGuidelines",element:<AuthorGuidelines/>},
    {path:"/JournalPolicies",element:<JournalPolicies/>},
-
+  {path:"/EditorialBoard",element:<EditorialBoard/>},
+   
 
 
 
