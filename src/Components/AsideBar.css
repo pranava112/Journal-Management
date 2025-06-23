@@ -87,8 +87,10 @@
 
 
 .scroller{
-    height: 200px; 
-    overflow: hidden;
+    height: 300px; 
+    overflow:visible;
+     font-size: 0.9rem;
+  color: #555;
 }
 
 
@@ -103,7 +105,33 @@
   text-decoration: underline;
 }
 
-.scroller {
-  font-size: 0.9rem;
-  color: #555;
+
+
+#marquee1{
+  
+  padding: 10px;
+  /* margin-top: 20px; */
+  /* background-color: black; */
+}
+
+
+#notice{
+  font-size: 25px;
+  color: red;
+}
+
+.news{
+  /* color: red; */
+  font-size: 15px;
+  text-decoration: none;
+  /* margin: 20px;
+  gap: 20px; */
+}
+
+.news1{
+  color: red;
+  margin-top: 10px;
+}
+.news2{
+  color: blue;
 }

@@ -3,6 +3,11 @@ import AuthorGuidelines from '../Header/AuthorGuidelines'
 import Contact from '../Header/Contact'
 import EditorialBoard from '../Header/EditorialBoard'
 import ErrorPage from './ErrorPage'
+import Events2021 from '../News and events/Events2021'
+import Events2022 from '../News and events/Events2022'
+import Events2023 from '../News and events/Events2023'
+import Events2024 from '../News and events/Events2024'
+import Events2025 from '../News and events/Events2025'
 import Home from '../Components/Home'
 import JournalPolicies from '../Header/JournalPolicies'
 import Layout from './Layout'
@@ -28,9 +33,11 @@ const Routing = createBrowserRouter([
    {path:"/AuthorGuidelines",element:<AuthorGuidelines/>},
    {path:"/JournalPolicies",element:<JournalPolicies/>},
   {path:"/EditorialBoard",element:<EditorialBoard/>},
-   
-
-
+   {path:"/Events2021",element:<Events2021/>},
+   {path:"/Events2022",element:<Events2022/>},
+   {path:"/Events2023",element:<Events2023/>},
+   {path:"/Events2024",element:<Events2024/>},
+   {path:"/Events2025",element:<Events2025/>},
 
 
     ]
