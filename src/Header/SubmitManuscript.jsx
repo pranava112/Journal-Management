@@ -238,7 +238,7 @@ const SubmitManuscript = () => {
         </Form>
       </Container>
 
-      <ManuscriptList />
+      {/* <ManuscriptList /> */}
     </>
   );
 };

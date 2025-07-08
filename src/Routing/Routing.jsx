@@ -12,6 +12,7 @@ import Home from '../Components/Home'
 import JournalPolicies from '../Header/JournalPolicies'
 import Layout from './Layout'
 import ListOfJournals from '../Header/ListOfJournals'
+import ManuscriptList from '../Header/ManuscriptList'
 import PublicationEthics from '../Header/PublicationEthics'
 import React from 'react'
 import SubmitManuscript from '../Header/SubmitManuscript'
@@ -30,6 +31,7 @@ const Routing = createBrowserRouter([
    {path:"/ListOfJournals",element:<ListOfJournals/>},
    {path:"/PublicationEthics",element:<PublicationEthics/>},
    {path:"/SubmitManuscript",element:<SubmitManuscript/>},
+     {path:"/Manuscripts",element:<ManuscriptList/>},
    {path:"/AuthorGuidelines",element:<AuthorGuidelines/>},
    {path:"/JournalPolicies",element:<JournalPolicies/>},
   {path:"/EditorialBoard",element:<EditorialBoard/>},
@@ -38,6 +40,7 @@ const Routing = createBrowserRouter([
    {path:"/Events2023",element:<Events2023/>},
    {path:"/Events2024",element:<Events2024/>},
    {path:"/Events2025",element:<Events2025/>},
+
 
 
 
