@@ -163,10 +163,10 @@ const NavigationBar = () => {
               <Nav.Link as={NavLink} to="/ListOfJournals">List Of Journals</Nav.Link>
               <Nav.Link as={NavLink} to="/SubmitManuscript">Submit Manuscript</Nav.Link>
 
-              {/* {auth && (
+              {auth && (
                 <>
                   <Nav.Link as={NavLink} to="/Manuscripts">Manuscripts</Nav.Link>
-                  <Nav.Link as="button" className="btn btn-link nav-link" onClick={handleLogout}>
+                  <Nav.Link as="button" id='logout' className="btn btn-link nav-link" onClick={handleLogout}>
                     Logout
                   </Nav.Link>
                 </>
@@ -177,7 +177,7 @@ const NavigationBar = () => {
                   <NavDropdown.Item onClick={() => setAuthAction('login')}>Login</NavDropdown.Item>
                   <NavDropdown.Item onClick={() => setAuthAction('register')}>Register</NavDropdown.Item>
                 </NavDropdown>
-              )}*/}
+              )}
             </Nav> 
           </Navbar.Collapse>
         </Container>
