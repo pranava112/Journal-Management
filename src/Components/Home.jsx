@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section className="py-5 bg-light text-center">
       <Container>
-        <h1 className="mb-4 fw-bold text-primary">Welcome to IJMSBC</h1>
+        <h1 className="mb-4 fw-bold text-primary">Welcome to IJMSABC</h1>
 
         <Row className="mb-5 justify-content-center">
           <Col xs={12} md={4} className="mb-3">
