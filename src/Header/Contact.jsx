@@ -3,6 +3,39 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import React from 'react';
 
 const Contact = () => {
+
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    address: form.address.value,
+    message: form.message.value,
+  };
+
+  try {
+    const res = await fetch('https://ijmsbc-backend.onrender.com/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+    if (res.ok) {
+      alert(result.message);
+      form.reset();
+    } else {
+      alert(result.error || 'Submission failed.');
+    }
+  } catch (error) {
+    alert('Error connecting to the server.');
+  }
+};
+
+
   return (
     <Container className="my-5">
       <h1 className="text-center mb-4">Contact Us</h1>
@@ -18,15 +51,16 @@ const Contact = () => {
           <p>-------------</p>
           <p>
             Mobile: <strong>----------</strong><br />
-            Website: <a href="https://journal-management.vercel.app/" target="_blank" rel="noopener noreferrer">
-              journal-management.vercel.app
+            Website: <a href="https://www.ijmsabc.org/" target="_blank" rel="noopener noreferrer">
+              https://www.ijmsabc.org/
             </a>
           </p>
         </Col>
 
         <Col xs={12}>
           <h4 className="mb-3">Submit Your Information</h4>
-          <Form>
+         <Form onSubmit={handleSubmit}>
+
             <Form.Group className="mb-3" controlId="name">
               <Form.Label>Name*</Form.Label>
               <Form.Control type="text" placeholder="Enter your name" required />

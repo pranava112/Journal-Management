@@ -1,6 +1,7 @@
 import About from '../Header/About'
 import AuthorGuidelines from '../Header/AuthorGuidelines'
 import Contact from '../Header/Contact'
+import ContactList from '../Header/ContactList'
 import EditorialBoard from '../Header/EditorialBoard'
 import ErrorPage from './ErrorPage'
 import Events2021 from '../News and events/Events2021'
@@ -42,6 +43,7 @@ const Routing = createBrowserRouter([
    {path:"/Events2025",element:<Events2025/>},
 
 
+{path:"/contacts",element:<ContactList />},
 
 
 
