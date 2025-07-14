@@ -1,5 +1,6 @@
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
+import ContactList from './ContactList';
 import React from 'react';
 
 const Contact = () => {
@@ -37,6 +38,7 @@ const Contact = () => {
 
 
   return (
+    <>
     <Container className="my-5">
       <h1 className="text-center mb-4">Contact Us</h1>
 
@@ -93,6 +95,12 @@ const Contact = () => {
         </Col>
       </Row>
     </Container>
+
+
+
+    
+    <ContactList/>
+    </>
   );
 };
 

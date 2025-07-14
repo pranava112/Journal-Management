@@ -249,6 +249,8 @@ const ManuscriptList = () => {
 
   const fetchManuscripts = async () => {
     try {
+      // 'http://localhost:5000/api/manuscripts'
+      // const response = await fetch( 'http://localhost:5000/api/manuscripts', {
       const response = await fetch('https://ijmsbc-backend.onrender.com/api/manuscripts', {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -346,3 +348,4 @@ const ManuscriptList = () => {
 };
 
 export default ManuscriptList;
+
