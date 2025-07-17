@@ -326,7 +326,7 @@ const ContactList = () => {
 
   return (
     <Container className="my-5">
-      <h2 className="mb-4">Submitted Contacts</h2>
+      <h2 className="mb-4">Submitted Contacts List</h2>
       {error && <Alert variant="danger">{error}</Alert>}
 
       <InputGroup className="mb-3">
@@ -341,7 +341,7 @@ const ContactList = () => {
       <Table striped bordered hover responsive>
         <thead className="table-dark">
           <tr>
-            <th>#</th><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>Message</th><th>Actions</th>
+            <th>S.no</th><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>Message</th><th>Actions</th>
           </tr>
         </thead>
         <tbody>

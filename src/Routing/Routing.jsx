@@ -1,4 +1,6 @@
 import About from '../Header/About'
+import Admin from '../services/Admin'
+import AdminRouting from './AdminRouting'
 import AuthorGuidelines from '../Header/AuthorGuidelines'
 import Contact from '../Header/Contact'
 import ContactList from '../Header/ContactList'
@@ -32,7 +34,7 @@ const Routing = createBrowserRouter([
    {path:"/ListOfJournals",element:<ListOfJournals/>},
    {path:"/PublicationEthics",element:<PublicationEthics/>},
    {path:"/SubmitManuscript",element:<SubmitManuscript/>},
-     {path:"/Manuscripts",element:<ManuscriptList/>},
+     
    {path:"/AuthorGuidelines",element:<AuthorGuidelines/>},
    {path:"/JournalPolicies",element:<JournalPolicies/>},
   {path:"/EditorialBoard",element:<EditorialBoard/>},
@@ -43,8 +45,25 @@ const Routing = createBrowserRouter([
    {path:"/Events2025",element:<Events2025/>},
 
 
-{path:"/contacts",element:<ContactList />},
+    
 
+{path:"/contactlist",element:(
+
+<AdminRouting>
+  <ContactList />
+</AdminRouting>
+
+)},
+{path:"/Manuscripts",element:(<AdminRouting><ManuscriptList/></AdminRouting>)},
+
+
+{path:"/Admin",element:(
+
+<AdminRouting>
+  <Admin />
+</AdminRouting>
+
+)},
 
 
     ]

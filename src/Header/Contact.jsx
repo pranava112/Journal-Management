@@ -1,6 +1,7 @@
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Nav, Row } from 'react-bootstrap';
 
 import ContactList from './ContactList';
+import { NavLink } from 'react-router-dom';
 import React from 'react';
 
 const Contact = () => {
@@ -95,11 +96,6 @@ const Contact = () => {
         </Col>
       </Row>
     </Container>
-
-
-
-    
-    <ContactList/>
     </>
   );
 };

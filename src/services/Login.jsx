@@ -6,6 +6,7 @@ import { saveToken } from '../services/AuthService';
 const Login = ({ onLogin }) => {
   const [data, setData] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
+  
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,7 +21,13 @@ const Login = ({ onLogin }) => {
       const json = await res.json();
       if (res.ok) {
         saveToken(json.token);
+        localStorage.setItem("USER_DATA", JSON.stringify({ email: data.email }));
         onLogin();
+
+        
+
+
+
       } else {
         setError(json.error || 'Login failed');
       }
