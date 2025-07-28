@@ -85,3 +85,10 @@
   font-weight: bolder;
   color: white;
 }
+
+#list{
+  /* background-color:red; */
+  color: blue;
+  font-size: 15px;
+  font-weight: bold;
+}

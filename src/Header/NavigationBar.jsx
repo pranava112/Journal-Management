@@ -94,6 +94,7 @@ import React, { useEffect, useState } from 'react';
 import { isLoggedIn, logout } from '../services/AuthService';
 
 import Login from '../services/Login';
+import ManuscriptsList from './ManuscriptList'
 import { NavLink } from 'react-router-dom';
 import Register from '../services/Register';
 
@@ -160,7 +161,11 @@ const NavigationBar = () => {
               {auth ? (
                 <>
                   {isAdmin && (
-                    <Nav.Link as={NavLink} to="/Admin">Admin</Nav.Link>
+                    // <Nav.Link as={NavLink} to="/Admin">Admin DB</Nav.Link>
+                     <NavDropdown title="Admin DB" id="auth-dropdown">
+                      <Nav.Link as={NavLink} to="/Manuscripts" id='list'>📄 Manuscripts</Nav.Link>
+                      <Nav.Link as={NavLink}to="/contactlist" id='list'>📬 Contact-List</Nav.Link>
+                    </NavDropdown>
                   )}
                   <Nav.Link as="button" id='logout' className="btn btn-link nav-link" onClick={handleLogout}>
                     Logout

@@ -1,5 +1,4 @@
 import About from '../Header/About'
-import Admin from '../services/Admin'
 import AdminRouting from './AdminRouting'
 import AuthorGuidelines from '../Header/AuthorGuidelines'
 import Contact from '../Header/Contact'
@@ -55,15 +54,6 @@ const Routing = createBrowserRouter([
 
 )},
 {path:"/Manuscripts",element:(<AdminRouting><ManuscriptList/></AdminRouting>)},
-
-
-{path:"/Admin",element:(
-
-<AdminRouting>
-  <Admin />
-</AdminRouting>
-
-)},
 
 
     ]
