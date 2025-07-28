@@ -51,7 +51,7 @@ const Header = () => (
         <Col xs={12} className="d-flex align-items-center justify-content-center flex-column flex-md-row">
           <img src="/logo.jpeg" alt="IJMSBC Logo" className="logo mb-3 mb-md-0 me-md-3" />
           <div className="text-center text-md-start">
-            <h1 className="title mb-0">International Journal Management of Science and Business Conclave</h1>
+            <h1 className="title mb-0">International Journal of Management Science and Business Conclave</h1>
             <h1 className="subtitle mb-0"></h1>
           </div>
         </Col>
