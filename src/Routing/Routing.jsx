@@ -18,6 +18,7 @@ import ManuscriptList from '../Header/ManuscriptList'
 import PublicationEthics from '../Header/PublicationEthics'
 import React from 'react'
 import SubmitManuscript from '../Header/SubmitManuscript'
+import UserInfoPortal from '../services/UserInfoPortal'
 import { createBrowserRouter } from 'react-router-dom'
 
 const Routing = createBrowserRouter([
@@ -42,6 +43,7 @@ const Routing = createBrowserRouter([
    {path:"/Events2023",element:<Events2023/>},
    {path:"/Events2024",element:<Events2024/>},
    {path:"/Events2025",element:<Events2025/>},
+   {path:"UserInfoPortal",element:<UserInfoPortal/>},
 
 
     

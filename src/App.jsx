@@ -5,10 +5,7 @@ import Routing from './Routing/Routing'
 const App = () => {
   return (
     <>
-    
-  
     <RouterProvider router={Routing}/>
-    
     </>
   )
 }
