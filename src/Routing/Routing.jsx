@@ -1,5 +1,6 @@
 import About from '../Header/About'
 import AdminRouting from './AdminRouting'
+import Archive from '../Header/Archive'
 import AuthorGuidelines from '../Header/AuthorGuidelines'
 import Contact from '../Header/Contact'
 import ContactList from '../Header/ContactList'
@@ -13,7 +14,6 @@ import Events2025 from '../News and events/Events2025'
 import Home from '../Components/Home'
 import JournalPolicies from '../Header/JournalPolicies'
 import Layout from './Layout'
-import ListOfJournals from '../Header/ListOfJournals'
 import ManuscriptList from '../Header/ManuscriptList'
 import PublicationEthics from '../Header/PublicationEthics'
 import React from 'react'
@@ -31,7 +31,7 @@ const Routing = createBrowserRouter([
         
       {path:"/About",element:<About/>},
       {path:"/Contact",element:<Contact/>},
-   {path:"/ListOfJournals",element:<ListOfJournals/>},
+   {path:"/Archive",element:<Archive/>},
    {path:"/PublicationEthics",element:<PublicationEthics/>},
    {path:"/SubmitManuscript",element:<SubmitManuscript/>},
      

@@ -11,10 +11,9 @@ const Home = () => {
 
       
       <div className='home-para'>
-        <h3>Scope of Management Journal</h3>
-          <p>Management Journal is publishing high quality papers on all aspects of Management and Economics, Human Resource Management, Organizational Behavior and Organizational Management, International Business, Knowledge Management, Environmental Management, Data Analysis and Decision Making, Technology and Operations Management, Strategic Decision Making, Negotiations and Competitive Decision Making, Ethics in Management, Corporate Governance, Corporate Social Responsibility, Entrepreneurship and Innovation, Public Management, Rural Management, General Management, Hotel Management, Intellectual Property Rights, Education Management, Communication Management, Lifecycle Management, Spiritual Management, Tourism Management, Hospitality Management, Leisure Management, Inventory Management, Waste Management, Hospital Management, Financial Markets, International Business, International Finance, E-Business, Empirical Finance, Financial Economics, Financial Engineering, Financial Forecasting, Financial Risk Management and Analysis, Systemic Risk, Corporate Finance, etc.</p>    
-     
-    <h3> Why publish with the Management Journal?</h3>
+       <p>International Journal of Management Science and Business Conclave is a peer-reviewed, open-access journal dedicated to advancing both empirical and theoretical research in management science, business analysis, and related fields. It provides a scholarly platform for researchers, academics, consultants, and industry professionals to share insights, methodologies, and applied solutions that support strategic business decision-making and organizational development. The journal covers a wide range of disciplines including accounting and finance, management, marketing, human resource management, technology, social sciences, and arts, welcoming contributions from researchers, scholars, doctors, professors, and business consultants worldwide. Articles published in this journal are reviewed by internationally qualified experts to ensure high academic standards and are used as case studies in universities across the world wide.</p>
+          
+    {/* <h3> Why publish with the Management Journal?</h3>
    <ul>
       <li>This is a peer-reviewed Management Journal</li>
       <li> DOI from CrossRef to each published paper</li>
@@ -22,7 +21,7 @@ const Home = () => {
       <li>Open access journal (High Citation Rate)</li>
       <li>This Management Journal is indexed by various reputed databases</li>
       <li>Rapid publication after acceptance</li>
-    </ul>   
+    </ul>    */}
 
       </div>
         

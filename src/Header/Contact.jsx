@@ -1,3 +1,5 @@
+import './Contact.css';
+
 import { Button, Col, Container, Form, Nav, Row } from 'react-bootstrap';
 
 import ContactList from './ContactList';
@@ -37,33 +39,29 @@ const Contact = () => {
   }
 };
 
-
-  return (
-    <>
-    <Container className="my-5">
-      <h1 className="text-center mb-4">Contact Us</h1>
+return (
+  <>
+    <Container className="contact-container">
+      <h1 className="text-center contact-header">Contact Us</h1>
 
       <Row className="mb-4">
-        <Col xs={12} className="mb-5">
+        <Col xs={12} className="office-address">
           <h3>Office Address:</h3>
-          <h5>_____________________________</h5>
-          <p className="mt-4"><strong>Editor-in-Chief</strong></p>
-          <p>International Journal Management of Science and Business Conclave</p>
-          <p>-------------</p>
-          <p>-------------</p>
-          <p>-------------</p>
-          <p>
-            Mobile: <strong>----------</strong><br />
-            Website: <a href="https://www.ijmsabc.org/" target="_blank" rel="noopener noreferrer">
-              https://www.ijmsabc.org/
-            </a>
-          </p>
+          <h5>Dr.V.Vijaya Kumar</h5>
+          <p><strong>Editor-in-Chief</strong></p>
+          <p>International Journal of Management Science and Business Conclave</p>
+          <p>11-31, Nandivelugu</p>
+          <p>Tenali Mandal</p>
+          <p>Guntur District</p>
+          <p>Andhra Pradesh-522306</p>
+          <p><strong>Mobile:</strong> +91 8143123534</p>
+          <p><strong>Email:</strong> ijmsabc@gmail.com</p>
+          <p><strong>Website:</strong> <a href="https://www.ijmsabc.org/" target="_blank" rel="noopener noreferrer">www.ijmsabc.org</a></p>
         </Col>
 
-        <Col xs={12}>
-          <h4 className="mb-3">Submit Your Information</h4>
-         <Form onSubmit={handleSubmit}>
-
+        <Col xs={12} className="contact-form">
+          <h4>Submit Your Information</h4>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="name">
               <Form.Label>Name*</Form.Label>
               <Form.Control type="text" placeholder="Enter your name" required />
@@ -89,15 +87,16 @@ const Contact = () => {
               <Form.Control as="textarea" rows={3} placeholder="Write your message here" required />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <Button variant="primary" type="submit">Submit</Button>
           </Form>
         </Col>
       </Row>
     </Container>
-    </>
-  );
+  </>
+);
+
+
+  
 };
 
 export default Contact;

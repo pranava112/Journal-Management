@@ -71,7 +71,7 @@ const NavigationBar = () => {
               <Nav.Link as={NavLink} to="/About">About Us</Nav.Link>
               <Nav.Link as={NavLink} to="/Contact">Contact Us</Nav.Link>
               <Nav.Link as={NavLink} to="/EditorialBoard">Editorial Board</Nav.Link>
-              <Nav.Link as={NavLink} to="/ListOfJournals">List Of Journals</Nav.Link>
+              <Nav.Link as={NavLink} to="/Archive">Archive</Nav.Link>
               <Nav.Link as={NavLink} to="/SubmitManuscript">Submit Manuscript</Nav.Link>
 
               {auth ? (

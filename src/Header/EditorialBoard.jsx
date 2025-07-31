@@ -4,29 +4,90 @@ import React from 'react';
 
 const members = [
   {
-    name: 'Dr. John Smith',
-    image: '../dummy-image.png',
-    description: 'PhD in Computer Science, Harvard University. Editor-in-Chief of XYZ Journal.',
+    name: 'Dr. Tanvir Hussein',
+    position:"Associate Professor",
+    Department:"Accounting & Financial Science",
+    university:"Gulf University,.",
+    address:"Building 1964, Road 4363, Block 743, Sanad, Kingdom of Bahrain. ",
+    email:"dr.tanvir@gulfuniversity.edu.bh ",
+    Profilelink: 'https://www.gulfuniversity.edu.bh/colleges/administrative-and-financial-science/departments/accounting-and-financial-science/department-staff/dr-tanvir-hussein/',
     pdf: '/assets/john.pdf',
+    image: '../dummy-image.png',
   },
   {
-    name: 'Prof. Jane Doe',
-    image: '../dummy-image.png',
-    description: 'Professor at Stanford. Research interests in AI and ML.',
-    pdf: '/assets/jane.pdf',
+    name:"Prof. Prema Kirubakaran",
+    position:"Deputy Vice Chancellor  (Central Admin) & HOD, ",
+    Department:"Department Information Technology & Systems",
+    university:"Nile University of Nigeria  ",
+    address:"Plot 681, Cadastral Zone C-OO, Research & Institution Area, Jabi Airport Bypass, Abuja FCT, 900001 Nigeria. ",
+    email:"prema.kirubakaran@nileuniversity.edu.ng ",
+    Profilelink: ': https://nileuniversity.edu.ng/staff/dr-a-prema-kirubakaran',
+    pdf:"",
+    image:"../dummy-image.png",
   },
+
   {
-    name: 'Dr. Alan Turing',
-    image: '../dummy-image.png',
-    description: 'Mathematician, pioneer of modern computing.',
-    pdf: '/assets/alan.pdf',
+    name:"Dr. Vottiprolu Vijaya Kumar ",
+    position:" Editor in Chief / Assistant Professor",
+    Department:"Institute of Management and Research",
+    university:"MGM University",
+    address:"Chhatrapati Sambhajinagar, Maharashtra.",
+    email:"vvottiprolu@mgmu.ac.in",
+    Profilelink: 'https://mgmu.ac.in/admissions/program/master-of-business-administration-mba',
+    pdf:"",
+    image:"../dummy-image.png",
   },
+
   {
-    name: 'Dr. Grace Hopper',
-    image: '../dummy-image.png',
-    description: 'Computer scientist and United States Navy rear admiral.',
-    pdf: '/assets/grace.pdf',
+    name:"Dr Vishali Kahpradhe ",
+    
+    position:"Head, & Director I/C,",
+    Department:"Department of Library & Information Science & Knowledge Resource Centre",
+    university:"Dr. Babasaheb Ambedkar Marathwada University, University Campus, Near Soneri Mahal",
+    address:"Jaisingpura Chhatrapati Sambhajinagar  431004",
+    email:"head.libscience@bamu.ac.in ",
+    Profilelink: 'https://www.bamu.ac.in/campus/institutional-excellence/krc-library/#',
+ProfileLink1:'https://www.bamu.ac.in/en/academicspage/department-of-library-and-information-science/',
+    pdf:"",
+    image:"../dummy-image.png",
   },
+
+  {
+    name:"DR ZEENA FLAVIA D’SOUZA",
+    position:"Associate Professor",
+    Department:"School of Commerce, Finance and Accountancy",
+    university:" St Aloysius (Deemed to be University)",
+    address:"Mangalore. Karnataka",
+    email:"zeena_flavia@staloysius.edu.in",
+    Profilelink: 'https://staloysius.edu.in/school/school-of-commerce-finance-and-accountancy',
+    pdf:"",
+    image:"../dummy-image.png",
+  },
+
+  {
+    name:"DR. Nirav Joshi",
+    position:"Assistant Professor",
+    Department:"VM Patil Institute of Management",
+    university:"Ganpat University",
+    address:"Mehsana Gandhinagr Highway, PO-384012, North Gujarat, India",
+    email:"nrj01@ganpatuniversity.ac.in",
+    Profilelink: 'https://vmpim.guni.ac.in/people/faculty/dr-nirav-joshi',
+    pdf:"",
+    image:"../dummy-image.png",
+  },
+
+  {
+    name:"Mr. Ganesh Sagre",
+    position:"",
+    Department:"Institute of Management and Research Librarian ",
+    university:"MGM University",
+    address:"Institute of Management and Research N-6 CIDCO Chhatrapati Sambhajinagar  431003",
+    email:"gsagare@mgmu.ac.in",
+    Profilelink: 'https://mgmu.ac.in/knowledge-resource-center?srsltid=AfmBOop5WpQ08inSpv3tQUl_QgjeLSMmkzSZR48Sx6BiCuFWbWEpcxOp',
+    pdf:"",
+    image:"../dummy-image.png",
+  },
+  
 ];
 
 const EditorialBoard = () => {
@@ -55,7 +116,17 @@ const EditorialBoard = () => {
                   {/* Text Column - ID 2 */}
                   <Col xs={12} sm={6} id="2">
                     <h5 style={{color:'purple'}}>{member.name}</h5>
-                    <p>{member.description}</p>
+                    <ul itemType='document' className="list-unstyled">
+                      <li>{member.position}</li>
+                    <li><h5>Department:</h5>{member.Department}</li>
+                    <p><h5>University:</h5>{member.university}</p>
+                    <li><h5>Address: </h5>{member.address}</li>
+                    <li><h5>Email:</h5>{member.email}</li>
+                    <li><h5>Profile Link:</h5><a href={member.Profilelink}>{member.Profilelink}</a><a href={member.ProfileLink1}>{member.ProfileLink1}</a></li>
+                    </ul>
+                    
+                    
+                    {/* <p>{member.Profilelink}</p> */}
                   </Col>
 
                   {/* PDF Link Column - ID 3 */}
