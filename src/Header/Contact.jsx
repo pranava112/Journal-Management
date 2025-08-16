@@ -48,7 +48,7 @@ return (
         <Col xs={12} className="office-address">
           <h3>Office Address:</h3>
           <h5>Dr.V.Vijaya Kumar</h5>
-          <p><strong>Editor-in-Chief</strong></p>
+          <p><strong>Publisher/Editor-in-Chief</strong></p>
           <p>International Journal of Management Science and Business Conclave</p>
           <p>11-31, Nandivelugu</p>
           <p>Tenali Mandal</p>
@@ -56,6 +56,7 @@ return (
           <p>Andhra Pradesh-522306</p>
           <p><strong>Mobile:</strong> +91 8143123534</p>
           <p><strong>Email:</strong> ijmsabc@gmail.com</p>
+          <p><strong>Email:</strong> vvottiprolu@mgmu.ac.in</p>
           <p><strong>Website:</strong> <a href="https://www.ijmsabc.org/" target="_blank" rel="noopener noreferrer">www.ijmsabc.org</a></p>
         </Col>
 

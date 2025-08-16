@@ -1,252 +1,116 @@
-// // import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap';
+import React, { useEffect } from 'react';
 
-// // const JournalPolicies = () => {
-// //   return (
-// //     <div>JournalPolicies</div>
-// //   )
-// // }
+const JournalPolicies = () => {
+  useEffect(() => {
+    document.title = "Journal Policies";
+  }, []);
 
-// // export default JournalPolicies
-
-// import { Accordion, Card, Container } from 'react-bootstrap';
-
-// import React from 'react';
-
-// const JournalPolicies = () => {
-//   return (
-//     <Container className="my-4">
-//       <h2 className="mb-4 text-center">Journal Policies</h2>
-//       <Accordion defaultActiveKey="0">
-//         <Accordion.Item eventKey="0">
-//           <Accordion.Header>1. Aims and Scope</Accordion.Header>
-//           <Accordion.Body>
-//             IJMSBC publishes peer-reviewed research, reviews, and case studies in:
-//             <ul>
-//               <li>Management</li>
-//               <li>Business Studies</li>
-//               <li>Economics</li>
-//               <li>Applied Sciences</li>
-//               <li>Innovation and Entrepreneurship</li>
-//             </ul>
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="1">
-//           <Accordion.Header>2. Publication Ethics</Accordion.Header>
-//           <Accordion.Body>
-//             <ul>
-//               <li>Originality and unpublished work required.</li>
-//               <li>All manuscripts are checked for plagiarism (threshold: 10%).</li>
-//               <li>Data integrity must be maintained; original data must be available.</li>
-//               <li>No simultaneous submissions allowed.</li>
-//             </ul>
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="2">
-//           <Accordion.Header>3. Authorship Policy</Accordion.Header>
-//           <Accordion.Body>
-//             <ul>
-//               <li>Authors must contribute significantly to the research.</li>
-//               <li>All co-authors must approve the final manuscript.</li>
-//               <li>Authorship changes require approval by all listed authors.</li>
-//             </ul>
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="3">
-//           <Accordion.Header>4. Peer Review Process</Accordion.Header>
-//           <Accordion.Body>
-//             <ul>
-//               <li>Double-blind peer review by at least two experts.</li>
-//               <li>The editorial board may reject a paper at any stage.</li>
-//             </ul>
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="4">
-//           <Accordion.Header>5. Open Access Policy</Accordion.Header>
-//           <Accordion.Body>
-//             IJMSBC is an open-access journal providing free access to all published content globally.
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="5">
-//           <Accordion.Header>6. Publication Charges</Accordion.Header>
-//           <Accordion.Body>
-//             <ul>
-//               <li>Nominal publication fee applies.</li>
-//               <li>Waivers available for low-income countries or by request.</li>
-//             </ul>
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="6">
-//           <Accordion.Header>7. Copyright & Licensing</Accordion.Header>
-//           <Accordion.Body>
-//             <ul>
-//               <li>Authors retain copyright.</li>
-//               <li>Articles published under CC BY license.</li>
-//             </ul>
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="7">
-//           <Accordion.Header>8. Archiving Policy</Accordion.Header>
-//           <Accordion.Body>
-//             All content is archived digitally and supports LOCKSS/CLOCKSS for long-term availability.
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="8">
-//           <Accordion.Header>9. Retraction and Corrections</Accordion.Header>
-//           <Accordion.Body>
-//             <ul>
-//               <li>Major errors or misconduct may lead to retraction.</li>
-//               <li>Minor corrections are issued as errata or corrigenda.</li>
-//             </ul>
-//           </Accordion.Body>
-//         </Accordion.Item>
-
-//         <Accordion.Item eventKey="9">
-//           <Accordion.Header>10. Conflicts of Interest</Accordion.Header>
-//           <Accordion.Body>
-//             All authors, editors, and reviewers must disclose potential conflicts of interest.
-//           </Accordion.Body>
-//         </Accordion.Item>
-//       </Accordion>
-//     </Container>
-//   );
-// };
-
-// export default JournalPolicies;
-
-import { Card, Container } from 'react-bootstrap';
-
-import React from 'react';
-
-const JournalPolicies= () => {
   return (
-    <Container className="my-4">
-      <h2 className="mb-4 text-center">Journal Policies</h2>
+    <Container className="py-5">
+      <Row>
+        <Col>
+          <h1 className="text-center mb-5">Journal Policies</h1>
 
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>1. Aims and Scope</Card.Title>
-          <Card.Text>
-            IJMSBC publishes peer-reviewed research, reviews, and case studies in:
-            <ul>
-              <li>Management</li>
-              <li>Business Studies</li>
-              <li>Economics</li>
-              <li>Applied Sciences</li>
-              <li>Innovation and Entrepreneurship</li>
+          {/* Open Access Policy */}
+          <section className="mb-5">
+            <h2 className="mb-3">Open Access Policy</h2>
+            <p className="lead">
+              International Journal of Management Science and Business Conclave (IJMSABC) is an open access journal.
+              This open access means that articles in the journal can be freely accessed, downloaded, shared and reused 
+              by scientists, scholars, teachers, students, and others. This accelerates research, enriches education, 
+              and fosters global knowledge exchange, in accordance with the BOAI definition of open access.
+            </p>
+            <div className="text-center my-4">
+              <img
+                src="./journalpolicy.png"
+                alt="Journal Policy"
+                className="img-fluid rounded shadow"
+                style={{ maxWidth: "600px" }}
+              />
+            </div>
+            <p>
+              All IJMSABC articles are published under the terms of the Creative Commons Attribution 4.0 International License. 
+              This license permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+            </p>
+            <h3 className="mt-4">Benefits of open access for authors include:</h3>
+            <ol className="ms-4">
+              <li>Free access for all users worldwide</li>
+              <li>Increased visibility and readership</li>
+              <li>Increased citation and usage</li>
+              <li>Increased interdisciplinary interaction</li>
+              <li>Faster impact</li>
+              <li>Authors retain copyright with a Creative Commons license</li>
+              <li>
+                Authors can post any version of their manuscript on personal or institutional websites, 
+                in repositories, etc., provided the published source is cited and linked via DOI.
+              </li>
+            </ol>
+          </section>
+
+          {/* Peer Review Policy */}
+          <section className="mb-5">
+            <h2 className="mb-3">Peer Review Policy</h2>
+            <p>
+              The practice of peer review ensures that only quality research is published. 
+              IJMSABC operates a conventional double-blind reviewing policy, where author names remain 
+              anonymous to reviewers and vice versa. All submitted articles undergo a rigorous review process 
+              to ensure thorough and detailed evaluation.
+            </p>
+            <h3 className="mt-4">Review procedure:</h3>
+            <ul className="ms-4">
+              <li>Article submission receives a tracking number for future correspondence.</li>
+              <li>Initial assessment by the editor against journal scope and author guidelines.</li>
+              <li>Decision to send the article for peer review or reject.</li>
+              <li>Reviewers provide comments, suggestions, and recommendations.</li>
+              <li>Editor makes the decision: accept, reject, or request revision.</li>
+              <li>Authors revise (if required) and resubmit.</li>
+              <li>Once accepted, the article goes into production and is published.</li>
+              <li>Rejected articles may be transferred to another journal.</li>
             </ul>
-          </Card.Text>
-        </Card.Body>
-      </Card>
+          </section>
 
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>2. Publication Ethics</Card.Title>
-          <Card.Text>
-            <ul>
-              <li>Submitted work must be original and unpublished.</li>
-              <li>Manuscripts undergo plagiarism checks (limit: 10%).</li>
-              <li>Data integrity is required; raw data must be presented upon request.</li>
-              <li>Simultaneous submissions to multiple journals are not allowed.</li>
+          {/* Editorial Policy */}
+          <section className="mb-5">
+            <h2 className="mb-3">Editorial Policy</h2>
+            <h3 className="mt-3">Editorial Review and Acceptance</h3>
+            <p>
+              IJMSABC is a peer-reviewed, open access international journal publishing 
+              research articles and reviews in management and allied disciplines.
+            </p>
+            <h3 className="mt-4">Guidelines for submitted articles:</h3>
+            <ul className="ms-4">
+              <li>Authors must adhere to the highest ethical standards.</li>
+              <li>Acceptance is based on quality, originality, and significance.</li>
+              <li>Articles should be clear, concise, and professional.</li>
+              <li>Articles are reviewed for innovation, contribution, and theoretical advancement.</li>
+              <li>The editor may modify manuscripts for clarity and correctness.</li>
+              <li>All correspondence is via email.</li>
+              <li>Final acceptance depends on compliance with IJMSABC requirements.</li>
             </ul>
-          </Card.Text>
-        </Card.Body>
-      </Card>
+            <p>
+              Articles should be submitted online via the submission form or email at:{" "}
+              <a href="mailto:ijmsabc@gmail.com">ijmsabc@gmail.com</a>
+            </p>
+          </section>
 
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>3. Authorship Policy</Card.Title>
-          <Card.Text>
-            <ul>
-              <li>All authors must contribute significantly to the research.</li>
-              <li>Corresponding author ensures approval by all co-authors.</li>
-              <li>Authorship changes must be approved by all authors.</li>
+          {/* Plagiarism Prevention Policy */}
+          <section>
+            <h2 className="mb-3">Plagiarism Prevention Policy</h2>
+            <p>
+              IJMSABC follows a strong plagiarism policy to maintain scholarly integrity. 
+              The journal uses Crossref Similarity Check (powered by iThenticate) to screen content for originality.
+            </p>
+            <h3 className="mt-4">By submitting, authors confirm that:</h3>
+            <ul className="ms-4">
+              <li>All authors have reviewed and approved the manuscript.</li>
+              <li>No part of the manuscript is plagiarized.</li>
+              <li>Proper references are provided wherever content is extracted.</li>
+              <li>Strong action will be taken in cases of plagiarism.</li>
             </ul>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>4. Peer Review Process</Card.Title>
-          <Card.Text>
-            <ul>
-              <li>Double-blind peer review by at least two reviewers.</li>
-              <li>Editorial board reserves the right to reject at any stage.</li>
-            </ul>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>5. Open Access Policy</Card.Title>
-          <Card.Text>
-            IJMSBC offers free open access to all published content for the global academic community.
-          </Card.Text>
-        </Card.Body>
-      </Card>
-
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>6. Publication Charges</Card.Title>
-          <Card.Text>
-            <ul>
-              <li>Nominal publication charges apply.</li>
-              <li>Waivers are available for low-income authors or on request.</li>
-            </ul>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>7. Copyright & Licensing</Card.Title>
-          <Card.Text>
-            <ul>
-              <li>Authors retain copyright.</li>
-              <li>Published under Creative Commons Attribution (CC BY) license.</li>
-            </ul>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>8. Archiving Policy</Card.Title>
-          <Card.Text>
-            Content is digitally archived with support for LOCKSS and CLOCKSS systems.
-          </Card.Text>
-        </Card.Body>
-      </Card>
-
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>9. Retraction and Corrections</Card.Title>
-          <Card.Text>
-            <ul>
-              <li>Major errors or misconduct may result in retraction.</li>
-              <li>Minor errors are addressed through erratum/corrigendum notices.</li>
-            </ul>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-
-      <Card className="mb-3">
-        <Card.Body>
-          <Card.Title>10. Conflicts of Interest</Card.Title>
-          <Card.Text>
-            Authors, editors, and reviewers must disclose any conflicts of interest.
-          </Card.Text>
-        </Card.Body>
-      </Card>
+          </section>
+        </Col>
+      </Row>
     </Container>
   );
 };

@@ -2,7 +2,7 @@ import './NavigationBar.css';
 
 import { Container, Modal, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
-import { isLoggedIn, logout } from '../services/AuthService';
+import { isLoggedIn, logout } from '../Services/AuthService';
 
 import Login from '../services/Login';
 import { NavLink } from 'react-router-dom';
