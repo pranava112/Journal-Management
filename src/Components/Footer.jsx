@@ -16,7 +16,7 @@ const Footer = () => {
           <Col md={4} className="mb-3 mb-md-0">
             <div className="phone-wrapper d-flex justify-content-center justify-content-md-start align-items-center">
               <FaPhone className="me-2" />
-              <span className="phone">+91-9999999999</span>
+              <span className="phone">+91-8143123534</span>
             </div>
           </Col>
 
