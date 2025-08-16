@@ -2,7 +2,7 @@
 
 import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
-import { getToken, saveToken } from '../services/AuthService';
+import { getToken, saveToken } from './AuthService';
 
 import UserInfoPortal from './UserInfoPortal';
 

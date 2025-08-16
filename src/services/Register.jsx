@@ -1,7 +1,7 @@
 import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import React, { useState } from 'react';
 
-import { saveToken } from '../services/AuthService';
+import { saveToken } from './AuthService';
 
 const Register = ({ onLogin }) => {
   const [data, setData] = useState({ name: '', email: '', password: '' });

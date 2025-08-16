@@ -124,19 +124,19 @@ import './NavigationBar.css';
 
 import { Container, Modal, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
-import { isLoggedIn, logout } from '../services/AuthService'; // ✅ fixed lowercase path
+import { isLoggedIn, logout } from '../Services/AuthService'; // ✅ matches folder
 
-import Login from '../services/Login';
+import Login from '../Services/Login';
 import { NavLink } from 'react-router-dom';
-import Register from '../services/Register';
-import UserInfoPortal from '../services/UserInfoPortal';
+import Register from '../Services/Register';
+import UserInfoPortal from '../Services/UserInfoPortal';
 
 const NavigationBar = () => {
   const [auth, setAuth] = useState(isLoggedIn());
   const [authAction, setAuthAction] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [userData, setUserData] = useState(null); // ✅ for portal
+  const [userData, setUserData] = useState(null);
 
   const allowedAdmins = ['AdminIjmsabc@gmail.com', 'Admin@123'];
 
@@ -158,7 +158,7 @@ const NavigationBar = () => {
     setIsAdmin(false);
     setAuthAction('');
     setShowModal(false);
-    setUserData(null); // ✅ clear portal user
+    setUserData(null);
   };
 
   const handleLoginSuccess = () => {
@@ -228,7 +228,6 @@ const NavigationBar = () => {
         </Container>
       </Navbar>
 
-      {/* Login/Register Modal */}
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>{authAction === 'login' ? 'Login' : 'Register'}</Modal.Title>
@@ -242,7 +241,6 @@ const NavigationBar = () => {
         </Modal.Body>
       </Modal>
 
-      {/* ✅ User Info Portal */}
       <UserInfoPortal user={userData} />
     </>
   );
