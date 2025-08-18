@@ -1,12 +1,31 @@
-// === services/AuthService.js ===
-export const logout = () => localStorage.removeItem('token');
-export const isLoggedIn = () => !!getToken();
+// // === services/AuthService.js ===
+// export const logout = () => localStorage.removeItem('token');
+// export const isLoggedIn = () => !!getToken();
 
+
+// export const saveToken = (token) => {
+//   localStorage.setItem('JWT_TOKEN', token);
+// };
+
+// export const getToken = () => {
+//   return localStorage.getItem('JWT_TOKEN');
+// };
+
+// === services/AuthService.js ===
+
+export const TOKEN_KEY = "JWT_TOKEN"; // ✅ Single source of truth
 
 export const saveToken = (token) => {
-  localStorage.setItem('JWT_TOKEN', token);
+  localStorage.setItem(TOKEN_KEY, token);
 };
 
 export const getToken = () => {
-  return localStorage.getItem('JWT_TOKEN');
+  return localStorage.getItem(TOKEN_KEY);
+};
+
+export const isLoggedIn = () => !!getToken();
+
+export const logout = () => {
+  localStorage.removeItem(TOKEN_KEY);
+  localStorage.removeItem("USER_DATA"); // ✅ clear user info too
 };
