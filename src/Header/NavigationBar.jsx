@@ -130,11 +130,11 @@ import './NavigationBar.css';
 
 import { Container, Modal, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
-import { isLoggedIn, logout } from '../Services/AuthService';
+import { isLoggedIn, logout } from '../services/AuthService';
 
-import Login from '../Services/Login';
+import Login from '../services/Login';
 import { NavLink } from 'react-router-dom';
-import Register from '../Services/Register';
+import Register from '../services/Register';
 import UserInfoPortal from '../Services/UserInfoPortal';
 
 const NavigationBar = () => {
