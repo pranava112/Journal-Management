@@ -135,7 +135,7 @@ import { isLoggedIn, logout } from '../services/AuthService';
 import Login from '../services/Login';
 import { NavLink } from 'react-router-dom';
 import Register from '../services/Register';
-import UserInfoPortal from '../Services/UserInfoPortal';
+import UserInfoPortal from '../services/UserInfoPortal';
 
 const NavigationBar = () => {
   const [auth, setAuth] = useState(isLoggedIn());
