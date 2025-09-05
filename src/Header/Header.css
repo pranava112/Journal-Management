@@ -114,7 +114,8 @@
     font-weight: 700;
     color: #2c3e50;
     line-height: 1.2;
-    background-color: red;
+    background-color: black;
+    color: white;
 }
 
 .subtitle {
