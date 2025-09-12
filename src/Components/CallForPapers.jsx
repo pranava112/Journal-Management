@@ -21,10 +21,29 @@ import React from 'react'
 
 const CallForPapers = () => {
   return (
-    <div>
-      Call For Papers
+    <div className="px-6 py-10 max-w-3xl mx-auto text-center">
+      <h2 className="text-3xl font-bold mb-6">Call for Papers</h2>
+      <p className="text-lg leading-relaxed mb-4">
+        We warmly invite researchers, scholars, and professionals to submit their
+        original research papers, articles, and case studies to the{" "} <br />
+        <strong>International Journal of Management Science and Business Conclave (IJMSBC)</strong>.
+      </p>
+      <p className="text-lg leading-relaxed mb-4">
+        Submissions are welcomed in all areas of management, business, science,
+        and related fields that contribute to innovative academic and practical knowledge.
+      </p>
+      <p className="text-lg leading-relaxed">
+        For paper submission or inquiries, please contact us at:{" "}
+        <a
+          href="mailto:editor@ijmsbc.org"
+          className="text-blue-400 underline hover:text-blue-600"
+        >
+          editor@ijmsbc.org
+        </a>
+      </p>
     </div>
   )
 }
 
 export default CallForPapers
+

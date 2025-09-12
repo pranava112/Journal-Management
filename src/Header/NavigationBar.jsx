@@ -65,21 +65,21 @@ const NavigationBar = () => {
       {/* <Navbar bg="dark" variant="dark" expand="lg" sticky="top"> */}
 <Navbar bg="" variant="" expand="lg" sticky="top" id='navbar'>
         <Container>
-          <Navbar.Brand as={NavLink} to="/">IJMSABC</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to="/" id='color'>IJMSABC</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
-              <Nav.Link as={NavLink} to="/About">About Us</Nav.Link>
-              <Nav.Link as={NavLink} to="/Contact">Contact Us</Nav.Link>
-              <Nav.Link as={NavLink} to="/EditorialBoard">Editorial Board</Nav.Link>
-              <Nav.Link as={NavLink} to="/Archive">Archive</Nav.Link>
-              <Nav.Link as={NavLink} to="/SubmitManuscript">Submit Manuscript</Nav.Link>
+              <Nav.Link as={NavLink} to="/" id='color' end>Home</Nav.Link>
+              <Nav.Link as={NavLink} to="/About" id='color'>About Us</Nav.Link>
+              <Nav.Link as={NavLink} to="/Contact" id='color'>Contact Us</Nav.Link>
+              <Nav.Link as={NavLink} to="/EditorialBoard" id='color'>Editorial Board</Nav.Link>
+              <Nav.Link as={NavLink} to="/Archive" id='color'>Archive</Nav.Link>
+              <Nav.Link as={NavLink} to="/SubmitManuscript" id='color'>Submit Manuscript</Nav.Link>
 
               {auth ? (
                 <>
                   {isAdmin && (
-                    <NavDropdown title="Admin DB" id="auth-dropdown">
+                    <NavDropdown title="Admin DB" id='color'>
                       <NavDropdown.Item as={NavLink} to="/Manuscripts">📄 Manuscripts</NavDropdown.Item>
                       <NavDropdown.Item as={NavLink} to="/contactlist">📬 Contact-List</NavDropdown.Item>
                     </NavDropdown>
@@ -94,7 +94,7 @@ const NavigationBar = () => {
                   </Nav.Link>
                 </>
               ) : (
-                <NavDropdown title="Authenticate" id="auth-dropdown">
+                <NavDropdown title="Authenticate" id='color'>
                   <NavDropdown.Item onClick={() => handleAuthClick('login')}>
                     Login
                   </NavDropdown.Item>

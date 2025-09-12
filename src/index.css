@@ -1,71 +1,82 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#header{
-  /* background-color: red; */
-  height: 120px;
-  width: 100vw;
-  border: 1px solid black;
+#header {
+    /* background-color: red; */
+    height: 120px;
+    width: 100vw;
+    border: 1px solid black;
 }
 
-#header div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-.outlet{
-  width: 73.5%;
-  margin-left: 5%;
-  margin-right: 5%;
-  /* background-color: green; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.outlet {
+    width: 73.5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-.outlet .outlet1{
-  width: 85%;
-  margin-left: -18%;
-  
+.outlet .outlet1 {
+    width: 85%;
+    margin-left: -18%;
 }
 
-
-#listofjournal{
-   height: auto;
-   width: 400px;
-   border: 1px solid black;
-   margin: 10px 50px;
-   padding: 20px;
-   border-radius: 10px;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   -ms-border-radius: 10px;
-   -o-border-radius: 10px;
-   background-color: bisque;
+#listofjournal {
+    height: auto;
+    width: 400px;
+    border: 1px solid black;
+    margin: 10px 50px;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: bisque;
 }
 
-.home-para{
-  width: auto;
-  height: auto;
-  background-color:lightblue;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.home-para {
+    width: auto;
+    height: auto;
+    background-color: lightblue;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.home-para p{
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
+
+.home-para p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+#department {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#department1 {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.landing {
+    height: 100vh;
+    width: 100vw;
 }

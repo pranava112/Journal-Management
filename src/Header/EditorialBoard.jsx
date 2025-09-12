@@ -14,17 +14,7 @@ const members = [
     pdf: '/assets/john.pdf',
     image: '../dummy-image.png',
   },
-  // {
-  //   name:"Prof. Prema Kirubakaran",
-  //   position:"Deputy Vice Chancellor  (Central Admin) & HOD, ",
-  //   Department:"Department Information Technology & Systems",
-  //   university:"Nile University of Nigeria  ",
-  //   address:"Plot 681, Cadastral Zone C-OO, Research & Institution Area, Jabi Airport Bypass, Abuja FCT, 900001 Nigeria. ",
-  //   email:"prema.kirubakaran@nileuniversity.edu.ng ",
-  //   Profilelink: ': https://nileuniversity.edu.ng/staff/dr-a-prema-kirubakaran',
-  //   pdf:"",
-  //   image:"../dummy-image.png",
-  // },
+  
 
   {
     name:"Dr.Vinoth raman rangan",
@@ -105,12 +95,14 @@ ProfileLink1:'https://www.bamu.ac.in/en/academicspage/department-of-library-and-
 const EditorialBoard = () => {
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-4">Editorial Board</h1>
+      <h1 className="text-center mb-4">Editorial Board Members</h1>
       <Row className="g-4">
         {members.map((member, index) => (
           <Col key={index} md={12}>
-            <Card className="shadow-sm p-3">
-              <Card.Body>
+
+            
+            <Card className="shadow-sm p-3 " id=''>
+              <Card.Body id=''>
                 <Row className="align-items-center">
                   {/* Image Column - ID 1 */}
                   <Col xs={12} sm={3} className="text-center mb-3 mb-sm-0">
@@ -130,12 +122,29 @@ const EditorialBoard = () => {
                     <h5 style={{color:'purple'}}>{member.name}</h5>
                     <ul itemType='document' className="list-unstyled">
                       <li>{member.position}</li>
-                    <li><h5>Department:</h5>{member.Department}</li>
-                    <p><h5>University:</h5>{member.university}</p>
-                    <li><h5>Address: </h5>{member.address}</li>
-                    <li><h5>Email:</h5>{member.email}</li>
-                    <li><h5>Profile Link:</h5><a href={member.Profilelink}>{member.Profilelink}</a><a href={member.ProfileLink1}>{member.ProfileLink1}</a></li>
+                    <li><span id='department'>Department : </span>{member.Department}</li>
                     </ul>
+                    
+
+                    <details>
+<summary className=''>More Details</summary>
+  <ul itemType='document' className="list-unstyled">
+    <li><span id='department1'>University : </span> {member.university}</li>
+    <li><span id='department1'>Address : </span> {member.address}</li>
+    <li><span id='department1'>Email : </span> {member.email}</li>
+    <li>
+      <span id='department1'>Profile Link : </span>
+      <a href={member.Profilelink} target="_blank" rel="noreferrer">
+        {member.Profilelink}
+      </a>
+      {" , "}
+      <a href={member.ProfileLink1} target="_blank" rel="noreferrer">
+        {member.ProfileLink1}
+      </a>
+    </li>
+  </ul>
+</details>
+
                     
                     
                     {/* <p>{member.Profilelink}</p> */}
