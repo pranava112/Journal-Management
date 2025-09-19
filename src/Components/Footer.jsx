@@ -22,7 +22,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <Col md={4} className="mb-3 mb-md-0 text-center">
-            <p className="mb-0">&copy; 2025 IJMSBC . All rights reserved.</p>
+            <p className="mb-0">&copy; 2025 IJMSABC . All rights reserved.</p>
           </Col>
 
           {/* Social Icons */}

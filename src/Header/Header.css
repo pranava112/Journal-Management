@@ -4,7 +4,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo {
+
+/* .logo {
     height: 80px;
     width: 80px;
     object-fit: cover;
@@ -14,6 +15,36 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+
+.logo:hover {
+    height: 100px;
+    width: 100px;
+} */
+
+.logo {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    /* Smooth animation effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Hover effect with animation */
+
+.logo:hover {
+    transform: scale(1.2);
+    /*Smoothzoominsteadofabruptresize*/
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Add a subtle shadow */
+    : ;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
 
 .title {

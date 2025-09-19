@@ -306,7 +306,7 @@ const SubmitManuscript = () => {
 
   return (
     <Container className="my-5">
-      <h2 className="text-center text-primary mb-4">Submit Your Manuscript</h2>
+      <h2 className="text-center  mb-4 sub_title">Submit Your Manuscript</h2>
 
       {submitted && (
         <Alert variant="success" onClose={() => setSubmitted(false)} dismissible>
@@ -366,7 +366,7 @@ const SubmitManuscript = () => {
         </Form.Group>
 
         <Form.Group className="mb-4" controlId="fileUpload">
-          <Form.Label>Upload Manuscript (PDF/DOC)</Form.Label>
+          <Form.Label>Upload Manuscript (.DOC/DOC)</Form.Label>
           <Form.Control
             type="file"
             name="file"

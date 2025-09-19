@@ -4,6 +4,7 @@ import { Container, Modal, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { isLoggedIn, logout } from '../services/AuthService';
 
+import { FaFilePdf } from 'react-icons/fa';
 import Login from '../services/Login';
 import { NavLink } from 'react-router-dom';
 import Register from '../services/Register';
@@ -69,11 +70,13 @@ const NavigationBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+
+              
               <Nav.Link as={NavLink} to="/" id='color' end>Home</Nav.Link>
               <Nav.Link as={NavLink} to="/About" id='color'>About Us</Nav.Link>
               <Nav.Link as={NavLink} to="/Contact" id='color'>Contact Us</Nav.Link>
               <Nav.Link as={NavLink} to="/EditorialBoard" id='color'>Editorial Board</Nav.Link>
-              <Nav.Link as={NavLink} to="/Archive" id='color'>Archive</Nav.Link>
+              <Nav.Link as={NavLink} to="/Archives" id='color'>Archives</Nav.Link>
               <Nav.Link as={NavLink} to="/SubmitManuscript" id='color'>Submit Manuscript</Nav.Link>
 
               {auth ? (
@@ -82,6 +85,10 @@ const NavigationBar = () => {
                     <NavDropdown title="Admin DB" id='color'>
                       <NavDropdown.Item as={NavLink} to="/Manuscripts">📄 Manuscripts</NavDropdown.Item>
                       <NavDropdown.Item as={NavLink} to="/contactlist">📬 Contact-List</NavDropdown.Item>
+                      <NavDropdown.Item as={NavLink} to="/uploadpdf"> <FaFilePdf />Upload PDF</NavDropdown.Item>
+                      <NavDropdown.Item as={NavLink} to="/PdfList"> <FaFilePdf />Pdf List</NavDropdown.Item>
+                      <NavDropdown.Item as={NavLink} to="/uploadAnnouncement"> Upload Announcement</NavDropdown.Item>
+                      <NavDropdown.Item as={NavLink} to="/RegisterList"> Register-List</NavDropdown.Item>
                     </NavDropdown>
                   )}
                   <Nav.Link

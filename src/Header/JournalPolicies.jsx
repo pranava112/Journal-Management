@@ -10,7 +10,7 @@ const JournalPolicies = () => {
     <Container className="py-5">
       <Row>
         <Col>
-          <h1 className="text-center mb-5">Journal Policies</h1>
+          <h1 className="text-center mb-5 sub_title">Journal Policies</h1>
 
           {/* Open Access Policy */}
           <section className="mb-5">

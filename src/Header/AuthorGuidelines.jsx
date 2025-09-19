@@ -12,7 +12,7 @@ const AuthorGuidelines = () => {
     <Container className="py-5">
       <Row>
         <Col>
-          <h1 className="text-center mb-5">Author Guidelines</h1>
+          <h1 className="text-center mb-5 sub_title">Author Guidelines</h1>
 
           <p className="lead">
             International Journal of Management Science and Business Conclave (IJMSABC) is an

@@ -326,7 +326,7 @@ const ContactList = () => {
 
   return (
     <Container className="my-5">
-      <h2 className="mb-4">Submitted Contacts List</h2>
+      <h2 className="mb-4 sub_title">Submitted Contacts List</h2>
       {error && <Alert variant="danger">{error}</Alert>}
 
       <InputGroup className="mb-3">

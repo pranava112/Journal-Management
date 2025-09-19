@@ -59,7 +59,7 @@ const ManuscriptList = () => {
 
   return (
     <Container className="my-5">
-      <h2 className="text-center mb-4">Submitted Manuscripts</h2>
+      <h2 className="text-center mb-4 sub_title">Submitted Manuscripts</h2>
       {loading && <Spinner animation="border" variant="primary" />}
       {error && <Alert variant="danger">{error}</Alert>}
       {!loading && !error && manuscripts.length === 0 && <p>No submissions found.</p>}

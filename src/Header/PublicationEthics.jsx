@@ -101,7 +101,7 @@ These guidelines ensure fairness, transparency, and accountability in all stages
 const PublicationEthics = () => {
   return (
     <Container className="py-5">
-      <h2 className="text-center mb-4">Publication Ethics</h2>
+      <h2 className="text-center mb-4 sub_title">Publication Ethics</h2>
       <Accordion defaultActiveKey="0">
         {ethicsSections.map((section, idx) => (
           <Accordion.Item eventKey={idx.toString()} key={idx}>

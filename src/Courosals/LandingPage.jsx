@@ -66,7 +66,8 @@ const LandingPage = () => {
       transition={{ delay: 3.5, duration: 0.5 }} // start fading out before 4s
     >
       {/* Logo */}
-      <motion.img
+    <div id="motionImg">
+        <motion.img
         src="/logo.png"
         alt="IJMSBC Logo"
         className="w-40 h-40 mb-6 drop-shadow-2xl landing"
@@ -74,6 +75,7 @@ const LandingPage = () => {
         animate={{ scale: 1, rotate: 0, opacity: 1 }}
         transition={{ duration: 3, ease: "easeOut" }}
       />
+    </div>
 
       {/* Title */}
       <motion.h1

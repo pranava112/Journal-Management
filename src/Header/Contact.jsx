@@ -42,7 +42,7 @@ const Contact = () => {
 return (
   <>
     <Container className="contact-container">
-      <h1 className="text-center contact-header">Contact Us</h1>
+      <h1 className="text-center sub_title">Contact Us</h1>
 
       <Row className="mb-4">
         <Col xs={12} className="office-address">

@@ -37,6 +37,7 @@ import AsideBar from '../Components/AsideBar';
 import Footer from '../Components/Footer'
 import Header from '../Header/Header';
 import NavigationBar from '../Header/NavigationBar';
+import News from '../Components/News';
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 
@@ -45,6 +46,7 @@ const Layout = () => {
     <div id="main">
       <Header />
       <NavigationBar />
+      <News/>
 
       <Container fluid className="py-3">
         <Row>

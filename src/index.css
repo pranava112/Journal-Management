@@ -78,5 +78,228 @@
 
 .landing {
     height: 100vh;
-    width: 100vw;
+    width: 80%;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    */
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#motionImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Archives {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%;
+}
+
+#anchor {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+#icon {
+    height: 30px;
+    width: 30px;
+    color: rgba(198, 8, 8, 0.777);
+    /* margin-right: 100px; */
+}
+
+#li {
+    margin-left: 15px;
+}
+
+.marquee {
+    height: auto;
+    width: auto;
+    background-color: white;
+    color: blue;
+    font-size: 25px;
+    padding: 6px 0px;
+}
+
+.sub_title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #003366;
+}
+
+
+/* editorial board */
+
+
+/* Section wrapper */
+
+.editorial {
+    display: flex;
+    justify-content: flex-start;
+    /* container always left */
+    align-items: flex-start;
+    /* background-color: red; */
+    padding: 20px;
+}
+
+
+/* Container aligned left */
+
+.editorial-container {
+    margin: 0;
+    padding: 0 10px;
+    max-width: 800px;
+}
+
+
+/* Title */
+
+.editorial-title {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/* Card list */
+
+.editorial-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Individual card */
+
+.editorial-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+
+/* Row inside card */
+
+.editorial-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+
+/* Columns */
+
+.editorial-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+
+/* Image column */
+
+.image-col {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.editorial-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Text column */
+
+.text-col {
+    flex: 1;
+    text-align: left;
+}
+
+.member-name {
+    color: purple;
+    margin-bottom: 5px;
+}
+
+
+/* PDF column */
+
+.pdf-col {
+    flex: 0 0 120px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.pdf-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #007bff;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.pdf-btn:hover {
+    background: #0056b3;
+}
+
+
+/* Details & lists */
+
+.editorial-list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.label {
+    font-weight: bold;
+}
+
+
+/* ✅ Responsive: center image when screen is small */
+
+@media (max-width: 600px) {
+    .image-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 140px;
+        /* center image on small screens */
+        width: 100%;
+    }
+    .pdf-col {
+        justify-content: center;
+        /* center PDF button too */
+        width: 100%;
+        margin-top: 10px;
+    }
+    .text-col {
+        text-align: center;
+        /* optional: center text on mobile */
+    }
 }
