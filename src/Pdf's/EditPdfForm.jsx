@@ -144,7 +144,7 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs }
     }
 
     try {
-      const response = await Api.put(`/${editId}`, formData, {
+      const response = await Api.put(`/pdfs/${editId}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

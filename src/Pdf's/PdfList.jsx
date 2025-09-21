@@ -432,7 +432,7 @@ const PdfList = () => {
   // ✅ Fetch all PDFs
   const fetchPdfs = async () => {
     try {
-      const response = await Api.get();
+      const response = await Api.get(`/pdfs`);
       setPdfs(response.data);
     } catch (error) {
       console.error("Error fetching PDFs:", error);
@@ -443,7 +443,7 @@ const PdfList = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this PDF?")) return;
     try {
-      await Api.delete(`/${id}`);
+      await Api.delete(`/pdfs/${id}`);
       setPdfs(pdfs.filter((pdf) => pdf.id !== id));
     } catch (error) {
       console.error("Error deleting PDF:", error);

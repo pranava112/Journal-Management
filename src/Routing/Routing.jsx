@@ -1,5 +1,7 @@
 import About from '../Header/About'
 import AdminRouting from './AdminRouting'
+import Announcement from '../Announcement/Announcement'
+import AnnouncementInput from '../Announcement/AnnouncementInput'
 import Archives from '../Pdf\'s/Archives'
 import ArticleProcessingCharges from '../News and events/ArticleProcessingCharges'
 import AuthorGuidelines from '../Header/AuthorGuidelines'
@@ -20,9 +22,9 @@ import Previous_Issues from '../Pdf\'s/Previous_Issues'
 import PublicationEthics from '../Header/PublicationEthics'
 import React from 'react'
 import SubmitManuscript from '../Header/SubmitManuscript'
-import UploadAnnouncement from '../Header/UploadAnnouncement'
 import UploadPdf from '../Pdf\'s/UploadPdf'
 import UserInfoPortal from '../services/UserInfoPortal'
+import VisitorStats from '../Header/VisitorStats'
 import { createBrowserRouter } from 'react-router-dom'
 
 const Routing = createBrowserRouter([
@@ -55,9 +57,11 @@ const Routing = createBrowserRouter([
   
 {path:"/uploadpdf", element:(<AdminRouting><UploadPdf/></AdminRouting>)},
 
+{path:"/VisitorStats", element:(<AdminRouting><VisitorStats/></AdminRouting>)},
+
 {path:"/PdfList",element:(<AdminRouting><PdfList /></AdminRouting>)},
 
-{path:"/uploadAnnouncement",element:(<AdminRouting><UploadAnnouncement /></AdminRouting>)},
+{path:"/uploadAnnouncement",element:(<AdminRouting><Announcement /></AdminRouting>)},
 
 {path:"/RegisterList",element:(<AdminRouting><ListOfUsers /></AdminRouting>)},
 
@@ -67,6 +71,9 @@ const Routing = createBrowserRouter([
 
 {path:"/Manuscripts",element:(<AdminRouting><ManuscriptList/></AdminRouting>)},
 
+{path:"/Announcement",element:(<AdminRouting><Announcement/></AdminRouting>)},
+
+{path:"/AnnouncementInput",element:(<AdminRouting><AnnouncementInput/></AdminRouting>)},
 
     ]
   },

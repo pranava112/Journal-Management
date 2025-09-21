@@ -8,7 +8,7 @@ const UploadPdf = () => {
     title: "",
     pdf_doc: null,
     volume: "",
-    issue: "",
+    issueNo: "",
     year: "",
     type: "",
   });
@@ -29,12 +29,12 @@ const UploadPdf = () => {
     formData.append("title", pdf.title);
     formData.append("pdf_doc", pdf.pdf_doc);
     formData.append("volume", pdf.volume);
-    formData.append("issue", pdf.issue);
+    formData.append("issueNo", pdf.issueNo);
     formData.append("year", pdf.year);
     formData.append("type", pdf.type);
 
     try {
-      const response = await Api.post("/upload", formData, {
+      const response = await Api.post("/pdfs/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       console.log("Pdf uploaded successfully", response.data);
@@ -49,14 +49,14 @@ const UploadPdf = () => {
       title: "",
       pdf_doc: null,
       volume: "",
-      issue: "",
+      issueNo: "",
       year: "",
       type: "",
     });
     e.target.reset();
   };
 
-  const { id, title, volume, issue, year, type } = pdf;
+  const { id, title, volume, issueNo, year, type } = pdf;
 
   useEffect(() => {
     document.title = "Upload File";
@@ -142,9 +142,9 @@ const UploadPdf = () => {
                 <input
                   type="text"
                   className="form-control"
-                  id="issue"
-                  name="issue"
-                  value={issue}
+                  id="issueNo"
+                  name="issueNo"
+                  value={issueNo}
                   onChange={handleInputChange}
                   required
                   placeholder="Enter Issue (e.g. 1(1))"
@@ -183,5 +183,3 @@ const UploadPdf = () => {
 };
 
 export default UploadPdf;
-
-

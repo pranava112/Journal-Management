@@ -30,7 +30,7 @@ const members = [
 
   {
     name:"Dr. Vottiprolu Vijaya Kumar ",
-    position:"•	Publisher/ Editor in Chief / Assistant Professor",
+    position:"Publisher/ Editor in Chief / Assistant Professor",
     Department:"Institute of Management and Research",
     university:"MGM University",
     address:"Chhatrapati Sambhajinagar, Maharashtra.",

@@ -83,7 +83,7 @@ const Previous_Issues = () => {
 
   const fetchPdfs = async () => {
     try {
-      const response = await Api.get();
+      const response = await Api.get(`/pdfs`);
 
       // const response = await Api.get();
       // setPdfs(response.data);

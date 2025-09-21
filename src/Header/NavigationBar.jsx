@@ -89,6 +89,9 @@ const NavigationBar = () => {
                       <NavDropdown.Item as={NavLink} to="/PdfList"> <FaFilePdf />Pdf List</NavDropdown.Item>
                       <NavDropdown.Item as={NavLink} to="/uploadAnnouncement"> Upload Announcement</NavDropdown.Item>
                       <NavDropdown.Item as={NavLink} to="/RegisterList"> Register-List</NavDropdown.Item>
+ <NavDropdown.Item as={NavLink} to="/VisitorStats">Visitor Stats</NavDropdown.Item>
+
+                      
                     </NavDropdown>
                   )}
                   <Nav.Link

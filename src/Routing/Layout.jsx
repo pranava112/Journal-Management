@@ -37,7 +37,7 @@ import AsideBar from '../Components/AsideBar';
 import Footer from '../Components/Footer'
 import Header from '../Header/Header';
 import NavigationBar from '../Header/NavigationBar';
-import News from '../Components/News';
+import News from '../Announcement/News';
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 
