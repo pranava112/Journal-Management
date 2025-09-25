@@ -4,6 +4,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#header1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 
 /* .logo {
     height: 80px;

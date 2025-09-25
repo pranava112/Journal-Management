@@ -73,10 +73,10 @@ const NavigationBar = () => {
 
               
               <Nav.Link as={NavLink} to="/" id='color' end>Home</Nav.Link>
-              <Nav.Link as={NavLink} to="/Scope" id='color'>Aims and Scope</Nav.Link>
-              <Nav.Link as={NavLink} to="/Author" id='color'>Guidelines for Authors</Nav.Link>
+              <Nav.Link as={NavLink} to="/About" id='color'>Aims and Scope</Nav.Link>
+              <Nav.Link as={NavLink} to="/AuthorGuidelines" id='color'>Guidelines for Authors</Nav.Link>
               <Nav.Link as={NavLink} to="/CallForPapers" id='color'>Call For Papers</Nav.Link>
-              <Nav.Link as={NavLink} to="/About" id='color'>Article Submission System</Nav.Link>
+              <Nav.Link as={NavLink} to="/SubmitManuscript" id='color'>Article Submission System</Nav.Link>
               <Nav.Link as={NavLink} to="/EditorialBoard" id='color'>Editorial Board</Nav.Link>
               <Nav.Link as={NavLink} to="/Archives" id='color'>Archives</Nav.Link>
               <Nav.Link as={NavLink} to="/conferences" id='color'>Conferrences</Nav.Link>
