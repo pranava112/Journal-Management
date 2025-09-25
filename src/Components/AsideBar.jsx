@@ -29,13 +29,13 @@ const AsideBar = () => {
             </NavLink>
           </ListGroup.Item>
           <ListGroup.Item>
-            <NavLink to="/JournalPolicies" className="nav-link p-0" id='hello1'>
+            <NavLink to="/JournalPolicies" className="nav-link p-0" id='hello2'>
               <IoNewspaperOutline className="me-2 icon" />
               Journal Policies
             </NavLink>
           </ListGroup.Item>
           <ListGroup.Item>
-            <NavLink to="/AuthorGuidelines" className="nav-link p-0" id='hello1'>
+            <NavLink to="/AuthorGuidelines" className="nav-link p-0" id='hello3'>
               <IoNewspaperOutline className="me-2 icon" />
               Author Guidelines
             </NavLink>
