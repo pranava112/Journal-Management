@@ -66,20 +66,34 @@ const NavigationBar = () => {
       {/* <Navbar bg="dark" variant="dark" expand="lg" sticky="top"> */}
 <Navbar bg="" variant="" expand="lg" sticky="top" id='navbar'>
         <Container>
-          <Navbar.Brand as={NavLink} to="/" id='color'>IJMSABC</Navbar.Brand>
+          {/* <Navbar.Brand as={NavLink} to="/" id='color'>IJMSABC</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
 
               
               <Nav.Link as={NavLink} to="/" id='color' end>Home</Nav.Link>
-              <Nav.Link as={NavLink} to="/About" id='color'>About Us</Nav.Link>
-              <Nav.Link as={NavLink} to="/Contact" id='color'>Contact Us</Nav.Link>
+              <Nav.Link as={NavLink} to="/Scope" id='color'>Aims and Scope</Nav.Link>
+              <Nav.Link as={NavLink} to="/Author" id='color'>Guidelines for Authors</Nav.Link>
+              <Nav.Link as={NavLink} to="/CallForPapers" id='color'>Call For Papers</Nav.Link>
+              <Nav.Link as={NavLink} to="/About" id='color'>Article Submission System</Nav.Link>
               <Nav.Link as={NavLink} to="/EditorialBoard" id='color'>Editorial Board</Nav.Link>
               <Nav.Link as={NavLink} to="/Archives" id='color'>Archives</Nav.Link>
-              <Nav.Link as={NavLink} to="/SubmitManuscript" id='color'>Submit Manuscript</Nav.Link>
+              <Nav.Link as={NavLink} to="/conferences" id='color'>Conferrences</Nav.Link>
+              <Nav.Link as={NavLink} to="/ethics" id='color'>Ethics and policies</Nav.Link>
+              <Nav.Link as={NavLink} to="/downloads" id='color'>Downloads</Nav.Link>
+<Nav.Link as={NavLink} to="/member" id='color'>Membership</Nav.Link>
+              <Nav.Link as={NavLink} to="/Contact" id='color'>Contact Us</Nav.Link>
 
-              {auth ? (
+              {/* <Nav.Link as={NavLink} to="/About" id='color'>About Us</Nav.Link>
+              
+              
+              
+              <Nav.Link as={NavLink} to="/SubmitManuscript" id='color'>Submit Manuscript</Nav.Link> */}
+
+
+
+              {/* {auth ? (
                 <>
                   {isAdmin && (
                     <NavDropdown title="Admin DB" id='color'>
@@ -93,8 +107,10 @@ const NavigationBar = () => {
 
                       
                     </NavDropdown>
-                  )}
-                  <Nav.Link
+                  )} */}
+
+
+                  {/* <Nav.Link
                     as="button"
                     className="btn btn-link nav-link"
                     id="logout"
@@ -112,7 +128,7 @@ const NavigationBar = () => {
                     Register
                   </NavDropdown.Item>
                 </NavDropdown>
-              )}
+              )} */}
             </Nav>
           </Navbar.Collapse>
         </Container>

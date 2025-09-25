@@ -6,7 +6,7 @@ import React from 'react';
 import UserInfoPortal from '../services/UserInfoPortal';
 
 const Header = () => {
-  const text = "International Journal Of Management Science And Business Conclave";
+  const text = "International Journal Of Management Science And Business Conclave ";
 
   // Function to wrap first letter of each word in a span
   const styledTitle = text.split(" ").map((word, index) => (
@@ -32,7 +32,8 @@ const Header = () => {
               />
               <div className="text-center text-md-start">
                 <h1 className="title mb-0">{styledTitle}</h1>
-                <h1 className="subtitle mb-0"></h1>
+                {/* <h1 className="subtitle mb-0"></h1> */}
+                {/* <center><h1>(IJMSABC)</h1></center> */}
               </div>
             </Col>
           </Row>
