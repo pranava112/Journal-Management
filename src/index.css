@@ -303,3 +303,14 @@
         /* optional: center text on mobile */
     }
 }
+
+.marquee {
+    width: 100%;
+    background-color: white;
+}
+
+#buttons {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+}

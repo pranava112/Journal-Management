@@ -114,7 +114,7 @@
 import Api from "./Api";
 import React from "react";
 
-const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs }) => {
+const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs, }) => {
   // ✅ Handle input change
   const handleEditChange = (e) => {
     const { name, value, files } = e.target;
@@ -137,6 +137,7 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs }
     formData.append("issueNo", editForm.issueNo);
     formData.append("year", editForm.year);
     formData.append("type", editForm.type);
+    formData.append("author",editForm.author)
 
     // only append pdf if a new file is selected
     if (editForm.pdf_doc instanceof File) {
@@ -162,14 +163,16 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs }
     <div className="card mt-4 p-3 shadow-sm">
       <h4>Edit PDF</h4>
       <form onSubmit={handleUpdate}>
+        <label htmlFor="title">Title: </label>
         <input
           type="text"
+          id="title"
           name="title"
           value={editForm.title}
           onChange={handleEditChange}
           placeholder="Title"
           className="form-control mb-2"
-          required
+          readOnly
         />
 
         {/* ✅ Show current PDF info */}
@@ -185,38 +188,62 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs }
           </div>
         )}
 
+
+       <label htmlFor="PDF">PDF: </label>
         <input
           type="file"
+          id="PDF"
           name="pdf_doc"
           onChange={handleEditChange}
           className="form-control mb-2"
           accept="application/pdf"
         />
+          
+           <label htmlFor="author">Author: </label>
+          <input  
+          type="text"
+          id="author"
+          name="author"
+          value={editForm.author}
+          onChange={handleEditChange}
+          className="form-control mb-2"
+          readOnly
+        />
 
+        <label htmlFor="year">Year: </label>
         <input
           type="text"
           name="year"
+          id="year"
           value={editForm.year}
           onChange={handleEditChange}
           className="form-control mb-2"
           required
         />
+
+         <label htmlFor="volume">Volume: </label>
         <input
           type="text"
           name="volume"
+          id="volume"
           value={editForm.volume}
           onChange={handleEditChange}
           className="form-control mb-2"
           required
         />
+
+         <label htmlFor="issueNo">Issue No: </label>
         <input
           type="text"
+          id="issueNo"
           name="issueNo"
           value={editForm.issueNo}
           onChange={handleEditChange}
           className="form-control mb-2"
           required
         />
+
+         {/* <label htmlFor="type">Type: </label>
         <input
           type="text"
           name="type"
@@ -224,8 +251,23 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs }
           onChange={handleEditChange}
           className="form-control mb-2"
           required
-        />
+        /> */}
 
+        <label htmlFor='type' >Type: </label>
+        <select name="type" className="form-label mb-2" id="type" onChange={handleEditChange} value={editForm.type} 
+        required
+        // className="px-3 py-0 my-1 w-72 h-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <option value="">--select--</option>
+          <option value="Current_Issue">Current Issue</option>
+          <option value="Previous_Issue">Previous Issue</option>
+          
+        </select>
+
+
+
+
+<br />
         <button type="submit" className="btn btn-success">
           Save Changes
         </button>

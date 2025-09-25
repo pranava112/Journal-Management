@@ -33,7 +33,7 @@ const News = () => {
     <>
       {/* <h3 className="text-black text-center text-xl font-bold">ANNOUNCEMENT</h3> */}
       <marquee
-        className="text-black text-center mt-2 text-lg"
+        className="text-black text-center mt-2 text-lg marquee"
         direction="left"
       >
         <img src="/new_blink.gif" alt="logo" className="inline-block mr-2" />

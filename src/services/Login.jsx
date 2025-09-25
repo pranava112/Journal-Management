@@ -109,3 +109,43 @@ const Login = ({ onLogin }) => {
 };
 
 export default Login;
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// import React, { useState } from "react";
+
+// import { auth } from "./firebaseConfig";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+
+// const Login = () => {
+//   const [form, setForm] = useState({ email: "", password: "" });
+//   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const userCredential = await signInWithEmailAndPassword(auth, form.email, form.password);
+
+//       if (!userCredential.user.emailVerified) {
+//         alert("Please verify your email first.");
+//         return;
+//       }
+
+//       alert("Login successful");
+//     } catch (err) {
+//       alert(err.message);
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleLogin}>
+//       <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+//       <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+//       <button type="submit">Login</button>
+//     </form>
+//   );
+// };
+
+// export default Login;

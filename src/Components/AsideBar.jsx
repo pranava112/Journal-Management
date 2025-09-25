@@ -23,25 +23,25 @@ const AsideBar = () => {
 
         <ListGroup variant="flush">
           <ListGroup.Item>
-            <NavLink to="/PublicationEthics" className="nav-link p-0">
+            <NavLink to="/PublicationEthics" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
               Publication Ethics
             </NavLink>
           </ListGroup.Item>
           <ListGroup.Item>
-            <NavLink to="/JournalPolicies" className="nav-link p-0">
+            <NavLink to="/JournalPolicies" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
               Journal Policies
             </NavLink>
           </ListGroup.Item>
           <ListGroup.Item>
-            <NavLink to="/AuthorGuidelines" className="nav-link p-0">
+            <NavLink to="/AuthorGuidelines" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
               Author Guidelines
             </NavLink>
           </ListGroup.Item>
           <ListGroup.Item className="p-0 mt-2 ps-2">
-            {/* <IoNewspaperOutline className="me-2 icon" /> */}
+            
            <h5> News and Events</h5>
           </ListGroup.Item>
         </ListGroup>

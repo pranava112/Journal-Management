@@ -100,3 +100,95 @@ const Register = ({ onLogin }) => {
 };
 
 export default Register;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+// import React, { useState } from "react";
+// import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+
+// import { auth } from "./firebaseConfig";
+// import axios from "axios";
+// import bcrypt from "bcryptjs"; // ✅ Import bcryptjs
+
+// const Register = () => {
+//   const [form, setForm] = useState({
+//     name: "",
+//     email: "",
+//     phone: "",
+//     password: "",
+//     confirmPassword: "",
+//   });
+
+//   const handleChange = (e) => {
+//     setForm({ ...form, [e.target.name]: e.target.value });
+//   };
+
+//   const handleRegister = async (e) => {
+//     e.preventDefault();
+
+//     if (form.password !== form.confirmPassword) {
+//       alert("Passwords do not match");
+//       return;
+//     }
+
+//     try {
+//       // 1️⃣ Create user in Firebase
+//       const userCredential = await createUserWithEmailAndPassword(auth, form.email, form.password);
+
+//       // 2️⃣ Send email verification
+//       await sendEmailVerification(userCredential.user);
+//       alert("Verification email sent. Please check your inbox.");
+
+//       // 3️⃣ Hash the password before sending to backend
+//       const salt = await bcrypt.genSalt(10);
+//       const hashedPassword = await bcrypt.hash(form.password, salt);
+
+//       // 4️⃣ Send additional fields to backend
+//       await axios.post("http://localhost:8080/api/ijmsabc/users", {
+//         name: form.name,
+//         email: form.email,
+//         phone: form.phone,
+//         password: hashedPassword, // ✅ Hashed password
+//       });
+
+//       alert("User saved in backend successfully!");
+//       setForm({ name: "", email: "", phone: "", password: "", confirmPassword: "" });
+//     } catch (err) {
+//       console.error("Registration error:", err);
+//       alert(err.message);
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleRegister}>
+//       <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
+//       <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
+//       <input name="phone" placeholder="Phone" value={form.phone} onChange={handleChange} required />
+//       <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} required />
+//       <input type="password" name="confirmPassword" placeholder="Confirm Password" value={form.confirmPassword} onChange={handleChange} required />
+//       <button type="submit">Register</button>
+//     </form>
+//   );
+// };
+
+// export default Register;

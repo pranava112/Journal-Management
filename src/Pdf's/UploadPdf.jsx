@@ -11,6 +11,7 @@ const UploadPdf = () => {
     issueNo: "",
     year: "",
     type: "",
+    author:""
   });
 
   const handleInputChange = (e) => {
@@ -32,6 +33,7 @@ const UploadPdf = () => {
     formData.append("issueNo", pdf.issueNo);
     formData.append("year", pdf.year);
     formData.append("type", pdf.type);
+    formData.append("author", pdf.author);
 
     try {
       const response = await Api.post("/pdfs/upload", formData, {
@@ -52,11 +54,12 @@ const UploadPdf = () => {
       issueNo: "",
       year: "",
       type: "",
+      author:"",
     });
     e.target.reset();
   };
 
-  const { id, title, volume, issueNo, year, type } = pdf;
+  const { id, title, volume, issueNo, year, type, author} = pdf;
 
   useEffect(() => {
     document.title = "Upload File";
@@ -94,6 +97,21 @@ const UploadPdf = () => {
                   placeholder="Title of Pdf"
                 />
               </div>
+
+             <div className="mb-3">
+                <label htmlFor="author" className="form-label">Author Name</label>
+                <input 
+                  type='text'
+                  className="form-control"
+                  id="author"
+                  name="author"
+                  value={author}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Name of the Author"
+                />
+              </div>
+
 
               <div className="mb-3">
                 <label htmlFor="pdf_doc" className="form-label">Upload PDF</label>
