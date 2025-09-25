@@ -5,7 +5,7 @@ import React from 'react';
 const About = () => {
   return (
     <div className="about-container">
-      <h2 className="sub_title">About</h2>
+      {/* <h2 className="sub_title">About</h2> */}
 
       <section className="about-section">
         <h3>AIM</h3>

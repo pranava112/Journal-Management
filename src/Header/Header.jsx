@@ -49,8 +49,8 @@ const Header = () => {
               />
         </div>
         <div>
-          <h1><center>International Journal Of </center></h1>
-          <h1><center>Management Science And Business Conclave(IJMSABC)</center></h1>
+          <h1 className="title mb-0"><center>International Journal Of </center></h1>
+          <h1 className="title mb-0"><center>Management Science And Business Conclave(IJMSABC)</center></h1>
         </div>
 
       </div>

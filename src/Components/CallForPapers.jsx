@@ -38,7 +38,8 @@ const CallForPapers = () => {
           href="mailto:editor@ijmsbc.org"
           className="text-blue-400 underline hover:text-blue-600"
         >
-          editor@ijmsabc.org
+          {/* editor@ijmsabc.org */}
+          ijmsabc@gmail.com
         </a>
       </p>
     </div>

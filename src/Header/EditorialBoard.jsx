@@ -173,7 +173,7 @@ const EditorialBoard = () => {
 
 <section className="editorial">
   <div className="editorial-container">
-    <h1 className="editorial-title">Editorial Board Members</h1>
+    <h1 className="editorial-title">Editorial Board </h1>
 
     <div className="editorial-list">
       {members.map((member, index) => (
