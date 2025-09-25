@@ -66,17 +66,17 @@ ProfileLink1:'https://www.bamu.ac.in/en/academicspage/department-of-library-and-
     image:"../dummy-image.png",
   },
 
-  {
-    name:"DR. Nirav Joshi",
-    position:"Assistant Professor",
-    Department:"VM Patil Institute of Management",
-    university:"Ganpat University",
-    address:"Mehsana Gandhinagr Highway, PO-384012, North Gujarat, India",
-    email:"nrj01@ganpatuniversity.ac.in",
-    Profilelink: 'https://vmpim.guni.ac.in/people/faculty/dr-nirav-joshi',
-    pdf:"",
-    image:"../dummy-image.png",
-  },
+  // {
+  //   name:"DR. Nirav Joshi",
+  //   position:"Assistant Professor",
+  //   Department:"VM Patil Institute of Management",
+  //   university:"Ganpat University",
+  //   address:"Mehsana Gandhinagr Highway, PO-384012, North Gujarat, India",
+  //   email:"nrj01@ganpatuniversity.ac.in",
+  //   Profilelink: 'https://vmpim.guni.ac.in/people/faculty/dr-nirav-joshi',
+  //   pdf:"",
+  //   image:"../dummy-image.png",
+  // },
 
   {
     name:"Mr. Ganesh Sagre",
