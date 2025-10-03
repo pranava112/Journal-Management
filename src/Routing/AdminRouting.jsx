@@ -5,7 +5,7 @@ const AdminRouting = ({ children }) => {
   const userData = JSON.parse(localStorage.getItem("USER_DATA"));
 
   const allowedUsers = [
-    { email: "AdminIjmsabc@gmail.com" },
+    { email: "ijmsbc@gmail.com" },
     { password: "Admin@123" },
   ];
 

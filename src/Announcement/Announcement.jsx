@@ -109,7 +109,7 @@ import { Alert, Button, Card, Container, Form, Spinner } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import Api from "../Pdf's/Api"; // keep your path
+import Api from "../Pdfs/Api"; // keep your path
 
 const Announcement = () => {
   const [announcement, setAnnouncement] = useState({ information: "" });

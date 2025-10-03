@@ -1,30 +1,41 @@
 import About from '../Header/About'
+import AdminDashBoard from '../Pdfs/AdminDashBoard/AdminDashBoard'
 import AdminRouting from './AdminRouting'
 import Announcement from '../Announcement/Announcement'
 import AnnouncementInput from '../Announcement/AnnouncementInput'
-import Archives from '../Pdf\'s/Archives'
+import Archives from '../Pdfs/Archives'
 import ArticleProcessingCharges from '../News and events/ArticleProcessingCharges'
 import AuthorGuidelines from '../Header/AuthorGuidelines'
 import CallForPapers from '../Components/CallForPapers'
+import Conferences from '../Header/Conferences'
 import Contact from '../Header/Contact'
-import ContactList from '../Header/ContactList'
-import Current_Issues from '../Pdf\'s/Current_Issues'
+import ContactList from '../Pdfs/AdminDashBoard/ContactList'
+import Current_Issues from '../Pdfs/Current_Issues'
+import Downloads from '../Header/Downloads'
 import EditorialBoard from '../Header/EditorialBoard'
+import EditorialBoardList from '../Pdfs/AdminDashBoard/EditorialBoardList'
+import EditorialboardUpload from '../Header/EditorialboardUpload'
 import ErrorPage from './ErrorPage'
+import ForgotPassword from '../services/ForgotPassword'
 import Home from '../Components/Home'
 import IndexList from '../News and events/IndexList'
 import JournalPolicies from '../Header/JournalPolicies'
 import Layout from './Layout'
-import ListOfUsers from '../Header/ListOfUsers'
+import Login from '../services/Login'
 import ManuscriptList from '../Header/ManuscriptList'
-import PdfList from '../Pdf\'s/PdfList'
-import Previous_Issues from '../Pdf\'s/Previous_Issues'
+import Membership from '../Header/Membership'
+import MembershipList from '../Pdfs/MembershipList'
+import PdfList from '../Pdfs/AdminDashBoard/PdfList'
+import Previous_Issues from '../Pdfs/Previous_Issues'
 import PublicationEthics from '../Header/PublicationEthics'
 import React from 'react'
+import Register from '../services/Register'
+import Reviewers from '../Header/Reviewers'
+import ReviewersList from '../Pdfs/AdminDashBoard/ReviewersList'
 import SubmitManuscript from '../Header/SubmitManuscript'
-import UploadPdf from '../Pdf\'s/UploadPdf'
+import UploadPdf from '../Pdfs/AdminDashBoard/UploadPdf'
 import UserInfoPortal from '../services/UserInfoPortal'
-import VisitorStats from '../Header/VisitorStats'
+import VisitorStats from '../Pdfs/AdminDashBoard/VisitorStats'
 import { createBrowserRouter } from 'react-router-dom'
 
 const Routing = createBrowserRouter([
@@ -53,7 +64,22 @@ const Routing = createBrowserRouter([
    {path:"/Archives",element:<Archives/>},
    {path:"/Current_Issues",element:< Current_Issues/>},
    {path:"/Previous_Issues",element:<Previous_Issues/>},
+   {path:"/AdminDashBoard",element:<AdminDashBoard/>},
+   {path:"/Register",element:<Register/>},
+   {path:"/Login",element:<Login/>},
+   {path:"/forgotpassword", element:<ForgotPassword/>} ,
    
+   {path:"/Conferences",element:<Conferences/>},
+   {path:"/Downloads",element:<Downloads/>},
+   {path:"/Reviewers",element:<Reviewers/>},
+   {path:"/editorial-board",element:<EditorialboardUpload/>},
+   {path:"/membership",element:<Membership/>},
+
+   {path:"/ReviewersList",element:<ReviewersList/>},
+   {path:"/EditorialBordList",element:<EditorialBoardList/>},
+   {path:"/MembershipList",element:<MembershipList/>},
+
+
   
 {path:"/uploadpdf", element:(<AdminRouting><UploadPdf/></AdminRouting>)},
 
@@ -63,7 +89,7 @@ const Routing = createBrowserRouter([
 
 {path:"/uploadAnnouncement",element:(<AdminRouting><Announcement /></AdminRouting>)},
 
-{path:"/RegisterList",element:(<AdminRouting><ListOfUsers /></AdminRouting>)},
+
 
 
 {path:"/contactlist",element:(<AdminRouting><ContactList /></AdminRouting>)},
@@ -74,6 +100,7 @@ const Routing = createBrowserRouter([
 {path:"/Announcement",element:(<AdminRouting><Announcement/></AdminRouting>)},
 
 {path:"/AnnouncementInput",element:(<AdminRouting><AnnouncementInput/></AdminRouting>)},
+
 
     ]
   },

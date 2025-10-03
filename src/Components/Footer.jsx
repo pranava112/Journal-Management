@@ -5,6 +5,7 @@ import { FaFacebook, FaInstagram, FaPhone, FaTwitter } from 'react-icons/fa';
 
 import { CiLinkedin } from 'react-icons/ci';
 import React from 'react';
+import VisitorCount from './VisitorCount';
 
 const Footer = () => {
   return (
@@ -32,6 +33,9 @@ const Footer = () => {
               <a href="#" className="icon me-3"><FaInstagram /></a>
               <a href="#" className="icon me-3"><FaTwitter /></a>
               <a href="#" className="icon"><CiLinkedin /></a>
+            </div>
+            <div>
+              {/* <VisitorCount/> */}
             </div>
           </Col>
 

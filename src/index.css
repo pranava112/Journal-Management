@@ -314,3 +314,22 @@
     margin: 5px;
     display: flex;
 }
+
+.issn_block {
+    height: 140px;
+    width: 220px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    /* border-inline-end: #003366; */
+}
+
+#issn {
+    height: 120px;
+    width: 200px;
+}
+
+#icons {
+    font-size: 25px;
+    font-weight: bolder;
+}

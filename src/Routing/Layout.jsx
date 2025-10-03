@@ -46,7 +46,7 @@ const Layout = () => {
     <div id="main">
       <Header />
       <NavigationBar />
-      <News/>
+      {/* <News/> */}
 
       <Container fluid className="py-3">
         <Row>

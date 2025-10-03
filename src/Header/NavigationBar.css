@@ -47,9 +47,26 @@
 
 #navbar {
     background-color: rgb(166, 31, 38);
+    /* padding: -5px; */
 }
 
 #color {
     color: white;
     font-size: 13px;
+}
+
+#color1 {
+    background-color: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    /* Bootstrap primary color, same as Nav.Link */
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#color1 option {
+    color: #000;
+    /* dropdown text color */
 }

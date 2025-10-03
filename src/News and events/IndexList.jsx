@@ -4,7 +4,11 @@ const IndexList = () => {
   return (
     <>
     <h1 className='sub_title'><center>IndexList</center></h1>
-    <p>Google scholar, ISSN, </p>
+    {/* <p>Google scholar, ISSN, </p> */}
+
+   <div className='issn_block'>
+     <img src="/public/issn.jpg" alt="issn" id='issn' />
+   </div>
     </>
   )
 }

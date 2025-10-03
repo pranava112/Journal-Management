@@ -10,15 +10,27 @@ const About = () => {
       <section className="about-section">
         <h3>AIM</h3>
         <p>
-          The journal aims to open new horizons of unique thoughts, ideas, research methods, and professional techniques. Its vision is to provide a unique research platform with professional approaches, fostering knowledge sharing and innovation in diverse business and management domains. It encourages submissions on a variety of topics including financial management, marketing management, strategic management, entrepreneurship, operations management, corporate social responsibility, and emerging fields such as e-business and digital technologies. The journal also features book reviews from UK, USA, European, and Asian scholarships, engaging a broad audience to bridge the gap between academic research and practical business applications.
+          The primary aim of the International Journal of Management Science and Business Conclave (IJMSABC) is to provide a credible, peer-reviewed platform for the dissemination of high-quality research in the field of management and business studies. The journal seeks to advance knowledge, foster innovation, and facilitate the exchange of ideas among scholars, practitioners, policymakers, and industry leaders worldwide. IJMSABC encourages research that addresses contemporary challenges, proposes evidence-based solutions, and contributes to the sustainable growth and transformation of organizations and economies.
         </p>
       </section>
 
       <section className="about-section">
         <h3>Scope of the Journal</h3>
-        <p>
-          International Journal of Management Science and Business Conclave Journal is publishing high quality papers on all aspects of Management and Economics, Human Resource Management, Organizational Behavior and Organizational Management, International Business, Knowledge Management, Environmental Management, Data Analysis and Decision Making, Technology and Operations Management, Strategic Decision Making, Negotiations and Competitive Decision Making, Ethics in Management, Corporate Governance, Corporate Social Responsibility, Entrepreneurship and Innovation, Public Management, Rural Management, General Management, Hotel Management, Intellectual Property Rights, Education Management, Communication Management, Lifecycle Management, Spiritual Management, Tourism Management, Hospitality Management, Leisure Management, Inventory Management, Waste Management, Hospital Management, Financial Markets, International Business, International Finance, E-Business, Empirical Finance, Financial Economics, Financial Engineering, Financial Forecasting, Financial Risk Management and Analysis, Systemic Risk, Corporate Finance, Supply Chain and Logistics Management, Innovation and Change Management, Project Management and Agile Methodologies, Knowledge and Intellectual Capital Management, Digital Marketing and E-commerce Strategies, Performance Management and Balanced Scorecard, Risk Management and Corporate Security, Talent Acquisition and Employee Engagement, Organizational Development and Change Leadership, Cross-cultural Management and Diversity Inclusion, Business Analytics and Big Data in Management, Crisis and Disaster Management, Behavioral Economics and Consumer Psychology, Health Care Management and Policy, Energy and Resource Management, Public-Private Partnerships and Governance, Blockchain Applications in Business, Agile and Lean Management Practices, Circular Economy and Sustainable Business Models, Artificial Intelligence and Automation in Management, etc.
-        </p>
+        <p>The journal publishes original research articles, case studies, and critical reviews in all areas of management and business studies, including but not limited to:</p>
+        <ul>
+          <li>Organizational Behavior and Leadership,</li>
+          <li>Strategic Management and Business Policy,</li>
+          <li>Human Resource Development and Talent Management,</li>
+          <li>Entrepreneurship and Innovation,</li>
+          <li>Financial Management and Accounting Practices,</li>
+          <li>Marketing Strategies and Consumer Behavior,</li>
+          <li>Operations, Supply Chain, and Logistics Management,</li>
+          <li>Business Analytics, Data-Driven Decision Making, and Digital Transformation</li>
+          <li>Technology Management and its Impact on Global Business,</li>
+          <li>Hospital Management, IT Management,</li>
+          <li>All areas of Management, etc.,</li>
+        </ul>
+        <p>IJMSABC welcomes Management research that integrates management theory with practical applications, addressing current global trends and challenges in business. The journal aims to strengthen the dialogue between academia research and industry, encourage evidence based management practices and contribute to the advancement of knowledge in the field of management and business studies.</p>
       </section>
 
       <section className="about-section">
@@ -32,6 +44,7 @@ const About = () => {
           <li>Rapid publication after acceptance</li>
         </ul>
       </section>
+
     </div>
   );
 };

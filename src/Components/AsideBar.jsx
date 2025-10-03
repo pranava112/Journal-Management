@@ -23,9 +23,10 @@ const AsideBar = () => {
 
         <ListGroup variant="flush">
           <ListGroup.Item>
-            <NavLink to="/PublicationEthics" className="nav-link p-0" id='hello1'>
+            <NavLink to="/IndexList" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
-              Publication Ethics
+              {/* Publication Ethics */}
+              Index List
             </NavLink>
           </ListGroup.Item>
           <ListGroup.Item>
@@ -42,27 +43,27 @@ const AsideBar = () => {
           </ListGroup.Item>
           <ListGroup.Item className="p-0 mt-2 ps-2">
             
-           <h5> News and Events</h5>
+           {/* <h5> News and Events</h5> */}
           </ListGroup.Item>
         </ListGroup>
       </Card.Body>
 
-      <Card.Footer className="bg-light p-2">
+      {/* <Card.Footer className="bg-light p-2">
         <div className="scroller">
           <marquee behavior="scroll" direction="up" scrollamount="2" height="200px">
             <div id='marquee1'>
-              {/* <CgNotes id='notice'/>  */}
+               */}
                
                 
-                 <NavLink to="/ArticleProcessingCharges" className='news'>
+                 {/* <NavLink to="/ArticleProcessingCharges" className='news'>
                 <div className='news1'><CgNotes id='notice'/>ArticleProcessingCharges</div> 
-                {/* <div className='news2'>Journal impact factor</div> */}
-                </NavLink>
-
+               
+                </NavLink> */}
+{/* 
                 <NavLink to="/IndexList" className='news'>
                 <div className='news1'><CgNotes id='notice'/>Index List</div> 
-                {/* <div className='news2'>Journal impact factor</div> */}
-                </NavLink>
+                
+                </NavLink> */}
                 
                  {/* <NavLink to="/Events2023" className='news'>
                 <div className='news1'><CgNotes id='notice'/>On 2023</div> 
@@ -77,10 +78,11 @@ const AsideBar = () => {
                 <div className='news2'>Journal impact factor</div>
                 </NavLink> */}
 
-            </div>
+            {/* </div>
           </marquee>
         </div>
-      </Card.Footer>
+      </Card.Footer> */}
+
     </Card>
   );
 };

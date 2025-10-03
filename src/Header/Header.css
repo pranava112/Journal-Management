@@ -1,4 +1,4 @@
-#header {
+/* #header {
     height: auto;
     width: auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -10,42 +10,27 @@
     align-items: center;
 }
 
-
-/* .logo {
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #dee2e6;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-
-.logo:hover {
-    height: 100px;
-    width: 100px;
-} */
-
 .logo {
     height: 80px;
     width: 80px;
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid #dee2e6;
-    /* Smooth animation effect */
+   
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
-/* Hover effect with animation */
 
 .logo:hover {
     transform: scale(1.2);
-    /*Smoothzoominsteadofabruptresize*/
+   
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    /* Add a subtle shadow */
+   
     : ;
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -58,12 +43,12 @@
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: #2c3e50;
-    /* color: black; */
+  
     line-height: 1.2;
 }
 
 
-/* Style for the first letter of each word */
+
 
 .first-letter {
     font-size: 120%;
@@ -75,4 +60,72 @@
     font-size: 1.1rem;
     font-weight: 500;
     color: #495057;
+} */
+
+#header {
+    height: auto;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Hover effect */
+
+.logo:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+
+/* Style for the first letter of each word */
+
+.first-letter {
+    font-size: 120%;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+
+/* Responsive adjustments */
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+    }
 }

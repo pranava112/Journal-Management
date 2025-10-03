@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import Api from './Api';
+import Api from '../Api';
+
+// import Api from './Api';
 
 const UploadPdf = () => {
   const [pdf, setPdf] = useState({

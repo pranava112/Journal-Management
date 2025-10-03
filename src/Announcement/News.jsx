@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Api from "../Pdf's/Api";
+import Api from "../Pdfs/Api";
 
 const News = () => {
   const [info, setInfo] = useState({ information: "" });

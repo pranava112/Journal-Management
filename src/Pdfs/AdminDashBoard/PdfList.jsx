@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import Api from "./Api";
-import EditPdfForm from "./EditPdfForm";
+import Api from "../Api";
+import EditPdfForm from "../EditPdfForm";
+
+// import Api from "./Api";
+
+
 
 const PdfList = () => {
   const [pdfs, setPdfs] = useState([]);
