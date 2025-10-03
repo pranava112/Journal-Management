@@ -15,7 +15,7 @@ const Downloads = () => {
               <Card.Title>Cover Page</Card.Title>
               <Button
                 variant="primary"
-                href="/public/Cover Page.pdf"
+                href="/Cover Page.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto"
@@ -33,7 +33,7 @@ const Downloads = () => {
               <Card.Title>Undertaking by Authors</Card.Title>
               <Button
                 variant="primary"
-                href="/public/UNDERTAKING BY AUTHORS.pdf"
+                href="/UNDERTAKING BY AUTHORS.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto"
