@@ -7,7 +7,7 @@ const IndexList = () => {
     {/* <p>Google scholar, ISSN, </p> */}
 
    <div className='issn_block'>
-     <img src="/public/issn.jpg" alt="issn" id='issn' />
+     <img src="/issn.jpg" alt="issn" id='issn' />
    </div>
     </>
   )
