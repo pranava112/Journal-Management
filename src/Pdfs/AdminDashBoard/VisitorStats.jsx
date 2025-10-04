@@ -106,68 +106,6 @@
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-import {
-  CartesianGrid,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
-import React, { useEffect, useRef, useState } from "react";
-
-import axios from "axios";
-
-const VisitorStats = () => {
-  const [stats, setStats] = useState([]);
-  const hasTracked = useRef(false); // ✅ prevents duplicate POST in React Strict Mode
-
-  useEffect(() => {
-    if (!hasTracked.current) {
-      hasTracked.current = true;
-
-      // Track visit only once
-      axios
-        .post("http://localhost:8080/api/ijmsabc/visitors/visit")
-        .catch(console.error);
-
-      // Fetch stats
-      axios
-        .get("http://localhost:8080/api/ijmsabc/visitors/stats")
-        .then((res) => setStats(res.data))
-        .catch(console.error);
-    }
-  }, []);
-
-  return (
-    <div style={{ padding: "20px" }}>
-      <h1>📊 Visitor Statistics</h1>
-
-      {/* Show today's visitor count */}
-      {stats.length > 0 && (
-        <h2>
-          Today's Visitors: {stats[stats.length - 1].count}
-        </h2>
-      )}
-
-      {/* Chart */}
-      <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={stats}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
-          <YAxis allowDecimals={false} />
-          <Tooltip />
-          <Line type="monotone" dataKey="count" stroke="#8884d8" />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  );
-};
-
-export default VisitorStats;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -321,3 +259,130 @@ export default VisitorStats;
 // };
 
 // export default VisitorStats;
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// import {
+//   CartesianGrid,
+//   Line,
+//   LineChart,
+//   ResponsiveContainer,
+//   Tooltip,
+//   XAxis,
+//   YAxis,
+// } from "recharts";
+// import React, { useEffect, useRef, useState } from "react";
+
+// import axios from "axios";
+
+// const VisitorStats = () => {
+//   const [stats, setStats] = useState([]);
+//   const hasTracked = useRef(false); // ✅ prevents duplicate POST in React Strict Mode
+
+//   useEffect(() => {
+//     if (!hasTracked.current) {
+//       hasTracked.current = true;
+
+//       // Track visit only once
+//       axios
+//         .post("http://localhost:8080/api/ijmsabc/visitors/visit")
+//         .catch(console.error);
+
+//       // Fetch stats
+//       axios
+//         .get("http://localhost:8080/api/ijmsabc/visitors/stats")
+//         .then((res) => setStats(res.data))
+//         .catch(console.error);
+//     }
+//   }, []);
+
+//   return (
+//     <div style={{ padding: "20px" }}>
+//       <h1>📊 Visitor Statistics</h1>
+
+//       {/* Show today's visitor count */}
+//       {stats.length > 0 && (
+//         <h2>
+//           Today's Visitors: {stats[stats.length - 1].count}
+//         </h2>
+//       )}
+
+//       {/* Chart */}
+//       <ResponsiveContainer width="100%" height={300}>
+//         <LineChart data={stats}>
+//           <CartesianGrid strokeDasharray="3 3" />
+//           <XAxis dataKey="date" />
+//           <YAxis allowDecimals={false} />
+//           <Tooltip />
+//           <Line type="monotone" dataKey="count" stroke="#8884d8" />
+//         </LineChart>
+//       </ResponsiveContainer>
+//     </div>
+//   );
+// };
+
+// export default VisitorStats;
+
+import {
+  CartesianGrid,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
+import React, { useEffect, useRef, useState } from "react";
+
+import VisitorCount from "../../Components/VisitorCount";
+import axios from "axios";
+
+// import VisitorCount from "./VisitorCount";
+
+
+
+const VisitorStats = () => {
+  const [stats, setStats] = useState([]);
+  const hasTracked = useRef(false);
+
+  useEffect(() => {
+    if (!hasTracked.current) {
+      hasTracked.current = true;
+
+      // Track unique visit
+      axios.post("http://localhost:8080/api/ijmsabc/visitors/visit")
+        .catch(console.error);
+
+      // Fetch stats
+      axios.get("http://localhost:8080/api/ijmsabc/visitors/stats")
+        .then((res) => setStats(res.data))
+        .catch(console.error);
+    }
+  }, []);
+
+  const todayCount = stats.length > 0 ? stats[stats.length - 1].count : 0;
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>📊 Visitor Statistics</h1>
+
+      {/* Display today's count */}
+      <VisitorCount count={todayCount} />
+
+      {/* Chart */}
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart data={stats}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis allowDecimals={false} />
+          <Tooltip />
+          <Line type="monotone" dataKey="count" stroke="#8884d8" />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
+
+export default VisitorStats;

@@ -502,7 +502,7 @@ const SubmitManuscript = () => {
               </div>
 
               <div className="mb-3">
-                <label htmlFor="pdf_doc" className="form-label">Upload PDF</label>
+                {/* <label htmlFor="pdf_doc" className="form-label">Upload Doc</label>
                 <input
                   type="file"
                   className="form-control"
@@ -511,7 +511,19 @@ const SubmitManuscript = () => {
                   accept="application/pdf"
                   onChange={handleInputChange}
                   required
-                />
+                /> */}
+
+                <label htmlFor="pdf_doc" className="form-label">Upload DOC</label>
+                    <input
+                       type="file"
+                       className="form-control"
+                       id="pdf_doc"
+                       name="pdf_doc"
+                       accept=".doc,.docx"
+                       onChange={handleInputChange}
+                       required
+                     />
+
               </div>
 
               <div className="d-grid">
