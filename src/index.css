@@ -315,21 +315,89 @@
     display: flex;
 }
 
-.issn_block {
-    height: 140px;
-    width: 220px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
-    /* border-inline-end: #003366; */
-}
-
-#issn {
-    height: 120px;
-    width: 200px;
-}
-
 #icons {
     font-size: 25px;
     font-weight: bolder;
 }
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.sub_title {
+    font-size: 2rem;
+    margin: 20px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.IndexList {
+    display: flex;
+    flex-wrap: wrap;
+    /* ✅ allows multiple rows */
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.issn_block {
+    flex: 1 1 220px;
+    /* ✅ flexible width */
+    max-width: 260px;
+    min-width: 160px;
+    border: 1px solid #003366;
+    border-radius: 10px;
+    padding: 10px;
+    /* padding: 0px, -100px; */
+    background: #f9f9f9;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.issn_block:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.issn_img {
+    width: 100%;
+    /* width: auto; */
+    height: auto;
+    max-height: 140px;
+    object-fit: contain;
+}
+
+
+/* ✅ Responsive Breakpoints */
+
+@media (max-width: 1200px) {
+    .issn_block {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .issn_block {
+        max-width: 160px;
+    }
+    .sub_title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .IndexList {
+        flex-direction: column;
+        /* ✅ stack vertically */
+        align-items: center;
+    }
+    .issn_block {
+        width: 90%;
+        max-width: 300px;
+    }
+    .sub_title {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

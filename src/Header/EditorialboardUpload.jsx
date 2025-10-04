@@ -89,7 +89,8 @@ const EditorialboardUpload = () => {
     
   <Row className="mb-4">
       <Col xs={12} className="contact-form">
-         <h5>Please enter the details for Reviewers.</h5>
+         <h5>Please enter the details for Editorial Board Membership.</h5>
+         {/* <h5>Invitation to Join Our Editorial Board</h5> */}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="name">
               <Form.Label>Name*</Form.Label>
