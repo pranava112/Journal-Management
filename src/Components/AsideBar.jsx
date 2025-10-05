@@ -50,7 +50,7 @@ const AsideBar = () => {
 
        <Card className="text-center shadow-sm my-4" style={{ maxWidth: "300px", margin: "0 auto" }}>
             <Card.Body>
-              <Card.Title className="mb-3">IJMSABC QR Code</Card.Title>
+              <Card.Title className="mb-3">www.ijmsabc.org</Card.Title>
               <Card.Img 
                 variant="top" 
                 src="/ijmsabc_qr.png" 

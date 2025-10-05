@@ -1,13 +1,52 @@
+// import { Card } from "react-bootstrap";
+// import React from "react";
+
+// const VisitorCount = ({ count }) => {
+
+ 
+//   return (
+//     <Card className="text-center shadow-sm mb-3 ">
+//       <Card.Body className="">
+//         {/* <Card.Title> Visitors</Card.Title> */}
+//         <Card.Text style={{ fontSize: "20px", fontWeight: "bold", color: "#007bff"}}>
+//          Visitors {count}
+//         </Card.Text>
+//       </Card.Body>
+//     </Card>
+//   );
+// };
+
+// export default VisitorCount;
+///////////////////////////////////////////////////////////////
+
 import { Card } from "react-bootstrap";
 import React from "react";
 
-const VisitorCount = ({ count }) => {
+const VisitorCount = ({ count, title, color }) => {
   return (
-    <Card className="text-center shadow-sm mb-3">
+    <Card
+      className="text-center shadow-sm border-0"
+      style={{ borderRadius: "12px" }}
+    >
       <Card.Body>
-        {/* <Card.Title> Visitors</Card.Title> */}
-        <Card.Text style={{ fontSize: "20px", fontWeight: "bold", color: "#007bff" }}>
-         Visitors {count}
+        <Card.Title
+          style={{
+            fontSize: "1.3rem",
+            color: color || "#0d6efd",
+            fontWeight: "600",
+          }}
+        >
+          {title || "Visitors"}: {count}
+        </Card.Title>
+        <Card.Text
+          style={{
+            fontSize: "2.5rem",
+            fontWeight: "bold",
+           
+            marginTop: "10px",
+          }}
+        >
+          {/* {count} */}
         </Card.Text>
       </Card.Body>
     </Card>

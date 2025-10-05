@@ -112,8 +112,8 @@ const Footer = () => {
            
             
 </Col>
-           <div className="visitor-count-wrapper">
-  <VisitorCount count={todayCount}  />
+           <div className="visitor-count-wrapper ">
+  <VisitorCount count={todayCount}/>
 </div>
 
           

@@ -7,7 +7,7 @@ const IndexList = () => {
     <>
       <h1 className='sub_title text-center'>Index List</h1>
 
-      <section className='IndexList'>
+      {/* <section className='IndexList'>
         
         <div className='issn_block'>
           <img src="/issn.jpg" alt="issn" id='img' className='issn_img' />
@@ -32,7 +32,7 @@ const IndexList = () => {
         <div className='issn_block'>
           <img src="/img5.jpg" alt="img" className='issn_img' />
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
