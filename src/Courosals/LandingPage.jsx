@@ -150,8 +150,11 @@ const LandingPage = () => {
       {/* Logo */}
       <div id="motionImg">
         <motion.img
-          src="/logo.png"
+          // src="/logo.png"
+          // src="/logo.jpg"
+          src="/IjmsabcLogo.png"
           alt="IJMSBC Logo"
+          height="100vh"
           className="w-40 h-40 mb-6 drop-shadow-2xl landing"
           initial={{ scale: 0.2, opacity: 0 }}   // start small and hidden
           animate={{ scale: 1, opacity: 1 }}     // grow to full size
@@ -163,7 +166,7 @@ const LandingPage = () => {
       </div>
 
       {/* Title */}
-      <motion.h1
+      {/* <motion.h1
         className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-pink-400 to-red-400"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -172,20 +175,20 @@ const LandingPage = () => {
         International Journal Of <br />
         Management Science And <br />
         Business Conclave
-      </motion.h1>
+      </motion.h1> */}
 
       {/* Subtitle */}
-      <motion.p
+      {/* <motion.p
         className="mt-6 text-lg md:text-2xl text-yellow-400 text-center max-w-2xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
       >
         A global platform for innovative research in Management, Science, and Business.
-      </motion.p>
+      </motion.p> */}
 
       {/* Button */}
-      <motion.a
+      {/* <motion.a
         href="#explore"
         className="mt-10 px-8 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-yellow-400 text-lg font-semibold text-black shadow-xl hover:scale-105 transition-transform"
         whileHover={{ scale: 1.1 }}
@@ -195,7 +198,7 @@ const LandingPage = () => {
         transition={{ delay: 2, duration: 1 }}
       >
         Explore Journal
-      </motion.a>
+      </motion.a> */}
     </motion.div>
   );
 };

@@ -48,6 +48,18 @@ const AsideBar = () => {
         </ListGroup>
       </Card.Body>
 
+       <Card className="text-center shadow-sm my-4" style={{ maxWidth: "300px", margin: "0 auto" }}>
+            <Card.Body>
+              <Card.Title className="mb-3">IJMSABC QR Code</Card.Title>
+              <Card.Img 
+                variant="top" 
+                src="/ijmsabc_qr.png" 
+                alt="IJMSABC QR Code" 
+                style={{ width: "200px", height: "200px", objectFit: "contain", margin: "0 auto" }}
+              />
+            </Card.Body>
+          </Card>
+
       {/* <Card.Footer className="bg-light p-2">
         <div className="scroller">
           <marquee behavior="scroll" direction="up" scrollamount="2" height="200px">

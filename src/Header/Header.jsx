@@ -32,7 +32,8 @@ const Header = () => {
               className="d-flex align-items-center justify-content-center flex-column flex-md-row"
             >
               <img
-                src="/logo.jpeg"
+                // src="/logo.jpeg"
+                src='/IjmsabcLogo.png'
                 alt="IJMSBC Logo"
                 className="logo mb-3 mb-md-0 me-md-3"
               />

@@ -72,9 +72,14 @@
     height: 80px;
     width: 80px;
     object-fit: cover;
-    border-radius: 10px;
+    /*border-radius: 10px;
+    */border-radius: 50%;
     border: 2px solid #dee2e6;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 
