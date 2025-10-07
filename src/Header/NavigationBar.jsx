@@ -78,7 +78,7 @@ const NavigationBar = () => {
    
    <option value="/membership" >Membership</option>
   <option value="/reviewers">Reviewers</option>
-  <option value="/editorial-board">Editorial</option>
+  <option value="/editorial-board">Editorial Board</option>
  
 </select>
 

@@ -52,10 +52,10 @@ const PdfList = () => {
   }, []);
 
   return (
-    <div className="container mt-5">
-      <h2 className="mb-4 sub_title">All PDFs</h2>
-      <table className="table table-bordered table-hover">
-        <thead className="table-light">
+    <div className="container mt-5 ">
+      <h2 className="mb-4 sub_title">All PDF's</h2>
+      <table className="table table-bordered table-hover pdflist">
+        <thead className="table-light " >
           <tr>
             <th>Id</th>
             <th>Title</th>

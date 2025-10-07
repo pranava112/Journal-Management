@@ -1,114 +1,21 @@
-// // import { Button } from 'react-bootstrap';
-// // import React from 'react';
+// import { Button } from 'react-bootstrap';
+// import React from 'react';
 
-// // const CallButton = () => {
-// //   const handleCall = () => {
-// //     window.location.href = "tel:+918143123534";
-// //     // BsWindowSidebar.location.href="tel:+91"
-// //   };
+// const CallButton = () => {
+//   const handleCall = () => {
+//     window.location.href = "tel:+918143123534";
+//     // BsWindowSidebar.location.href="tel:+91"
+//   };
 
-// //   return (
-// //     <Button variant="success" onClick={handleCall}>
-// //       📞 Call Now
-// //     </Button>
-// //   );
-// // };
-
-
-// // export default CallButton;
-
-// import React from 'react'
-
-// const CallForPapers = () => {
 //   return (
-//     <>
-//     <div className="px-6 py-10 max-w-3xl mx-auto text-center">
-//       <h2 className="text-3xl font-bold mb-6 sub_title">Call for Papers</h2>
-//       <p className="text-lg leading-relaxed mb-4">
-//         We warmly invite researchers, scholars, and professionals to submit their
-//         original research papers, articles, and case studies to the{" "} <br />
-//         <strong>International Journal of Management Science and Business Conclave (IJMSBC)</strong>.
-//       </p>
-//       <p className="text-lg leading-relaxed mb-4">
-//         Submissions are welcomed in all areas of management, business, science,
-//         and related fields that contribute to innovative academic and practical knowledge.
-//       </p>
-//       <p className="text-lg leading-relaxed">
-//         For paper submission or inquiries, please contact us at:{" "}
-//         <a
-//           href="mailto:editor@ijmsbc.org"
-//           className="text-blue-400 underline hover:text-blue-600"
-//         >
-//           {/* editor@ijmsabc.org */}
-//           ijmsabc@gmail.com
-//         </a>
-//       </p>
-//     </div>
-//      <table border='1'>
-//         <tr>
-//           <td><b>Frequency of Publication</b></td>
-//           <td><b>Bi-monthly </b> (July–August, September–October, November–December, January–February, March–April, May–June)</td>
-//         </tr>
-//         <tr>
-//           <td><b>ISSN </b></td>
-//           <td>****-****</td>
-//         </tr>
-//         <tr>
-//           <td><b>Publisher </b></td>
-//           <td>
-//             Dr. Vottiprolu Vijaya Kumar <br />
-// International Journal of Management Science and Business Conclave (IJMSABC)
+//     <Button variant="success" onClick={handleCall}>
+//       📞 Call Now
+//     </Button>
+//   );
+// };
 
-//           </td>
-//         </tr>
-//         <tr>
-//           <td><b>Editor-in-Chief</b></td>
-//           <td>Dr. Vottiprolu Vijaya Kumar</td>
-//         </tr>
-//         <tr>
-//           <td><b>Copyright </b></td>
-//           <td>Upon acceptance of a manuscript, authors are required to sign a Declaration of Copyright Form, transferring copyright to the International Journal of Management Science and Business Conclave (IJMSABC). The journal follows an Open Access policy, ensuring that all published articles are freely accessible in print format. Authors must ensure that their submissions are original, unpublished, and do not violate any existing copyright laws.</td>
-//         </tr>
-//         <tr>
-//           <td><b>Starting Year</b></td>
-//           <td>2025</td>
-//         </tr>
-//         <tr>
-//           <td><b>First issue Published</b></td>
-//           <td>Volume 01, Issue 01, July–August 2025</td>
-//         </tr>
-//         <tr>
-//           <td><b>Subject </b></td>
-//           <td>Management</td>
-//         </tr>
-//         <tr>
-//           <td><b>Language</b></td>
-//           <td>English</td>
-//         </tr>
-//         <tr>
-//           <td><b>Format of Publication</b></td>
-//           <td>Print Format</td>
-//         </tr>
-//         <tr>
-//           <td><b>Publisher Details </b></td>
-//           <td>
-//             Dr. Vottiprolu Vijaya Kumar <br />
-//             International Journal of Management Science and Business Conclave (IJMSABC) <br />
-//             <b>Address:</b> House No. 11-31, Nandivelugu, Tenali Mandal,
-// Guntur District, Andhra Pradesh-522306 <br />
-//              <b>Mobile:</b> +91 8143123534 <br />
-//            <b>  Email: </b>ijmsabc@gmail.com, vvottiprolu@mgmu.ac.in <br />
-//            <b>Website: </b> www.ijmsabc.org
 
-//           </td>
-//         </tr>
-//       </table>
-
-//     </>
-//   )
-// }
-
-// export default CallForPapers
+// export default CallButton;
 
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 

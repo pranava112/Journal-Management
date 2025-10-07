@@ -16,32 +16,6 @@ const Membership = () => {
 
   let{name,designation,email,address,membershiptype,cv}=membership;
 
-  // const handleSubmit=async (e)=>{
-  //   e.preventDefault();
-  //   console.log(reviewers);
-
-  //   try{
-  //     const response=await Api.post("/reviews",reviewers,{
-  //       headers:{"Cotent-Type":"application/json"},
-  //     });
-  //     console.log("Reviews Saved Successfully",response.data);
-  //     alert("Review Saved Successfully");
-      
-  //   }catch(error){
-  //     console.error("Error Occurred:",error.response?error.respose.data:error.message);
-  //     alert("Upload failed");
-      
-  //   }finally{
-  //     setReviewers({
-  //        name:"",
-  //        designation:"",
-  //        email:"",
-  //        address:"",
-  //        cv:null,
-  //     })
-  //   } 
-  // }
-
   const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -154,9 +128,6 @@ const Membership = () => {
         </Col>
       </Row>
     </Container>
-
-
-
     </>
   )
 }
