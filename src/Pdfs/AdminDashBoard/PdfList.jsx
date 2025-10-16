@@ -68,6 +68,7 @@ const PdfList = () => {
           </tr>
         </thead>
         <tbody>
+          
           {pdfs.map((pdf) => (
             <tr key={pdf.id}>
               <td>{pdf.id}</td>

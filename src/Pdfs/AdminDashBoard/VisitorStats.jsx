@@ -8,6 +8,7 @@ import axios from "axios";
 const VisitorStats = () => {
   const [stats, setStats] = useState([]);
   const hasTracked = useRef(false);
+  
 
   useEffect(() => {
     if (!hasTracked.current) {

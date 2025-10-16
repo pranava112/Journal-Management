@@ -122,6 +122,8 @@ const CurrentIssues = () => {
       )}
     </div>
   );
+
+  
 };
 
 export default CurrentIssues;

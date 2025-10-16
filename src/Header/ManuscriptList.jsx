@@ -193,6 +193,7 @@ const ManuscriptList = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
+                      
                       DOC
                     </a>
                   ) : (

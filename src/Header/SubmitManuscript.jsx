@@ -172,14 +172,211 @@
 
 // ///////////////////////////////////////////////////////////////////////////////////////////////
 
+// import React, { useEffect, useState } from 'react';
+
+// import Api from '../Pdfs/Api';
+
+// const SubmitManuscript = () => {
+//   const [pdf, setPdf] = useState({
+//     name: '',
+//     email: '',
+//     title: '',
+//     abst: '',
+//     phone:'',
+//     kwords: '',
+//     pdf_doc: null,
+//   });
+
+//   const handleInputChange = (e) => {
+//     const { name, value, files } = e.target;
+//     if (name === "pdf_doc") {
+//       setPdf({ ...pdf, [name]: files[0] });
+//     } else {
+//       setPdf({ ...pdf, [name]: value });
+//     }
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     const formData = new FormData();
+//     formData.append("name", pdf.name);
+//     formData.append("email", pdf.email);
+//     formData.append("title", pdf.phone);
+//     formData.append("title", pdf.title);
+//     formData.append("abst", pdf.abst);
+//     formData.append("kwords", pdf.kwords);
+//     formData.append("pdf_doc", pdf.pdf_doc); // ✅ match backend param
+
+//     try {
+//       const response = await Api.post("/manuscript/upload", formData, {
+//         headers: { "Content-Type": "multipart/form-data" },
+//       });
+//       console.log("Document uploaded successfully", response.data);
+//       alert("Document uploaded successfully ✅");
+//     } catch (error) {
+//       console.error("Error occurred:", error.response ? error.response.data : error.message);
+//       alert("Upload failed ❌");
+//     }
+
+//     setPdf({
+//       name: '',
+//       email: '',
+//       phone:'',
+//       title: '',
+//       abst: '',
+//       kwords: '',
+//       pdf_doc: null,
+//     });
+//     e.target.reset();
+//   };
+
+//   useEffect(() => {
+//     document.title = "Upload File";
+//   }, []);
+
+//   return (
+//     <div className="container mt-5">
+//       <div className="row justify-content-center">
+//         <div className="col-lg-6 col-md-8 col-sm-12">
+//           <div className="card shadow-lg p-4 rounded-3">
+//             <h2 className="text-center mb-4">Upload An Article</h2>
+//             <form onSubmit={handleSubmit}>
+              
+//               <div className="mb-3">
+//                 <label htmlFor="name" className="form-label">Name</label>
+//                 <input
+//                   type="text"
+//                   className="form-control"
+//                   id="name"
+//                   name="name"
+//                   value={pdf.name}
+//                   onChange={handleInputChange}
+//                   required
+//                   placeholder="Enter your Name"
+//                 />
+//               </div>
+
+//               <div className="mb-3">
+//                 <label htmlFor="email" className="form-label">Email</label>
+//                 <input 
+//                   type="email"
+//                   className="form-control"
+//                   id="email"
+//                   name="email"
+//                   value={pdf.email}
+//                   onChange={handleInputChange}
+//                   required
+//                   placeholder="Enter your Email"
+//                 />
+//               </div>
+
+//                <div className="mb-3">
+//                 <label htmlFor="phone" className="form-label">Phone No</label>
+//                 <input 
+//                   type="text"
+//                   className="form-control"
+//                   id="phone"
+//                   name="phone"
+//                   value={pdf.phone}
+//                   onChange={handleInputChange}
+//                   required
+//                   minLength={10}
+//                   maxLength={10}
+//                   placeholder="Enter your Phone No"
+//                 />
+//               </div>
+
+//               <div className="mb-3">
+//                 <label htmlFor="title" className="form-label">Title</label>
+//                 <input
+//                   type="text"
+//                   className="form-control"
+//                   id="title"
+//                   name="title"
+//                   value={pdf.title}
+//                   onChange={handleInputChange}
+//                   placeholder="Enter Manuscript Title"
+//                   required
+//                 />
+//               </div>
+
+//               <div className="mb-3">
+//                 <label htmlFor="abst" className="form-label">Abstract</label>
+//                 <textarea
+//                   className="form-control"
+//                   id="abst"
+//                   name="abst"
+//                   value={pdf.abst}
+//                   onChange={handleInputChange}
+//                   required
+//                   placeholder="Enter Abstract Here.."
+//                 />
+//               </div>
+
+//               <div className="mb-3">
+//                 <label htmlFor="kwords" className="form-label">Key Words</label>
+//                 <input
+//                   type="text"
+//                   className="form-control"
+//                   id="kwords"
+//                   name="kwords"
+//                   value={pdf.kwords}
+//                   onChange={handleInputChange}
+//                   required
+//                   placeholder="Enter Keywords Here.."
+//                 />
+//               </div>
+
+//               <div className="mb-3">
+//                 {/* <label htmlFor="pdf_doc" className="form-label">Upload Doc</label>
+//                 <input
+//                   type="file"
+//                   className="form-control"
+//                   id="pdf_doc"
+//                   name="pdf_doc"
+//                   accept="application/pdf"
+//                   onChange={handleInputChange}
+//                   required
+//                 /> */}
+
+//                 <label htmlFor="pdf_doc" className="form-label">Upload DOC</label>
+//                     <input
+//                        type="file"
+//                        className="form-control"
+//                        id="pdf_doc"
+//                        name="pdf_doc"
+//                        accept=".doc,.docx"
+//                        onChange={handleInputChange}
+//                        required
+//                      />
+
+//               </div>
+
+//               <div className="d-grid">
+//                 <button type="submit" className="btn btn-primary btn-lg">
+//                   Upload
+//                 </button>
+//               </div>
+//             </form>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SubmitManuscript;
+
 import React, { useEffect, useState } from 'react';
 
-import Api from '../Pdfs/Api';
+import Api from '../Pdfs/Api'; // Axios instance pointing to your backend
 
 const SubmitManuscript = () => {
-  const [pdf, setPdf] = useState({
+  const [manuscript, setManuscript] = useState({
     name: '',
     email: '',
+    phone: '',
     title: '',
     abst: '',
     kwords: '',
@@ -189,9 +386,9 @@ const SubmitManuscript = () => {
   const handleInputChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "pdf_doc") {
-      setPdf({ ...pdf, [name]: files[0] });
+      setManuscript({ ...manuscript, [name]: files[0] });
     } else {
-      setPdf({ ...pdf, [name]: value });
+      setManuscript({ ...manuscript, [name]: value });
     }
   };
 
@@ -199,12 +396,13 @@ const SubmitManuscript = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("name", pdf.name);
-    formData.append("email", pdf.email);
-    formData.append("title", pdf.title);
-    formData.append("abst", pdf.abst);
-    formData.append("kwords", pdf.kwords);
-    formData.append("pdf_doc", pdf.pdf_doc); // ✅ match backend param
+    formData.append("name", manuscript.name);
+    formData.append("email", manuscript.email);
+    formData.append("phone", manuscript.phone);
+    formData.append("title", manuscript.title);
+    formData.append("abst", manuscript.abst);
+    formData.append("kwords", manuscript.kwords);
+    formData.append("pdf_doc", manuscript.pdf_doc);
 
     try {
       const response = await Api.post("/manuscript/upload", formData, {
@@ -212,24 +410,24 @@ const SubmitManuscript = () => {
       });
       console.log("Document uploaded successfully", response.data);
       alert("Document uploaded successfully ✅");
+      setManuscript({
+        name: '',
+        email: '',
+        phone: '',
+        title: '',
+        abst: '',
+        kwords: '',
+        pdf_doc: null,
+      });
+      e.target.reset();
     } catch (error) {
       console.error("Error occurred:", error.response ? error.response.data : error.message);
       alert("Upload failed ❌");
     }
-
-    setPdf({
-      name: '',
-      email: '',
-      title: '',
-      abst: '',
-      kwords: '',
-      pdf_doc: null,
-    });
-    e.target.reset();
   };
 
   useEffect(() => {
-    document.title = "Upload File";
+    document.title = "Upload Manuscript";
   }, []);
 
   return (
@@ -239,7 +437,7 @@ const SubmitManuscript = () => {
           <div className="card shadow-lg p-4 rounded-3">
             <h2 className="text-center mb-4">Upload An Article</h2>
             <form onSubmit={handleSubmit}>
-              
+
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">Name</label>
                 <input
@@ -247,7 +445,7 @@ const SubmitManuscript = () => {
                   className="form-control"
                   id="name"
                   name="name"
-                  value={pdf.name}
+                  value={manuscript.name}
                   onChange={handleInputChange}
                   required
                   placeholder="Enter your Name"
@@ -261,10 +459,26 @@ const SubmitManuscript = () => {
                   className="form-control"
                   id="email"
                   name="email"
-                  value={pdf.email}
+                  value={manuscript.email}
                   onChange={handleInputChange}
                   required
                   placeholder="Enter your Email"
+                />
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="phone" className="form-label">Phone No</label>
+                <input 
+                  type="text"
+                  className="form-control"
+                  id="phone"
+                  name="phone"
+                  value={manuscript.phone}
+                  onChange={handleInputChange}
+                  required
+                  minLength={10}
+                  maxLength={10}
+                  placeholder="Enter your Phone No"
                 />
               </div>
 
@@ -275,7 +489,7 @@ const SubmitManuscript = () => {
                   className="form-control"
                   id="title"
                   name="title"
-                  value={pdf.title}
+                  value={manuscript.title}
                   onChange={handleInputChange}
                   placeholder="Enter Manuscript Title"
                   required
@@ -288,7 +502,7 @@ const SubmitManuscript = () => {
                   className="form-control"
                   id="abst"
                   name="abst"
-                  value={pdf.abst}
+                  value={manuscript.abst}
                   onChange={handleInputChange}
                   required
                   placeholder="Enter Abstract Here.."
@@ -296,13 +510,13 @@ const SubmitManuscript = () => {
               </div>
 
               <div className="mb-3">
-                <label htmlFor="kwords" className="form-label">Key Words</label>
+                <label htmlFor="kwords" className="form-label">Keywords</label>
                 <input
                   type="text"
                   className="form-control"
                   id="kwords"
                   name="kwords"
-                  value={pdf.kwords}
+                  value={manuscript.kwords}
                   onChange={handleInputChange}
                   required
                   placeholder="Enter Keywords Here.."
@@ -310,28 +524,16 @@ const SubmitManuscript = () => {
               </div>
 
               <div className="mb-3">
-                {/* <label htmlFor="pdf_doc" className="form-label">Upload Doc</label>
+                <label htmlFor="pdf_doc" className="form-label">Upload DOC</label>
                 <input
                   type="file"
                   className="form-control"
                   id="pdf_doc"
                   name="pdf_doc"
-                  accept="application/pdf"
+                  accept=".doc,.docx,.pdf"
                   onChange={handleInputChange}
                   required
-                /> */}
-
-                <label htmlFor="pdf_doc" className="form-label">Upload DOC</label>
-                    <input
-                       type="file"
-                       className="form-control"
-                       id="pdf_doc"
-                       name="pdf_doc"
-                       accept=".doc,.docx"
-                       onChange={handleInputChange}
-                       required
-                     />
-
+                />
               </div>
 
               <div className="d-grid">
@@ -339,6 +541,7 @@ const SubmitManuscript = () => {
                   Upload
                 </button>
               </div>
+
             </form>
           </div>
         </div>

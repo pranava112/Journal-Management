@@ -93,6 +93,8 @@ const CurrentIssues = () => {
                                           target="_blank"
                                           rel="noopener noreferrer"
                                         >
+
+                                          
                                           
                                           <div>
                                             <strong>{pdf.title}</strong>

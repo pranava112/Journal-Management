@@ -9,3 +9,4 @@ export const getAllManuscripts = async () => await axios.get(API_BASE);
 export const getManuscriptById = async (id) => await axios.get(`${API_BASE}/${id}`);
 export const updateManuscript = async (id, manuscript) => await axios.put(`${API_BASE}/${id}`, manuscript);
 export const deleteManuscript = async (id) => await axios.delete(`${API_BASE}/${id}`);
+

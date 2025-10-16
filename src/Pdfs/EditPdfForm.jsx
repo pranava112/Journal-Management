@@ -62,7 +62,7 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs, 
           readOnly
         />
 
-        {/* ✅ Show current PDF info */}
+        {/* ✅ Show current PDF */}
         {!(editForm.pdf_doc instanceof File) && editForm.pdf_doc && (
           <div className="mb-2">
             <a
@@ -130,15 +130,7 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs, 
           required
         />
 
-         {/* <label htmlFor="type">Type: </label>
-        <input
-          type="text"
-          name="type"
-          value={editForm.type}
-          onChange={handleEditChange}
-          className="form-control mb-2"
-          required
-        /> */}
+       
 
         <label htmlFor='type' >Type: </label>
         <select name="type" className="form-label mb-2" id="type" onChange={handleEditChange} value={editForm.type} 

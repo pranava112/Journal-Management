@@ -6,7 +6,7 @@ const AdminRouting = ({ children }) => {
 
   const allowedUsers = [
     { email: "ijmsbc@gmail.com" },
-    { password: "Admin@123" },
+    // { password: "Admin@123" },
   ];
 
   const isAuthorized =

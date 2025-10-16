@@ -111,4 +111,4 @@ const Reviewers = () => {
   )
 }
 
-export default Reviewers
+export default Reviewers;
