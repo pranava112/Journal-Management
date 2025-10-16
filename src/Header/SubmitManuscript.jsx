@@ -371,6 +371,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Api from '../Pdfs/Api'; // Axios instance pointing to your backend
+import { Helmet } from 'react-helmet';
 
 const SubmitManuscript = () => {
   const [manuscript, setManuscript] = useState({
@@ -431,6 +432,17 @@ const SubmitManuscript = () => {
   }, []);
 
   return (
+    <>
+    
+    <Helmet>
+        <title>Article Submission | IJMSABC Journal</title>
+        <meta
+          name="description"
+          content="Submit your research article to IJMSABC for Management Science And Business Conclave."
+        />
+        <link rel="canonical" href="https://www.ijmsabc.org/SubmitManuscript" />
+      </Helmet>
+   
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-lg-6 col-md-8 col-sm-12">
@@ -547,6 +559,8 @@ const SubmitManuscript = () => {
         </div>
       </div>
     </div>
+
+     </>
   );
 };
 

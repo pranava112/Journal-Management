@@ -1,10 +1,23 @@
 import { Card, Col, Container, Image, Row } from 'react-bootstrap';
 
 import DarkVariantExample from '../Courosals/DarkVariantExample';
+import { Helmet } from "react-helmet";
 import React from 'react';
 
 const Home = () => {
   return (
+    <>
+    <Helmet>
+        <title>IJMSABC | International Journal Of
+Management Science And Business Conclave</title>
+        <meta
+          name="description"
+          content="IJMSABC is a peer-reviewed international journal publishing high-quality multidisciplinary research in science, management, and technology."
+        />
+        <link rel="canonical" href="https://www.ijmsabc.org/" />
+      </Helmet>
+    
+    
     <section className="py-5 bg-light ">
        <h1 className="mb-4 fw-bold text-primary " style={{textAlign:'center'}}>Welcome to IJMSABC</h1>
        <DarkVariantExample/>
@@ -43,6 +56,7 @@ const Home = () => {
     </Card> */}
         
     </section>
+    </>
   );
 };
 

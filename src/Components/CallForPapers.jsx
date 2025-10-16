@@ -19,11 +19,22 @@
 
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 
+import { Helmet } from "react-helmet";
 import React from "react";
 
 const CallForPapers = () => {
   return (
     <>
+
+    <Helmet>
+        <title>Call for Papers | IJMSABC Journal</title>
+        <meta
+          name="description"
+          content="Submit your original research paper to IJMSABC – International Journal Of
+Management Science And Business Conclave. Call for papers is open now."
+        />
+        <link rel="canonical" href="https://www.ijmsabc.org/call-for-papers" />
+      </Helmet>
     <Container className="my-5">
       {/* Heading Section */}
       <Row className="text-center mb-4">

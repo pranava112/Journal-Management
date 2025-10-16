@@ -1,9 +1,23 @@
 import './About.css'; // Import the CSS
 
+import { Helmet } from 'react-helmet';
 import React from 'react';
 
 const About = () => {
   return (
+    <>
+
+     <Helmet>
+        <title>About IJMSABC | International Journal Of
+Management Science And Business Conclave</title>
+        <meta
+          name="description"
+          content="Learn about IJMSABC – International Journal Of
+Management Science And Business Conclave dedicated to publishing original and quality research."
+        />
+        <link rel="canonical" href="https://www.ijmsabc.org/about" />
+      </Helmet>
+    
     <div className="about-container">
       {/* <h2 className="sub_title">About</h2> */}
 
@@ -46,6 +60,8 @@ const About = () => {
       </section>
 
     </div>
+    
+    </>
   );
 };
 

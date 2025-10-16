@@ -222,10 +222,25 @@
 
 import { Card, Col, Container, Row } from "react-bootstrap";
 
+import { Helmet } from "react-helmet";
 import React from "react";
 
 const AuthorGuidelines = () => {
   return (
+
+    <>
+     <Helmet>
+        <title>Author Guidelines for IJMSABC | International Journal Of
+Management Science And Business Conclave</title>
+        <meta
+          name="description"
+          content=" IJMSABC – International Journal Of
+Management Science And Business Conclave provides a dedicated guidelines for authors."
+        />
+        <link rel="canonical" href="https://www.ijmsabc.org/AuthorGuidelines" />
+      </Helmet>
+    
+
     <Container className="my-5">
       {/* Title */}
       <Row className="mb-4">
@@ -431,6 +446,8 @@ const AuthorGuidelines = () => {
         </Col>
       </Row>
     </Container>
+
+        </>
   );
 };
 
