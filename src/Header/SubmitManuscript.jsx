@@ -435,7 +435,7 @@ const SubmitManuscript = () => {
     <>
     
     <Helmet>
-        <title>Article Submission | IJMSABC Journal</title>
+        <title>Article Submission | IJMSABC </title>
         <meta
           name="description"
           content="Submit your research article to IJMSABC for Management Science And Business Conclave."

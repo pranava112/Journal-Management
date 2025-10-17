@@ -27,7 +27,7 @@ const CallForPapers = () => {
     <>
 
     <Helmet>
-        <title>Call for Papers | IJMSABC Journal</title>
+        <title>Call for Papers | IJMSABC</title>
         <meta
           name="description"
           content="Submit your original research paper to IJMSABC – International Journal Of
