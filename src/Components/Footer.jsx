@@ -70,7 +70,7 @@ const Footer = () => {
         <Row className="mt-3">
           <Col className="text-center">
             <p className="mb-0 developer-credit">
-              Designed and Developed by V. Pranava Manjunath
+              Designed and Developed by V. Pranava Manjunath, R.Arjuna Rao
             </p>
           </Col>
         </Row>
