@@ -13,8 +13,7 @@ const LandingPage = () => {
       {/* Logo */}
       <div id="motionImg">
         <motion.img
-          // src="/logo.png"
-          // src="/logo.jpg"
+         
           src="/IjmsabcLogo.svg"
           alt="IJMSBC Logo"
           // height="100vh"

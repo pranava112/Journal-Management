@@ -24,3 +24,17 @@ const App = () => {
 };
 
 export default App;
+
+// import CertificateSender from './CertificateSender'
+// import React from 'react'
+
+// const App = () => {
+//   return (
+//     <>
+//     app 
+//     <CertificateSender/>
+//     </>
+//   )
+// }
+
+// export default App

@@ -40,6 +40,18 @@ const members = [
     image:"../dummy-image.png",
   },
 
+  //  {
+  //   name:"Dr. Vottiprolu Vijaya Kumar ",
+  //   position:"Publisher/ Editor in Chief / Assistant Professor",
+  //   Department:"Institute of Management and Research",
+  //   university:"MGM University",
+  //   address:"Chhatrapati Sambhajinagar, Maharashtra.",
+  //   email:"vvottiprolu@mgmu.ac.in",
+  //   Profilelink: 'https://mgmu.ac.in/admissions/program/master-of-business-administration-mba',
+  //   pdf:"",
+  //   image:"../dummy-image.png",
+  // },
+
   {
     name:"Dr Vishali Kahpradhe ",
     

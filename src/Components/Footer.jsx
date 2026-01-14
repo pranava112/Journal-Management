@@ -42,7 +42,7 @@ const Footer = () => {
               <span className="phone">+91-8143123534</span>
             </div>
           </Col>
-
+          
           {/* Copyright */}
           <Col md={4} className="mb-3 mb-md-0 text-center">
             <p className="mb-0">&copy; 2025 IJMSABC. All rights reserved.</p>
@@ -61,16 +61,17 @@ const Footer = () => {
            
           </Col>
 
-           <div className="visitor-count-wrapper mt-2">
+           {/*<div className="visitor-count-wrapper mt-2">
               <VisitorCount count={totalCount} title="Total Visitors" />
-            </div>
+            </div>*/}
         </Row>
+        
 
         {/* Developer Credit */}
         <Row className="mt-3">
           <Col className="text-center">
             <p className="mb-0 developer-credit">
-              Designed and Developed by V. Pranava Manjunath, R.Arjuna Rao
+              Designed and Developed by V. Pranava Manjunath, R. Arjuna Rao
             </p>
           </Col>
         </Row>

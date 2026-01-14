@@ -49,12 +49,12 @@ const Routing = createBrowserRouter([
       {path:"/About",element:<About/>},
       {path:"/Contact",element:<Contact/>},
    
-   {path:"/PublicationEthics",element:<PublicationEthics/>},
-   {path:"/SubmitManuscript",element:<SubmitManuscript/>},
+      {path:"/PublicationEthics",element:<PublicationEthics/>},
+      {path:"/SubmitManuscript",element:<SubmitManuscript/>},
      
-   {path:"/AuthorGuidelines",element:<AuthorGuidelines/>},
-   {path:"/JournalPolicies",element:<JournalPolicies/>},
-  {path:"/EditorialBoard",element:<EditorialBoard/>},
+      {path:"/AuthorGuidelines",element:<AuthorGuidelines/>},
+      {path:"/JournalPolicies",element:<JournalPolicies/>},
+      {path:"/EditorialBoard",element:<EditorialBoard/>},
   
    {path:"/UserInfoPortal",element:<UserInfoPortal/>},
    {path:"/ArticleProcessingCharges",element:<ArticleProcessingCharges/>},
