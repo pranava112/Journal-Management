@@ -430,12 +430,12 @@
     color: black;
     background-color: #dedede;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     /* padding: 5px 20px; */
 }
 
 .info-bar h3 {
     font-size: 22px;
-    padding: 2px 10px;
+    padding: 2px 16px;
 }
