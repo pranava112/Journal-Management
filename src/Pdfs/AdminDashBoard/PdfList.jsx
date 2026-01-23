@@ -1,22 +1,26 @@
+import "./PdfList.css";
+
 import React, { useEffect, useState } from "react";
 
 import Api from "../Api";
 import EditPdfForm from "../EditPdfForm";
-
-// import Api from "./Api";
-
-
 
 const PdfList = () => {
   const [pdfs, setPdfs] = useState([]);
   const [editId, setEditId] = useState(null);
   const [editForm, setEditForm] = useState(null);
 
-  // ✅ Fetch all PDFs
+  // ✅ Fetch all PDFs & filter by source = ijmsabc
   const fetchPdfs = async () => {
     try {
-      const response = await Api.get(`/pdfs`);
-      setPdfs(response.data);
+      const response = await Api.get("/pdfs");
+
+      // 🔥 FILTER HERE
+      const filteredPdfs = response.data.filter(
+        (pdf) => pdf.source === "ijmsabc"
+      );
+
+      setPdfs(filteredPdfs);
     } catch (error) {
       console.error("Error fetching PDFs:", error);
     }
@@ -38,12 +42,13 @@ const PdfList = () => {
     setEditId(pdf.id);
     setEditForm({
       title: pdf.title,
-      pdf_doc: null, // reset file
+      pdf_link: pdf.pdfLink,
       volume: pdf.volume,
       issueNo: pdf.issueNo,
       year: pdf.year,
       type: pdf.type,
-      author:pdf.author,
+      author: pdf.author,
+      source: pdf.source,
     });
   };
 
@@ -52,64 +57,83 @@ const PdfList = () => {
   }, []);
 
   return (
-    <div className="container mt-5 ">
-      <h2 className="mb-4 sub_title">All PDF's</h2>
-      <table className="table table-bordered table-hover pdflist">
-        <thead className="table-light " >
-          <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Volume</th>
-            <th>Issue</th>
-            <th>Year</th>
-            <th>Type</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-          {pdfs.map((pdf) => (
-            <tr key={pdf.id}>
-              <td>{pdf.id}</td>
-              <td>
-                <a
-                id="anchor"
-                  href={`http://localhost:8080/api/ijmsabc/pdfs/${pdf.id}/file`}
-                  rel="noopener noreferrer"
-                >
-                  {pdf.title}
-                </a>
-              </td>
-              <td>
-                {pdf.author}
-              </td>
-              <td>{pdf.volume}</td>
-              <td>{pdf.issueNo}</td>
-              <td>{pdf.year}</td>
-              <td>{pdf.type}</td>
-              <td>
-                <div id="buttons">
-                  <button
-                  className="btn btn-warning btn-sm me-2"
-                  onClick={() => handleEditClick(pdf)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="btn btn-danger btn-sm"
-                  onClick={() => handleDelete(pdf.id)}
-                >
-                  Delete
-                </button>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="pdf-list-container">
+      <div className="pdf-list-header">
+        <h2 className="pdf-list-title">IJMSABC PDFs</h2>
+      </div>
 
-      {/* ✅ Separate Edit Component */}
+      <div className="pdf-list-wrapper">
+        <table className="pdf-table">
+          <thead className="pdf-table-head">
+            <tr>
+              <th className="col-id">Id</th>
+              <th className="col-title">Title</th>
+              <th className="col-author">Author</th>
+              <th className="col-volume">Volume</th>
+              <th className="col-issue">Issue</th>
+              <th className="col-year">Year</th>
+              <th className="col-type">Type</th>
+              <th className="col-actions">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody className="pdf-table-body">
+            {pdfs.length === 0 ? (
+              <tr>
+                <td colSpan="8" className="text-center text-muted no-data">
+                  No PDFs found for IJMSABC
+                </td>
+              </tr>
+            ) : (
+              pdfs.map((pdf) => (
+                <tr key={pdf.id} className="pdf-row">
+                  <td className="col-id" data-label="Id">{pdf.id}</td>
+
+                  <td className="col-title" data-label="Title">
+                    <a
+                      className="pdf-link"
+                      href={pdf.pdfLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={pdf.title}
+                    >
+                      {pdf.title}
+                    </a>
+                  </td>
+
+                  <td className="col-author" data-label="Author">{pdf.author}</td>
+                  <td className="col-volume" data-label="Volume">{pdf.volume}</td>
+                  <td className="col-issue" data-label="Issue">{pdf.issueNo}</td>
+                  <td className="col-year" data-label="Year">{pdf.year}</td>
+                  <td className="col-type" data-label="Type">{pdf.type}</td>
+
+                  <td className="col-actions" data-label="Actions">
+                    <div className="action-buttons">
+                      <button
+                        className="btn btn-edit"
+                        onClick={() => handleEditClick(pdf)}
+                        title="Edit this PDF"
+                      >
+                        Edit
+                      </button>
+
+                      <button
+                        className="btn btn-delete"
+                        onClick={() => handleDelete(pdf.id)}
+                        title="Delete this PDF"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      {/* ✅ Edit Form */}
       {editId && editForm && (
         <EditPdfForm
           editId={editId}
@@ -118,7 +142,6 @@ const PdfList = () => {
           setEditId={setEditId}
           pdfs={pdfs}
           setPdfs={setPdfs}
-          // setAuthor={pdfs.author}
         />
       )}
     </div>

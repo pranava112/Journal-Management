@@ -1,39 +1,36 @@
+import "./EditPdfForm.css";
+
 import Api from "./Api";
 import React from "react";
 
 const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs, }) => {
   // ✅ Handle input change
   const handleEditChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "pdf_doc") {
-      if (files && files.length > 0) {
-        setEditForm({ ...editForm, pdf_doc: files[0] }); // store File object
-      }
-    } else {
-      setEditForm({ ...editForm, [name]: value });
-    }
+    const { name, value } = e.target;
+    setEditForm({ ...editForm, [name]: value });
   };
 
   // ✅ Handle Update
   const handleUpdate = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("title", editForm.title);
-    formData.append("volume", editForm.volume);
-    formData.append("issueNo", editForm.issueNo);
-    formData.append("year", editForm.year);
-    formData.append("type", editForm.type);
-    formData.append("author",editForm.author)
+    const params = new URLSearchParams();
+    params.append("title", editForm.title);
+    params.append("volume", editForm.volume);
+    params.append("issueNo", editForm.issueNo);
+    params.append("year", editForm.year);
+    params.append("type", editForm.type);
+    params.append("author", editForm.author);
+    params.append("source", "ijmsabc"); // CONSTANT
 
-    // only append pdf if a new file is selected
-    if (editForm.pdf_doc instanceof File) {
-      formData.append("pdf_doc", editForm.pdf_doc);
+    // only append pdf_link if a new link is provided
+    if (editForm.pdf_link && editForm.pdf_link.trim()) {
+      params.append("pdf_link", editForm.pdf_link);
     }
 
     try {
-      const response = await Api.put(`/pdfs/${editId}`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
+      const response = await Api.put(`/pdfs/${editId}`, params, {
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
       });
 
       // ✅ Replace updated record in state
@@ -41,123 +38,141 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs, 
       setEditId(null);
       alert("PDF updated successfully ✅");
     } catch (error) {
-      console.error("Error updating PDF:", error);
+      console.error("Error updating PDF:", error.response?.data || error.message);
       alert("Update failed ❌");
     }
   };
 
   return (
-    <div className="card mt-4 p-3 shadow-sm">
-      <h4>Edit PDF</h4>
-      <form onSubmit={handleUpdate}>
-        <label htmlFor="title">Title: </label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={editForm.title}
-          onChange={handleEditChange}
-          placeholder="Title"
-          className="form-control mb-2"
-          readOnly
-        />
-
-        {/* ✅ Show current PDF */}
-        {!(editForm.pdf_doc instanceof File) && editForm.pdf_doc && (
-          <div className="mb-2">
-            <a
-              href={editForm.pdfUrl || `http://localhost:8080/api/pdfs/${editId}/download`}
-              // target="_blank"
-              // rel="noopener noreferrer"
-            >
-              Current PDF: {editForm.title}.pdf
-            </a>
+    <div className="edit-pdf-container">
+      <div className="edit-pdf-card">
+        <h4 className="edit-pdf-title">Edit PDF</h4>
+        <form onSubmit={handleUpdate} className="edit-pdf-form">
+          <div className="form-group">
+            <label htmlFor="title" className="form-label">Title: </label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              value={editForm.title}
+              onChange={handleEditChange}
+              placeholder="Title"
+              className="form-control"
+              readOnly
+            />
           </div>
-        )}
 
+          {/* ✅ Show current PDF */}
+          {editForm.pdf_link && (
+            <div className="form-group pdf-link-preview">
+              <a
+                href={editForm.pdf_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pdf-link-text"
+              >
+                Current PDF: {editForm.title}
+              </a>
+            </div>
+          )}
 
-       <label htmlFor="PDF">PDF: </label>
-        <input
-          type="file"
-          id="PDF"
-          name="pdf_doc"
-          onChange={handleEditChange}
-          className="form-control mb-2"
-          accept="application/pdf"
-        />
+          <div className="form-group">
+            <label htmlFor="pdf_link" className="form-label">PDF Link: </label>
+            <input
+              type="url"
+              id="pdf_link"
+              name="pdf_link"
+              onChange={handleEditChange}
+              placeholder="Enter PDF link (e.g. https://example.com/file.pdf)"
+              value={editForm.pdf_link || ""}
+              className="form-control"
+            />
+          </div>
           
-           <label htmlFor="author">Author: </label>
-          <input  
-          type="text"
-          id="author"
-          name="author"
-          value={editForm.author}
-          onChange={handleEditChange}
-          className="form-control mb-2"
-          readOnly
-        />
+          <div className="form-group">
+            <label htmlFor="author" className="form-label">Author: </label>
+            <input  
+              type="text"
+              id="author"
+              name="author"
+              value={editForm.author}
+              onChange={handleEditChange}
+              className="form-control"
+              readOnly
+            />
+          </div>
 
-        <label htmlFor="year">Year: </label>
-        <input
-          type="text"
-          name="year"
-          id="year"
-          value={editForm.year}
-          onChange={handleEditChange}
-          className="form-control mb-2"
-          required
-        />
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="year" className="form-label">Year: </label>
+              <input
+                type="text"
+                name="year"
+                id="year"
+                value={editForm.year}
+                onChange={handleEditChange}
+                className="form-control"
+                required
+              />
+            </div>
 
-         <label htmlFor="volume">Volume: </label>
-        <input
-          type="text"
-          name="volume"
-          id="volume"
-          value={editForm.volume}
-          onChange={handleEditChange}
-          className="form-control mb-2"
-          required
-        />
+            <div className="form-group">
+              <label htmlFor="volume" className="form-label">Volume: </label>
+              <input
+                type="text"
+                name="volume"
+                id="volume"
+                value={editForm.volume}
+                onChange={handleEditChange}
+                className="form-control"
+                required
+              />
+            </div>
 
-         <label htmlFor="issueNo">Issue No: </label>
-        <input
-          type="text"
-          id="issueNo"
-          name="issueNo"
-          value={editForm.issueNo}
-          onChange={handleEditChange}
-          className="form-control mb-2"
-          required
-        />
+            <div className="form-group">
+              <label htmlFor="issueNo" className="form-label">Issue No: </label>
+              <input
+                type="text"
+                id="issueNo"
+                name="issueNo"
+                value={editForm.issueNo}
+                onChange={handleEditChange}
+                className="form-control"
+                required
+              />
+            </div>
+          </div>
 
-       
+          <div className="form-group">
+            <label htmlFor="type" className="form-label">Type: </label>
+            <select 
+              name="type" 
+              id="type" 
+              onChange={handleEditChange} 
+              value={editForm.type} 
+              className="form-control form-select"
+              required
+            >
+              <option value="">--select--</option>
+              <option value="Current_Issue">Current Issue</option>
+              <option value="Previous_Issue">Previous Issue</option>
+            </select>
+          </div>
 
-        <label htmlFor='type' >Type: </label>
-        <select name="type" className="form-label mb-2" id="type" onChange={handleEditChange} value={editForm.type} 
-        required
-        // className="px-3 py-0 my-1 w-72 h-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        >
-          <option value="">--select--</option>
-          <option value="Current_Issue">Current Issue</option>
-          <option value="Previous_Issue">Previous Issue</option>
-          
-        </select>
-
-
-
-
-<br />
-        <button type="submit" className="btn btn-success">
-          Save Changes
-        </button>
-        <button
-          type="button"
-          className="btn btn-secondary ms-2"
-          onClick={() => setEditId(null)}
-        >
-          Cancel
-        </button>
-      </form>
+          <div className="form-actions">
+            <button type="submit" className="btn btn-success">
+              Save Changes
+            </button>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => setEditId(null)}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -9,13 +9,16 @@ const CurrentIssues = () => {
 
   const fetchPdfs = async () => {
     try {
-      const response = await Api.get(`/pdfs`);
+      const response = await Api.get("/pdfs");
 
+      // ✅ FILTER: Current Issue + IJMSABC source
       const filtered = response.data.filter(
-        (pdf) => pdf.type === "Current_Issue"
+        (pdf) =>
+          pdf.type === "Current_Issue" &&
+          pdf.source === "ijmsabc"
       );
 
-      // Group by Year → Volume → Issue
+      // ✅ Group by Year → Volume → Issue
       const grouped = filtered.reduce((acc, pdf) => {
         const { year, volume, issueNo } = pdf;
 
@@ -27,6 +30,7 @@ const CurrentIssues = () => {
         return acc;
       }, {});
 
+      // ✅ Convert to render-friendly structure
       const dataValues = Object.entries(grouped).map(([year, volumes]) => ({
         year,
         volumes: Object.entries(volumes).map(([volume, issues]) => ({
@@ -40,7 +44,7 @@ const CurrentIssues = () => {
 
       setData(dataValues);
     } catch (err) {
-      console.error(err);
+      console.error("Error fetching current issues:", err);
     }
   };
 
@@ -55,14 +59,22 @@ const CurrentIssues = () => {
       </center>
 
       {data.length === 0 ? (
-        <p className="text-muted">No Current Issues available.</p>
+        <p className="text-muted text-center">
+          No Current Issues available for IJMSABC.
+        </p>
       ) : (
         <Accordion defaultActiveKey={data[0]?.year}>
           {data
             .sort((a, b) => b.year - a.year)
             .map((yearObj) => (
-              <Accordion.Item eventKey={yearObj.year} key={yearObj.year}>
-                <Accordion.Header>Year: {yearObj.year}</Accordion.Header>
+              <Accordion.Item
+                eventKey={yearObj.year}
+                key={yearObj.year}
+              >
+                <Accordion.Header>
+                  Year: {yearObj.year}
+                </Accordion.Header>
+
                 <Accordion.Body>
                   <Accordion>
                     {yearObj.volumes.map((vol) => (
@@ -73,6 +85,7 @@ const CurrentIssues = () => {
                         <Accordion.Header>
                           Volume {vol.volume} ({yearObj.year})
                         </Accordion.Header>
+
                         <Accordion.Body>
                           <Accordion>
                             {vol.issues.map((issue) => (
@@ -83,24 +96,23 @@ const CurrentIssues = () => {
                                 <Accordion.Header>
                                   Issue {issue.issueNo}
                                 </Accordion.Header>
+
                                 <Accordion.Body>
-                                  <ol type="1" className="list-group">
+                                  <ol className="list-group">
                                     {issue.pdfs.map((pdf) => (
                                       <li id="li" key={pdf.id}>
                                         <a
                                           id="anchor"
-                                          href={`http://localhost:8080/api/ijmsabc/pdfs/${pdf.id}/file`}
+                                          href={pdf.pdfLink}
                                           target="_blank"
                                           rel="noopener noreferrer"
                                         >
-
-                                          
-                                          
                                           <div>
                                             <strong>{pdf.title}</strong>
                                             <br />
                                             By {pdf.author}
                                           </div>
+
                                           <div>
                                             <GrDocumentPdf id="icon" />
                                           </div>

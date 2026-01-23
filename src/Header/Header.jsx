@@ -24,33 +24,35 @@ const Header = () => {
 
   return (
     <>
-      <div id="header" className="bg-light py-3 border-bottom shadow-sm">
+      <div id="header" className="
+      
+      py-3 border-bottom shadow-sm">
         <Container fluid>
           <Row className="align-items-center">
-            <Col
+            {/* <Col
               xs={12}
               className="d-flex align-items-center justify-content-center flex-column flex-md-row"
-            >
-              <img
+            > */}
+             
+             <div className='imgcontainer'>  {/* remove if the client is not satisfied*/}
+               <img
                 // src="/logo.jpeg"
                 src='/IjmsabcLogo.png'
                 alt="IJMSBC Logo"
                 className="logo mb-3 mb-md-0 me-md-3"
               />
+             </div>
+            
               <div className="text-center text-md-start">
-                {/* <h1 className="title mb-0">{styledTitle}</h1>
               
-                <div>
-                  <h1 className="subtitle mb-0">{text2}</h1>
-                </div> */}
 
                 <Row className="title-wrapper text-center">
-                   <h1 className="title mb-2">International Journal Of</h1>
-               <h2 className="title mb-2">Management Science And Business Conclave</h2>
+                   <h1 className="title mb-2">International Journal of</h1>
+               <h2 className="title mb-2">Management Science and Business Conclave</h2>
                <h3 className="title mb-2">(IJMSABC)</h3>
                    </Row>
               </div>
-            </Col>
+            {/* </Col> */}
           </Row>
         </Container>
       </div>

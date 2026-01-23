@@ -6,7 +6,7 @@ const UploadPdf = () => {
   const [pdf, setPdf] = useState({
     id: "",
     title: "",
-    pdf_doc: null,
+    pdf_link: "",
     volume: "",
     issueNo: "",
     year: "",
@@ -15,12 +15,8 @@ const UploadPdf = () => {
   });
 
   const handleInputChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "pdf_doc") {
-      setPdf({ ...pdf, [name]: files[0] });
-    } else {
-      setPdf({ ...pdf, [name]: value });
-    }
+    const { name, value } = e.target;
+    setPdf({ ...pdf, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -28,12 +24,13 @@ const UploadPdf = () => {
 
     const formData = new FormData();
     formData.append("title", pdf.title);
-    formData.append("pdf_doc", pdf.pdf_doc);
+    formData.append("pdf_link", pdf.pdf_link);
     formData.append("volume", pdf.volume);
     formData.append("issueNo", pdf.issueNo);
     formData.append("year", pdf.year);
     formData.append("type", pdf.type);
     formData.append("author", pdf.author);
+    formData.append("source", "ijmsabc"); // CONSTANT
 
     try {
       const response = await Api.post("/pdfs/upload", formData, {
@@ -49,7 +46,7 @@ const UploadPdf = () => {
     setPdf({
       id: "",
       title: "",
-      pdf_doc: null,
+      pdf_link: "",
       volume: "",
       issueNo: "",
       year: "",
@@ -59,7 +56,7 @@ const UploadPdf = () => {
     e.target.reset();
   };
 
-  const { id, title, volume, issueNo, year, type, author} = pdf;
+  const { id, title, volume, issueNo, year, type, author, pdf_link} = pdf;
 
   useEffect(() => {
     document.title = "Upload File";
@@ -114,14 +111,15 @@ const UploadPdf = () => {
 
 
               <div className="mb-3">
-                <label htmlFor="pdf_doc" className="form-label">Upload PDF</label>
+                <label htmlFor="pdf_link" className="form-label">PDF Link</label>
                 <input
-                  type="file"
+                  type="url"
                   className="form-control"
-                  id="pdf_doc"
-                  name="pdf_doc"
-                  accept="application/pdf"
+                  id="pdf_link"
+                  name="pdf_link"
+                  value={pdf_link}
                   onChange={handleInputChange}
+                  placeholder="Enter PDF link (e.g. https://example.com/file.pdf)"
                   required
                 />
               </div>
