@@ -22,6 +22,7 @@ const AsideBar = () => {
         </Card.Title>
 
         <ListGroup variant="flush">
+          
           <ListGroup.Item>
             <NavLink to="/IndexList" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
@@ -29,12 +30,14 @@ const AsideBar = () => {
               Index List
             </NavLink>
           </ListGroup.Item>
+
           <ListGroup.Item>
             <NavLink to="/JournalPolicies" className="nav-link p-0" id='hello2'>
               <IoNewspaperOutline className="me-2 icon" />
               Journal Policies
             </NavLink>
           </ListGroup.Item>
+
           <ListGroup.Item>
             <NavLink to="/AuthorGuidelines" className="nav-link p-0" id='hello3'>
               <IoNewspaperOutline className="me-2 icon" />
