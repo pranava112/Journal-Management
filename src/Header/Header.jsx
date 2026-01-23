@@ -29,19 +29,17 @@ const Header = () => {
       py-3 border-bottom shadow-sm">
         <Container fluid>
           <Row className="align-items-center">
-            {/* <Col
+            <Col
               xs={12}
               className="d-flex align-items-center justify-content-center flex-column flex-md-row"
-            > */}
+            >
              
-             <div className='imgcontainer'>  {/* remove if the client is not satisfied*/}
-               <img
+              <img
                 // src="/logo.jpeg"
                 src='/IjmsabcLogo.png'
                 alt="IJMSBC Logo"
                 className="logo mb-3 mb-md-0 me-md-3"
               />
-             </div>
             
               <div className="text-center text-md-start">
               
@@ -52,7 +50,7 @@ const Header = () => {
                <h3 className="title mb-2">(IJMSABC)</h3>
                    </Row>
               </div>
-            {/* </Col> */}
+            </Col>
           </Row>
         </Container>
       </div>

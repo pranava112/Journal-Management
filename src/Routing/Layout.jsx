@@ -36,6 +36,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import AsideBar from '../Components/AsideBar';
 import Footer from '../Components/Footer'
 import Header from '../Header/Header';
+import Info from '../Header/Info';
 import NavigationBar from '../Header/NavigationBar';
 import News from '../Announcement/News';
 import { Outlet } from 'react-router-dom';
@@ -44,6 +45,7 @@ import React from 'react';
 const Layout = () => {
   return (
     <div id="main">
+      <Info/>
       <Header />
       <NavigationBar />
       {/* <News/> */}

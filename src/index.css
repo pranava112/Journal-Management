@@ -425,3 +425,13 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+
+.info-bar {
+    color: black;
+    background-color: #dedede;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 14px;
+}
