@@ -435,7 +435,18 @@
     /* padding: 5px 20px; */
 }
 
-.info-bar h3 {
+
+/* .info-bar h3 {
     font-size: 18px;
-    padding: 2px 25px;
+    padding: 2px 50px;
+} */
+
+.info-bar h3 {
+    font-size: clamp(14px, 2.5vw, 18px);
+    /* Responsive font size */
+    padding: 4px clamp(10px, 5vw, 50px);
+    /* Responsive left & right padding */
+    text-align: center;
+    line-height: 1.4;
+    word-wrap: break-word;
 }
