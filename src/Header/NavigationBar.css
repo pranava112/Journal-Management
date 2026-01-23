@@ -40,18 +40,20 @@
 
 #list {
     /* background-color:red; */
-    color: blue;
+    /* color: blue; */
     font-size: 15px;
     font-weight: bold;
 }
 
 #navbar {
-    background-color: rgb(166, 31, 38);
+    /* background-color: rgb(166, 31, 38); */
+    background-color: #dedede;
     /* padding: -5px; */
 }
 
 #color {
-    color: white;
+    /* color: white; */
+    color: black;
     font-size: 13px;
 }
 
@@ -60,7 +62,8 @@
     border: none;
     font-size: 13px;
     font-weight: bold;
-    color: white;
+    /* color: white; */
+    color: #000;
     /* Bootstrap primary color, same as Nav.Link */
     cursor: pointer;
     margin-top: 8px;
