@@ -29,29 +29,23 @@
     -webkit-animation: moveAndColor 0.8s infinite alternate;
 }
 
-
-/* @keyframes moveAndColor {
+@keyframes moveAndColor {
     0% {
-       
-
-background-color: #5e989f;
-color: white;
-
+        background-color: #7eaeb4;
+        color: white;
+    }
+    50% {
+        color: white;
+        background-color: #19717c;
+    }
+    100% {
+        color: white;
+        background-color: #019eb1;
+    }
 }
-50% {
-    color: white;
-    background-color: rgb(92, 92, 238);
-}
-100% {
-    color: white;
-    background-color: blue;
-}
-
-}
-*/
 
 #hello1 {
-    background-color: #5e989f;
+    background-color: #7eaeb4;
     color: white;
     padding: 5px;
     font-size: 23px;
@@ -82,7 +76,7 @@ color: white;
 } */
 
 #hello2 {
-    background-color: #5e989f;
+    background-color: #7eaeb4;
     color: white;
     padding: 5px;
     font-size: 23px;
@@ -113,7 +107,7 @@ color: white;
 } */
 
 #hello3 {
-    background-color: #5e989f;
+    background-color: #7eaeb4;
     color: white;
     padding: 5px;
     font-size: 23px;
