@@ -6,24 +6,29 @@ const JournalPolicies = () => {
   return (
     <Container className="my-5">
       {/* Page Title */}
-      <Row className="mb-4">
-        <Col>
-          <h1 className="fw-bold text-primary text-center mb-3">
+      {/* <Row className="mb-4">
+        <Col> */}
+          {/* <h1 className="fw-bold text-primary text-center mb-3">
             Ethics and Policies
-          </h1>
+          </h1> */}
+
+           <h2 className="fw-bold author text-center mb-3">
+           Ethics and Policies
+          </h2>
+        
           {/* <p className="fs-5 text-muted text-center">
             International Journal of Management Science and Business Conclave
             (IJMSABC)
           </p> */}
-        </Col>
-      </Row>
+        {/* </Col>
+      </Row> */}
 
       {/* Review Policy */}
-      <Row className="mb-4">
+      <Row className="mb-4 gd-section">
         <Col>
           <Card className="shadow-sm border-0">
             <Card.Body>
-              <h2 className="h4 fw-bold text-success mb-3">Review Policy</h2>
+              <h3 className="h4 fw-bold  mb-3">Review Policy</h3>
               <Card.Text className="fs-6">
                 The International Journal of Management Science and Business
                 Conclave (IJMSABC) is committed to maintaining the highest
@@ -46,11 +51,11 @@ const JournalPolicies = () => {
       </Row>
 
       {/* Plagiarism Policy */}
-      <Row className="mb-4">
+      <Row className="mb-4 gd-section">
         <Col>
           <Card className="shadow-sm border-0">
             <Card.Body>
-              <h2 className="h4 fw-bold text-success mb-3">Plagiarism Policy</h2>
+              <h3 className="h4 fw-bold  mb-3">Plagiarism Policy</h3>
               <Card.Text className="fs-6">
                 The journal maintains a strict zero-tolerance policy on
                 plagiarism. All submissions are screened using plagiarism
@@ -69,11 +74,11 @@ const JournalPolicies = () => {
       </Row>
 
       {/* Processing Fee */}
-      <Row className="mb-4">
+      <Row className="mb-4 gd-section">
         <Col>
           <Card className="shadow-sm border-0">
             <Card.Body>
-              <h2 className="h4 fw-bold text-success mb-3">Processing Fee</h2>
+              <h3 className="h4 fw-bold  mb-3">Processing Fee</h3>
               <Card.Text className="fs-6">
                 Manuscript submission and processing for the International
                 Journal of Management Science and Business Conclave (IJMSABC) is{" "}
@@ -86,13 +91,13 @@ const JournalPolicies = () => {
       </Row>
 
       {/* Journal Access Policy */}
-      <Row>
+      <Row className="mb-4 gd-section">
         <Col>
           <Card className="shadow-sm border-0">
             <Card.Body>
-              <h2 className="h4 fw-bold text-success mb-3">
+              <h3 className="h4 fw-bold  mb-3">
                 Journal Access Policy
-              </h2>
+              </h3>
               <Card.Text className="fs-6">
                 The International Journal of Management Science and Business
                 Conclave (IJMSABC) is a print-only journal. All published

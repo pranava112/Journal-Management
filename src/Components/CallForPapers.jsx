@@ -37,11 +37,11 @@ Management Science And Business Conclave. Call for papers is open now."
       </Helmet>
     <Container className="my-5">
       {/* Heading Section */}
-      <Row className="text-center mb-4">
-        <Col>
-          <h2 className="fw-bold display-6 text-primary">Call for Papers</h2>
-        </Col>
-      </Row>
+      
+          <h2 className="fw-bold author text-center mb-3">
+           Call for Papers
+          </h2>
+        
 
       {/* Intro Text */}
       <Row className="mb-3">

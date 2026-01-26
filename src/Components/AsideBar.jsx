@@ -6,9 +6,11 @@ import { CgNotes } from 'react-icons/cg';
 import { IoNewspaperOutline } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
 import React from 'react';
+import SidePanel from './SidePanel';
 
 const AsideBar = () => {
   return (
+    <>
     <Card className="mb-4 shadow-sm">
       <Card.Body>
         <Card.Title className=" mb-3 " id='hello'>
@@ -99,6 +101,8 @@ const AsideBar = () => {
       </Card.Footer> */}
 
     </Card>
+    <SidePanel/>
+    </>
   );
 };
 

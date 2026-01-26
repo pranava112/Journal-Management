@@ -5,7 +5,11 @@ import React from "react";
 const Downloads = () => {
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-4">Downloads</h1>
+      {/* <h1 className="text-center mb-4">Downloads</h1> */}
+
+   <h2 className="fw-bold author text-center mb-3">
+           Downloads
+          </h2>
 
       <Row className="g-4 justify-content-center">
         {/* Cover Page */}

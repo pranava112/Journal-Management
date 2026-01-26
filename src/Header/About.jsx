@@ -22,7 +22,7 @@ Management Science And Business Conclave dedicated to publishing original and qu
       {/* <h2 className="sub_title">About</h2> */}
 
       <section className="about-section">
-        <h3>AIM</h3>
+        <h3>Aim</h3>
         <p>
           The primary aim of the International Journal of Management Science and Business Conclave (IJMSABC) is to provide a credible, peer-reviewed platform for the dissemination of high-quality research in the field of management and business studies. The journal seeks to advance knowledge, foster innovation, and facilitate the exchange of ideas among scholars, practitioners, policymakers, and industry leaders worldwide. IJMSABC encourages research that addresses contemporary challenges, proposes evidence-based solutions, and contributes to the sustainable growth and transformation of organizations and economies.
         </p>

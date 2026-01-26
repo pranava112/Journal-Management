@@ -12,6 +12,7 @@ const UploadPdf = () => {
     year: "",
     type: "",
     author:""
+
   });
 
   const handleInputChange = (e) => {
@@ -31,6 +32,7 @@ const UploadPdf = () => {
     formData.append("type", pdf.type);
     formData.append("author", pdf.author);
     formData.append("source", "ijmsabc"); // CONSTANT
+    formData.append("doi", "ijmsabc");
 
     try {
       const response = await Api.post("/pdfs/upload", formData, {

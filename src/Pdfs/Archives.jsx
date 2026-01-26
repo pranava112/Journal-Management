@@ -1,31 +1,45 @@
+import { Button, Col, Container, Row } from 'react-bootstrap'
+
 import { NavLink } from 'react-router-dom'
-import { Navbar } from 'react-bootstrap'
 import React from 'react'
 
 const Archives = () => {
   return (
-    <>
-    <div>
-    <h1 className='sub_title'><center>  Archive</center></h1>
+    <Container fluid className="py-5 px-3 px-md-4">
+      {/* <Row className="mb-5">
+        <Col xs={12}>
+          <h1 className="text-center fw-bold mb-4">Archive</h1>
+        </Col>
+      </Row> */}
+
+       <h2 className="fw-bold author text-center mb-4"> Archive</h2>
       
-       <section id='Archives'>
-       
-{/* <div> */}
-  <NavLink to="/Current_Issues" end>
-    <button className="btn btn-primary" title='View Current Issues'>Current Issues</button>
-  </NavLink>
-{/* </div>
+      <Row className="justify-content-center g-3">
+        <Col xs={12} sm={6} md={5} lg={4} className="d-flex">
+          <NavLink to="/Current_Issues" end className="w-100">
+            <Button 
+              variant="primary" 
+              className="w-100 py-2 fw-bold"
+              title="View Current Issues"
+            >
+              Current Issues
+            </Button>
+          </NavLink>
+        </Col>
 
-<div> */}
-  <NavLink to="/Previous_Issues">
-    <button className="btn btn-secondary" title='View Previeous Issues'>Previous Issues</button>
-  </NavLink>
-{/* </div> */}
-
-
-       </section>
-    </div>
-    </>
+        <Col xs={12} sm={6} md={5} lg={4} className="d-flex">
+          <NavLink to="/Previous_Issues" className="w-100">
+            <Button 
+              variant="secondary" 
+              className="w-100 py-2 fw-bold"
+              title="View Previous Issues"
+            >
+              Previous Issues
+            </Button>
+          </NavLink>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 

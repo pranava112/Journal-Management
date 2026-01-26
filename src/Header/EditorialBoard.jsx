@@ -106,166 +106,118 @@ ProfileLink1:'https://www.bamu.ac.in/en/academicspage/department-of-library-and-
 
 const EditorialBoard = () => {
   return (
-   
-//    <Container className="my-5">
-//       <h1 className="text-center mb-4 sub_title">Editorial Board Members</h1>
-//       <Row className="g-4">
-//         {members.map((member, index) => (
-//           <Col key={index} md={12}>
+    <Container fluid className="py-5 px-2 px-md-4">
+      {/* <Row className="mb-5">
+        <Col xs={12}>
+          <h2 className="fw-bold text-center mb-4">Editorial Board</h2>
+        </Col>
+      </Row> */}
+       <h2 className="fw-bold author text-center mb-3">
+           Editorial Board
+          </h2>
 
-            
-//             <Card className="shadow-sm p-3 " id=''>
-//               <Card.Body id=''>
-//                 <Row className="align-items-center">
-//                   {/* Image Column - ID 1 */}
-//                   <Col xs={12} sm={3} className="text-center mb-3 mb-sm-0">
-//                     <Image
-//                       src={member.image}
-//                       roundedCircle
-//                       width={100}
-//                       height={100}
-//                       style={{ objectFit: 'cover' }}
-//                       alt={member.name}
-//                       id="1"
-//                     />
-//                   </Col>
+      <Row className="g-4">
+        {members.map((member, index) => (
+          <Col xs={12} sm={12} md={12} lg={12} key={index} className="mb-3">
+            <Card className="h-100 shadow-sm border-0 rounded-3">
+              <Card.Body className="p-0">
+                <Row className="g-0 align-items-start">
+                  {/* Image Column */}
+                  <Col xs={12} sm={4} md={3} lg={3} className="d-flex justify-content-center p-3 bg-light rounded-start">
+                    <div className="text-center">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fluid
+                        className="rounded-circle"
+                        style={{
+                          maxWidth: '150px',
+                          width: '100%',
+                          height: 'auto',
+                          objectFit: 'cover',
+                        }}
+                      />
+                    </div>
+                  </Col>
 
-//                   {/* Text Column - ID 2 */}
-//                   <Col xs={12} sm={6} id="2">
-//                     <h5 style={{color:'purple'}}>{member.name}</h5>
-//                     <ul itemType='document' className="list-unstyled">
-//                       <li>{member.position}</li>
-//                     <li><span id='department'>Department : </span>{member.Department}</li>
-//                     </ul>
-                    
+                  {/* Content Column */}
+                  <Col xs={12} sm={8} md={6} lg={6} className="p-3 d-flex flex-column justify-content-start">
+                    <h5 className="fw-bold mb-2 text-dark">{member.name}</h5>
+                    <p className="mb-2 text-muted small">
+                      <strong>{member.position}</strong>
+                    </p>
+                    <p className="mb-3 small">
+                      <span className="fw-bold">Department:</span> {member.Department}
+                    </p>
 
-//                     <details>
-// <summary className=''>More Details</summary>
-//   <ul itemType='document' className="list-unstyled">
-//     <li><span id='department1'>University : </span> {member.university}</li>
-//     <li><span id='department1'>Address : </span> {member.address}</li>
-//     <li><span id='department1'>Email : </span> {member.email}</li>
-//     <li>
-//       <span id='department1'>Profile Link : </span>
-//       <a href={member.Profilelink} target="_blank" rel="noreferrer">
-//         {member.Profilelink}
-//       </a>
-//       {" , "}
-//       <a href={member.ProfileLink1} target="_blank" rel="noreferrer">
-//         {member.ProfileLink1}
-//       </a>
-//     </li>
-//   </ul>
-// </details>
+                    <details className="mt-auto">
+                      <summary className="cursor-pointer fw-bold text-primary">
+                        More Details
+                      </summary>
+                      <div className="mt-2 small">
+                        <p className="mb-2">
+                          <span className="fw-bold">University:</span> {member.university}
+                        </p>
+                        <p className="mb-2">
+                          <span className="fw-bold">Address:</span> {member.address}
+                        </p>
+                        <p className="mb-2">
+                          <span className="fw-bold">Email:</span>{' '}
+                          <a href={`mailto:${member.email}`}>{member.email}</a>
+                        </p>
+                        <p>
+                          <span className="fw-bold">Profile:</span>{' '}
+                          {member.Profilelink && (
+                            <a
+                              href={member.Profilelink}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-decoration-none"
+                            >
+                              Link
+                            </a>
+                          )}
+                          {member.ProfileLink1 && (
+                            <>
+                              {' | '}
+                              <a
+                                href={member.ProfileLink1}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-decoration-none"
+                              >
+                                Profile Link
+                              </a>
+                            </>
+                          )}
+                        </p>
+                      </div>
+                    </details>
+                  </Col>
 
-                    
-                    
-//                     {/* <p>{member.Profilelink}</p> */}
-//                   </Col>
-
-//                   {/* PDF Link Column - ID 3 */}
-//                   <Col xs={12} sm={3} className="text-center" id="3">
-//                     <a
-//                       href={member.pdf}
-//                       className="btn btn-primary"
-//                       target="_blank"
-//                       rel="noopener noreferrer"
-//                     >
-//                       View PDF
-//                     </a>
-//                   </Col>
-//                 </Row>
-//               </Card.Body>
-//             </Card>
-//           </Col>
-//         ))}
-//       </Row>
-//     </Container>
-
-
-<section className="editorial">
-  <div className="editorial-container">
-    <h1 className="editorial-title">Editorial Board </h1>
-
-    <div className="editorial-list">
-      {members.map((member, index) => (
-        <div className="editorial-card" key={index}>
-          <div className="editorial-row">
-            {/* Image - ID 1 */}
-            <div className="editorial-col image-col" id="1">
-              <img
-                src={member.image}
-                alt={member.name}
-                className="editorial-image"
-              />
-            </div>
-
-            {/* Text - ID 2 */}
-            <div className="editorial-col text-col" id="2">
-              <h5 className="member-name">{member.name}</h5>
-              <ul className="editorial-list-unstyled">
-                <li>{member.position}</li>
-                <li>
-                  <span className="label">Department :</span>{" "}
-                  {member.Department}
-                </li>
-              </ul>
-
-              <details>
-                <summary>More Details</summary>
-                <ul className="editorial-list-unstyled">
-                  <li>
-                    <span className="label">University :</span>{" "}
-                    {member.university}
-                  </li>
-                  <li>
-                    <span className="label">Address :</span>{" "}
-                    {member.address}
-                  </li>
-                  <li>
-                    <span className="label">Email :</span> {member.email}
-                  </li>
-                  <li>
-                    <span className="label">Profile Link :</span>{" "}
-                    <a
-                      href={member.Profilelink}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {member.Profilelink}
-                    </a>
-                    {" , "}
-                    <a
-                      href={member.ProfileLink1}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {member.ProfileLink1}
-                    </a>
-                  </li>
-                </ul>
-              </details>
-            </div>
-
-            {/* PDF Link - ID 3 */}
-            <div className="editorial-col pdf-col" id="3">
-              <a
-                href={member.pdf}
-                className="pdf-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View PDF
-              </a>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
+                  {/* PDF Column */}
+                  <Col xs={12} sm={12} md={3} lg={3} className="p-3 d-flex align-items-center justify-content-center">
+                    {member.pdf && (
+                      <a
+                        href={member.pdf}
+                        className="btn btn-primary btn-sm w-100"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View PDF
+                      </a>
+                    )}
+                    {!member.pdf && (
+                      <span className="text-muted small text-center">No PDF</span>
+                    )}
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
 

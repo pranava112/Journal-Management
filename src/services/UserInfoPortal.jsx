@@ -102,7 +102,17 @@ const UserInfoPortal = ({ user }) => {
   if (!user || !portalRoot) return null;
 
   return ReactDOM.createPortal(
-    <div style={{ position: "fixed", top: "20px", right: "20px", zIndex: 1050 }}>
+    <div style={
+      { 
+        position: "fixed", 
+        top: "60px", 
+        display:"flex",
+        flexDirection:"column",
+        alignItems:"center",
+        justifyContent:"center",
+    right: "20px",
+     zIndex: 1050
+      }}>
       <Button variant="secondary" size="sm" onClick={() => setShowInfo(!showInfo)}>
         👤 Profile
       </Button>
