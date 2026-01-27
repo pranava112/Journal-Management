@@ -141,12 +141,8 @@ const PreviousIssues = () => {
     try {
       const response = await Api.get("/pdfs");
 
-      // ✅ FILTER: IJMSABC source + NOT Current Issue
-      const filtered = response.data.filter(
-        (pdf) =>
-          pdf.source === "ijmsabc" &&
-          pdf.type !== "Current_Issue"
-      );
+      // ✅ Get ALL PDFs without filter
+      const filtered = response.data;
 
       // ✅ Group by Year → Volume → Issue
       const grouped = filtered.reduce((acc, pdf) => {
@@ -190,7 +186,7 @@ const PreviousIssues = () => {
 
       {data.length === 0 ? (
         <p className="text-muted text-center">
-          No Previous Issues available for IJMSABC.
+          No PDFs available.
         </p>
       ) : (
         <Accordion defaultActiveKey={data[0]?.year}>

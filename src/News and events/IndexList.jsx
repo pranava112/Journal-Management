@@ -33,6 +33,8 @@ const IndexList = () => {
           <img src="/img5.jpg" alt="img" className='issn_img' />
         </div>
       </section> */}
+
+      
     </>
   )
 }

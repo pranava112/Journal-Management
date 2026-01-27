@@ -1,4 +1,5 @@
 import About from '../Header/About'
+import AboutTheJournal from '../Header/AboutTheJournal'
 import AdminDashBoard from '../Pdfs/AdminDashBoard/AdminDashBoard'
 import AdminRouting from './AdminRouting'
 import Announcement from '../Announcement/Announcement'
@@ -78,6 +79,7 @@ const Routing = createBrowserRouter([
    {path:"/ReviewersList",element:<ReviewersList/>},
    {path:"/EditorialBordList",element:<EditorialBoardList/>},
    {path:"/MembershipList",element:<MembershipList/>},
+     {path:"/AboutTheJournal",element:<AboutTheJournal/>},
 
 
   

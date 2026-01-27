@@ -28,6 +28,9 @@ const NavigationBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+               <Nav.Link as={NavLink} to="/AboutTheJournal" id="color"  >
+                About the Journal
+              </Nav.Link>
               <Nav.Link as={NavLink} to="/" id="color"  >
                 Home
               </Nav.Link>
@@ -49,15 +52,15 @@ const NavigationBar = () => {
               <Nav.Link as={NavLink} to="/Archives" id="color">
                 Archives
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/conferences" id="color">
+               <Nav.Link as={NavLink} to="/conferences" id="color">
                 Conferences
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/JournalPolicies" id="color">
+              {/*<Nav.Link as={NavLink} to="/JournalPolicies" id="color">
                 Ethics and Policies
-              </Nav.Link>
-              <Nav.Link as={NavLink} to="/downloads" id="color">
+              </Nav.Link> */}
+              {/* <Nav.Link as={NavLink} to="/downloads" id="color">
                 Downloads
-              </Nav.Link>
+              </Nav.Link> */}
               
               {/* <Nav.Link as={NavLink} to="/member" id="color">
                 Membership
@@ -73,14 +76,14 @@ const NavigationBar = () => {
 
    
 
-<select onChange={handleChange} aria-label="Navigation Select" className="mb-3" id="color1">
-  {/* <option value="">-- Select --</option> */}
+{/* <select onChange={handleChange} aria-label="Navigation Select" className="mb-3" id="color1">
+ 
    
    <option value="/membership" >Membership</option>
   <option value="/reviewers">Reviewers</option>
   <option value="/editorial-board">Editorial Board</option>
  
-</select>
+</select> */}
 
 
     {/* <Nav>

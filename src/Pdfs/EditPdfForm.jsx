@@ -22,6 +22,8 @@ const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs, 
     params.append("type", editForm.type);
     params.append("author", editForm.author);
     params.append("source", "ijmsabc"); // CONSTANT
+    params.append("doi", "ijmsabc"); // CONSTANT
+
 
     // only append pdf_link if a new link is provided
     if (editForm.pdf_link && editForm.pdf_link.trim()) {

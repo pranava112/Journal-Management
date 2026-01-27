@@ -1,14 +1,20 @@
 import './AsideBar.css';
 
-import { Card, ListGroup } from 'react-bootstrap';
+import { Card, Form, ListGroup } from 'react-bootstrap';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import { CgNotes } from 'react-icons/cg';
 import { IoNewspaperOutline } from 'react-icons/io5';
-import { NavLink } from 'react-router-dom';
 import React from 'react';
 import SidePanel from './SidePanel';
 
 const AsideBar = () => {
+    const navigate = useNavigate();
+
+    const handleChange = (e) => {
+    navigate(e.target.value);
+  };
+
   return (
     <>
     <Card className="mb-4 shadow-sm">
@@ -36,7 +42,7 @@ const AsideBar = () => {
           <ListGroup.Item>
             <NavLink to="/JournalPolicies" className="nav-link p-0" id='hello2'>
               <IoNewspaperOutline className="me-2 icon" />
-              Journal Policies
+              Ethics and Policies
             </NavLink>
           </ListGroup.Item>
 
@@ -46,12 +52,52 @@ const AsideBar = () => {
               Author Guidelines
             </NavLink>
           </ListGroup.Item>
+
+           {/* <ListGroup.Item>
+            <NavLink to="/conferences" className="nav-link p-0" id='hello3'>
+              <IoNewspaperOutline className="me-2 icon" />
+              Conference
+            </NavLink>
+          </ListGroup.Item> */}
+
+           <ListGroup.Item>
+            <NavLink to="/Downloads" className="nav-link p-0" id='hello3'>
+              <IoNewspaperOutline className="me-2 icon" />
+              Downloads
+            </NavLink>
+          </ListGroup.Item>
+
+           <ListGroup.Item>
+            <Form.Select 
+              onChange={handleChange} 
+              aria-label="Navigation Select" 
+              className="form-select-dropdown dropdown-navlink" 
+              // id="color1"
+              // id='op'
+            >
+              <option value="" disabled defaultValue>-- Select Option --</option>
+              <option value="/membership" id='op'>📄 Membership</option>
+              <option value="/reviewers" id='op'>📄 Reviewers</option>
+              <option value="/editorial-board" id='op'>📄 Editorial Board</option>
+            </Form.Select>
+          </ListGroup.Item>
           <ListGroup.Item className="p-0 mt-2 ps-2">
             
            {/* <h5> News and Events</h5> */}
           </ListGroup.Item>
         </ListGroup>
       </Card.Body>
+
+
+
+
+
+
+
+
+
+
+      
 
        <Card className="text-center shadow-sm my-4" style={{ maxWidth: "300px", margin: "0 auto" }}>
             <Card.Body>

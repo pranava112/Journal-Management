@@ -276,6 +276,15 @@
     background: #0056b3;
 }
 
+.btn-delete {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 
 /* Details & lists */
 
