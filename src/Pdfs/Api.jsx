@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Api = axios.create({
-  baseURL: "http://localhost:8080/api/ijmsabc", // ✅ Ensure it matches the Spring Boot backend
+  baseURL: "https://api.ijmsabc.org/api/ijmsabc", // ✅ Ensure it matches the Spring Boot backend
   headers: {
     "Content-Type": "application/json",
   },

@@ -471,7 +471,7 @@ const ManuscriptList = () => {
                 <td>{m.kwords}</td>
                 <td>
                   <a
-                    href={`http://localhost:8080/api/ijmsabc/manuscript/${m.id}/file`}
+                    href={`https://api.ijmsabc.org/api/ijmsabc/manuscript/${m.id}/file`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

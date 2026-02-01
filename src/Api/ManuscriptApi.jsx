@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_BASE = "http://localhost:8080/api/ijmsabc/manuscript";
+// https://api.ijmsabc.org/api/ijmsabc/pdfs
+
+const API_BASE = "https://api.ijmsabc.org/api/ijmsabc/manuscript";
 
 export const createManuscript = async (formData) =>
   await axios.post(API_BASE, formData, { headers: { "Content-Type": "multipart/form-data" } });

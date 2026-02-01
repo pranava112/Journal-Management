@@ -15,14 +15,17 @@ const VisitorStats = () => {
       hasTracked.current = true;
 
       // Step 1: Track unique visit
+
+      // https://api.ijmsabc.org/api/ijmsabc
+
       axios
-        .post("http://localhost:8080/api/ijmsabc/visitors/visit")
+        .post("https://api.ijmsabc.org/api/ijmsabc/visitors/visit")
         .then(() => {
           // ✅ Wait briefly to ensure backend has saved the new visit
           setTimeout(() => {
             // Step 2: Fetch updated stats after visit is stored
             axios
-              .get("http://localhost:8080/api/ijmsabc/visitors/stats")
+              .get("https://api.ijmsabc.org/api/ijmsabc/visitors/stats")
               .then((res) => {
                 setStats(res.data || []);
               })
