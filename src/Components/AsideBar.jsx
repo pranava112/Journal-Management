@@ -17,6 +17,7 @@ const AsideBar = () => {
 
   return (
     <>
+     <Card>
     <Card className="mb-4 shadow-sm">
       <Card.Body>
         <Card.Title className=" mb-3 " id='hello'>
@@ -67,7 +68,7 @@ const AsideBar = () => {
             </NavLink>
           </ListGroup.Item>
 
-           <ListGroup.Item>
+           {/* <ListGroup.Item>
             <Form.Select 
               onChange={handleChange} 
               aria-label="Navigation Select" 
@@ -80,7 +81,7 @@ const AsideBar = () => {
               <option value="/reviewers" id='op'>📄 Reviewers</option>
               <option value="/editorial-board" id='op'>📄 Editorial Board</option>
             </Form.Select>
-          </ListGroup.Item>
+          </ListGroup.Item> */}
           <ListGroup.Item className="p-0 mt-2 ps-2">
             
            {/* <h5> News and Events</h5> */}
@@ -89,8 +90,52 @@ const AsideBar = () => {
       </Card.Body>
 
 
+</Card>
+{/* /////////////////////////////////////////////////////////////////////////// */}
+
+      <Card className="mb-4 shadow-sm">
+        <Card.Body>
+
+          <Card.Title className=" mb-3 " id='hello1'>
+         
+          More Details
 
 
+        </Card.Title>
+
+<ListGroup variant="flush">
+
+          <ListGroup.Item>
+            <NavLink to="/membership" className="nav-link p-0" id='hello1'>
+              <IoNewspaperOutline className="me-2 icon" />
+              
+              Membership
+            </NavLink>
+          </ListGroup.Item>
+
+          <ListGroup.Item>
+            <NavLink to="/reviewers" className="nav-link p-0" id='hello1'>
+              <IoNewspaperOutline className="me-2 icon" />
+             
+              Reviewers
+            </NavLink>
+          </ListGroup.Item>
+
+          <ListGroup.Item>
+            <NavLink to="/editorial-board" className="nav-link p-0" id='hello1'>
+              <IoNewspaperOutline className="me-2 icon" />
+           
+              Editorial Board
+            </NavLink>
+          </ListGroup.Item>
+
+         </ListGroup>
+
+         </Card.Body>
+          </Card>
+
+
+{/* /////////////////////////////////////////////////////////// */}
 
 
 
@@ -146,8 +191,10 @@ const AsideBar = () => {
         </div>
       </Card.Footer> */}
 
-    </Card>
+    
     <SidePanel/>
+
+    </Card>
     </>
   );
 };
