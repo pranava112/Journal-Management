@@ -64,7 +64,8 @@ const PreviousIssues = () => {
       {/* ✅ No Data */}
       {data.length === 0 ? (
         <p className="text-muted text-center">
-          No Previous Issues available for IJMSABC.
+          Loading Previous Issues for IJMSABC...
+          <br />Please wait a moment.
         </p>
       ) : (
         <Accordion defaultActiveKey={data[0]?.year}>
