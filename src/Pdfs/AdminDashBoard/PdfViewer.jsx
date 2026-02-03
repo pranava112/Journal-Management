@@ -317,3 +317,6 @@ const PdfViewer = ({ pdfUrl, closeViewer }) => {
 };
 
 export default PdfViewer;
+
+
+// implemented a full screen PDF viewer with a header and footer. The header contains the title and a close button, while the footer has navigation buttons to move between pages. The PDF is displayed in the center with a light background for better readability.

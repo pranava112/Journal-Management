@@ -144,6 +144,9 @@
 
 // export default CurrentIssues;
 
+
+// implemented PDF Viewer and inline opening of PDFs in same tab. Also added some styling to the list items and icons.
+
 import React, { useEffect, useState } from "react";
 
 import { Accordion } from "react-bootstrap";
