@@ -2,53 +2,50 @@ import "./PdfList.css";
 
 import React, { useEffect, useState } from "react";
 
-import Api from "../Api";
 import EditPdfForm from "../EditPdfForm";
+import PdfApi from "./PdfApi";
 
 const PdfList = () => {
   const [pdfs, setPdfs] = useState([]);
   const [editId, setEditId] = useState(null);
   const [editForm, setEditForm] = useState(null);
 
-  // ✅ Fetch all PDFs & filter by source = ijmsabc
+  // ✅ Fetch PDFs
   const fetchPdfs = async () => {
     try {
-      const response = await Api.get("/pdfs");
-
-      // 🔥 FILTER HERE
-      const filteredPdfs = response.data.filter(
-        (pdf) => pdf.source === "ijmsabc"
-      );
-
-      setPdfs(filteredPdfs);
+      const response = await PdfApi.get("");
+      console.log("PDF Response:", response.data);
+      setPdfs(response.data);
     } catch (error) {
-      console.error("Error fetching PDFs:", error);
+      console.error("❌ Fetch Error:", error);
     }
   };
 
-  // ✅ Delete
+  // ✅ Delete PDF
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this PDF?")) return;
     try {
-      await Api.delete(`/pdfs/${id}`);
+      await PdfApi.delete(`/${id}`);
       setPdfs(pdfs.filter((pdf) => pdf.id !== id));
+      alert("✅ PDF Deleted Successfully!");
     } catch (error) {
-      console.error("Error deleting PDF:", error);
+      console.error("❌ Delete Error:", error);
+      alert("Delete Failed!");
     }
   };
 
-  // ✅ Start editing
+  // ✅ Edit PDF click
   const handleEditClick = (pdf) => {
     setEditId(pdf.id);
     setEditForm({
       title: pdf.title,
-      pdf_link: pdf.pdfLink,
       volume: pdf.volume,
       issueNo: pdf.issueNo,
-      year: pdf.year,
-      type: pdf.type,
+      pubYear: pdf.pubYear,
+      issueType: pdf.issueType,
       author: pdf.author,
-      source: pdf.source,
+      doi: pdf.doi || "",
+      source: pdf.source || "ijmsabc",
     });
   };
 
@@ -58,82 +55,72 @@ const PdfList = () => {
 
   return (
     <div className="pdf-list-container">
-      <div className="pdf-list-header">
-        <h2 className="pdf-list-title">IJMSABC PDFs</h2>
-      </div>
+      <h2 className="text-center mb-4">📚 PDF List</h2>
 
-      <div className="pdf-list-wrapper">
-        <table className="pdf-table">
-          <thead className="pdf-table-head">
+      <table className="table table-bordered table-striped">
+        <thead className="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Volume</th>
+            <th>Issue</th>
+            <th>Year</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {pdfs.length === 0 ? (
             <tr>
-              <th className="col-id">Id</th>
-              <th className="col-title">Title</th>
-              <th className="col-author">Author</th>
-              <th className="col-volume">Volume</th>
-              <th className="col-issue">Issue</th>
-              <th className="col-year">Year</th>
-              <th className="col-type">Type</th>
-              <th className="col-actions">Actions</th>
+              <td colSpan="8" className="text-center text-danger">
+                ❌ No PDFs Found
+              </td>
             </tr>
-          </thead>
+          ) : (
+            pdfs.map((pdf) => (
+              <tr key={pdf.id}>
+                <td>{pdf.id}</td>
 
-          <tbody className="pdf-table-body">
-            {pdfs.length === 0 ? (
-              <tr>
-                <td colSpan="8" className="text-center text-muted no-data">
-                  No PDFs found for IJMSABC
+                {/* ✅ Open PDF in same tab */}
+                <td>
+                  <a
+                    href={`https://api.ijmsabc.org/api/ijmsabc/pdfs/view/${pdf.id}`}
+                    target="_self"
+                    rel="noreferrer"
+                  >
+                    {pdf.title}
+                  </a>
+                </td>
+
+                <td>{pdf.author}</td>
+                <td>{pdf.volume}</td>
+                <td>{pdf.issueNo}</td>
+                <td>{pdf.pubYear}</td>
+                <td>{pdf.issueType}</td>
+
+                <td>
+                  <button
+                    className="btn btn-sm btn-primary me-2"
+                    onClick={() => handleEditClick(pdf)}
+                  >
+                    ✏ Edit
+                  </button>
+                  <button
+                    className="btn btn-sm btn-danger"
+                    onClick={() => handleDelete(pdf.id)}
+                  >
+                    🗑 Delete
+                  </button>
                 </td>
               </tr>
-            ) : (
-              pdfs.map((pdf) => (
-                <tr key={pdf.id} className="pdf-row">
-                  <td className="col-id" data-label="Id">{pdf.id}</td>
+            ))
+          )}
+        </tbody>
+      </table>
 
-                  <td className="col-title" data-label="Title">
-                    <a
-                      className="pdf-link"
-                      href={pdf.pdfLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={pdf.title}
-                    >
-                      {pdf.title}
-                    </a>
-                  </td>
-
-                  <td className="col-author" data-label="Author">{pdf.author}</td>
-                  <td className="col-volume" data-label="Volume">{pdf.volume}</td>
-                  <td className="col-issue" data-label="Issue">{pdf.issueNo}</td>
-                  <td className="col-year" data-label="Year">{pdf.year}</td>
-                  <td className="col-type" data-label="Type">{pdf.type}</td>
-
-                  <td className="col-actions" data-label="Actions">
-                    <div className="action-buttons">
-                      <button
-                        className="btn btn-edit"
-                        onClick={() => handleEditClick(pdf)}
-                        title="Edit this PDF"
-                      >
-                        Edit
-                      </button>
-
-                      <button
-                        className="btn btn-delete"
-                        onClick={() => handleDelete(pdf.id)}
-                        title="Delete this PDF"
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
-
-      {/* ✅ Edit Form */}
+      {/* ✅ Edit Form Modal */}
       {editId && editForm && (
         <EditPdfForm
           editId={editId}
@@ -142,6 +129,7 @@ const PdfList = () => {
           setEditId={setEditId}
           pdfs={pdfs}
           setPdfs={setPdfs}
+          fetchPdfs={fetchPdfs} // optional to refresh
         />
       )}
     </div>

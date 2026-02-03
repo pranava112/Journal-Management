@@ -1,181 +1,369 @@
+// import "./EditPdfForm.css";
+
+// import React, { useState } from "react";
+
+// import PdfApi from "./AdminDashBoard/PdfApi";
+
+// const EditPdfForm = ({
+//   editId,
+//   editForm,
+//   setEditForm,
+//   setEditId,
+//   pdfs,
+//   setPdfs,
+//   fetchPdfs,
+// }) => {
+//   const [selectedFile, setSelectedFile] = useState(null);
+
+//   // ✅ Handle input change
+//   const handleEditChange = (e) => {
+//     setEditForm({
+//       ...editForm,
+//       [e.target.name]: e.target.value,
+//     });
+//   };
+
+//   // ✅ Handle file change
+//   const handleFileChange = (e) => {
+//     setSelectedFile(e.target.files[0]);
+//   };
+
+//   // ✅ Submit Update Request
+//   const handleUpdateSubmit = async (e) => {
+//     e.preventDefault();
+
+//     try {
+//       const formData = new FormData();
+
+//       // ✅ Append fields EXACTLY as backend expects
+//       formData.append("volume", editForm.volume);
+//       formData.append("issue_no", editForm.issue_no);
+//       formData.append("pub_year", editForm.pub_year);
+//       formData.append("issue_type", editForm.issue_type);
+
+//       formData.append("author", editForm.author);
+//       formData.append("doi", editForm.doi);
+//       formData.append("source", editForm.source);
+
+//       // ✅ Append file only if user selected new PDF
+//       if (selectedFile) {
+//         formData.append("pdf_doc", selectedFile);
+//       }
+
+//       // ✅ API Call
+//       const response = await PdfApi.put(
+//         `/update/${editId}`,
+//         formData
+//       );
+
+//       alert("✅ PDF Updated Successfully!");
+
+//       // ✅ Update list instantly
+//       const updatedList = pdfs.map((pdf) =>
+//         pdf.id === editId ? response.data : pdf
+//       );
+
+//       setPdfs(updatedList);
+
+//       // ✅ Close modal
+//       setEditId(null);
+//       setEditForm(null);
+//       setSelectedFile(null);
+
+//       // Optional refresh
+//       if (fetchPdfs) fetchPdfs();
+
+//     } catch (error) {
+//       console.error("❌ Update Error:", error.response?.data || error.message);
+//       alert("❌ Update Failed!");
+//     }
+//   };
+
+//   return (
+//     <div className="edit-modal-overlay">
+//       <div className="edit-modal">
+//         <h3 className="text-center mb-3">✏ Edit PDF Details</h3>
+
+//         <form onSubmit={handleUpdateSubmit}>
+
+//           {/* Volume */}
+//           <input
+//             type="text"
+//             name="volume"
+//             placeholder="Volume"
+//             value={editForm.volume}
+//             onChange={handleEditChange}
+//             required
+//           />
+
+//           {/* Issue No */}
+//           <input
+//             type="text"
+//             name="issue_no"
+//             placeholder="Issue No"
+//             value={editForm.issue_no}
+//             onChange={handleEditChange}
+//             required
+//           />
+
+//           {/* Pub Year */}
+//           <input
+//             type="text"
+//             name="pub_year"
+//             placeholder="Publication Year"
+//             value={editForm.pub_year}
+//             onChange={handleEditChange}
+//             required
+//           />
+
+//           {/* Issue Type */}
+//           <input
+//             type="text"
+//             name="issue_type"
+//             placeholder="Issue Type"
+//             value={editForm.issue_type}
+//             onChange={handleEditChange}
+//             required
+//           />
+
+//           {/* Author */}
+//           <input
+//             type="text"
+//             name="author"
+//             placeholder="Author"
+//             value={editForm.author}
+//             onChange={handleEditChange}
+//             required
+//           />
+
+//           {/* DOI */}
+//           <input
+//             type="text"
+//             name="doi"
+//             placeholder="DOI"
+//             value={editForm.doi}
+//             onChange={handleEditChange}
+//           />
+
+//           {/* Source */}
+//           <select
+//             name="source"
+//             value={editForm.source}
+//             onChange={handleEditChange}
+//           >
+//             <option value="ijmsabc">IJMSABC</option>
+//             <option value="other">Other</option>
+//           </select>
+
+//           {/* Upload New PDF */}
+//           <label className="mt-2">
+//             Replace PDF File (Optional):
+//           </label>
+//           <input
+//             type="file"
+//             accept="application/pdf"
+//             onChange={handleFileChange}
+//           />
+
+//           {/* Buttons */}
+//           <div className="modal-buttons">
+//             <button type="submit" className="btn btn-success">
+//               ✅ Update
+//             </button>
+
+//             <button
+//               type="button"
+//               className="btn btn-secondary"
+//               onClick={() => {
+//                 setEditId(null);
+//                 setEditForm(null);
+//               }}
+//             >
+//               ❌ Cancel
+//             </button>
+//           </div>
+
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default EditPdfForm;
+
 import "./EditPdfForm.css";
 
-import Api from "./Api";
-import React from "react";
+import { Alert, Button, Form, Modal } from "react-bootstrap";
+import React, { useState } from "react";
 
-const EditPdfForm = ({ editId, editForm, setEditForm, setEditId, pdfs, setPdfs, }) => {
-  // ✅ Handle input change
+import PdfApi from "./AdminDashBoard/PdfApi";
+
+const EditPdfForm = ({
+  editId,
+  editForm,
+  setEditForm,
+  setEditId,
+  fetchPdfs,
+}) => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [msg, setMsg] = useState("");
+
+  // ✅ Handle Text Field Change
   const handleEditChange = (e) => {
-    const { name, value } = e.target;
-    setEditForm({ ...editForm, [name]: value });
+    setEditForm({
+      ...editForm,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  // ✅ Handle Update
+  // ✅ Handle File Change
+  const handleFileChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
+
+  // ✅ Update PDF Function
   const handleUpdate = async (e) => {
     e.preventDefault();
 
-    const params = new URLSearchParams();
-    params.append("title", editForm.title);
-    params.append("volume", editForm.volume);
-    params.append("issueNo", editForm.issueNo);
-    params.append("year", editForm.year);
-    params.append("type", editForm.type);
-    params.append("author", editForm.author);
-    params.append("source", "ijmsabc"); // CONSTANT
-    params.append("doi", "ijmsabc"); // CONSTANT
-
-
-    // only append pdf_link if a new link is provided
-    if (editForm.pdf_link && editForm.pdf_link.trim()) {
-      params.append("pdf_link", editForm.pdf_link);
-    }
-
     try {
-      const response = await Api.put(`/pdfs/${editId}`, params, {
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      const formData = new FormData();
+
+      // ✅ Append Metadata Fields
+      formData.append("title", editForm.title);
+      formData.append("volume", editForm.volume);
+      formData.append("issue_no", editForm.issueNo);
+      formData.append("pub_year", editForm.pubYear);
+      formData.append("issue_type", editForm.issueType);
+      formData.append("author", editForm.author);
+      formData.append("doi", editForm.doi);
+      formData.append("source", editForm.source);
+
+      // ✅ Append File ONLY if Selected
+      if (selectedFile) {
+        formData.append("pdf_doc", selectedFile);
+      }
+
+      // ✅ Call Backend Update API
+      await PdfApi.put(`/update/${editId}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
 
-      // ✅ Replace updated record in state
-      setPdfs(pdfs.map((p) => (p.id === editId ? response.data : p)));
-      setEditId(null);
-      alert("PDF updated successfully ✅");
-    } catch (error) {
-      console.error("Error updating PDF:", error.response?.data || error.message);
-      alert("Update failed ❌");
+      setMsg("✅ PDF Updated Successfully!");
+
+      // ✅ Refresh List
+      fetchPdfs();
+
+      // ✅ Close Modal After 1 Second
+      setTimeout(() => {
+        setEditId(null);
+        setMsg("");
+      }, 1000);
+    } catch (err) {
+      console.error("Update Error:", err);
+      setMsg("❌ Update Failed!");
     }
   };
 
   return (
-    <div className="edit-pdf-container">
-      <div className="edit-pdf-card">
-        <h4 className="edit-pdf-title">Edit PDF</h4>
-        <form onSubmit={handleUpdate} className="edit-pdf-form">
-          <div className="form-group">
-            <label htmlFor="title" className="form-label">Title: </label>
-            <input
+    <Modal show={true} onHide={() => setEditId(null)} centered>
+      <Modal.Header closeButton>
+        <Modal.Title>✏ Edit PDF Details</Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body>
+        {msg && <Alert variant="info">{msg}</Alert>}
+
+        <Form onSubmit={handleUpdate}>
+          {/* Title */}
+          <Form.Group className="mb-2">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
               type="text"
-              id="title"
               name="title"
               value={editForm.title}
               onChange={handleEditChange}
-              placeholder="Title"
-              className="form-control"
-              readOnly
+              required
             />
-          </div>
+          </Form.Group>
 
-          {/* ✅ Show current PDF */}
-          {editForm.pdf_link && (
-            <div className="form-group pdf-link-preview">
-              <a
-                href={editForm.pdf_link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pdf-link-text"
-              >
-                Current PDF: {editForm.title}
-              </a>
-            </div>
-          )}
-
-          <div className="form-group">
-            <label htmlFor="pdf_link" className="form-label">PDF Link: </label>
-            <input
-              type="url"
-              id="pdf_link"
-              name="pdf_link"
-              onChange={handleEditChange}
-              placeholder="Enter PDF link (e.g. https://example.com/file.pdf)"
-              value={editForm.pdf_link || ""}
-              className="form-control"
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="author" className="form-label">Author: </label>
-            <input  
+          {/* Author */}
+          <Form.Group className="mb-2">
+            <Form.Label>Author</Form.Label>
+            <Form.Control
               type="text"
-              id="author"
               name="author"
               value={editForm.author}
               onChange={handleEditChange}
-              className="form-control"
-              readOnly
             />
-          </div>
+          </Form.Group>
 
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="year" className="form-label">Year: </label>
-              <input
-                type="text"
-                name="year"
-                id="year"
-                value={editForm.year}
-                onChange={handleEditChange}
-                className="form-control"
-                required
-              />
-            </div>
+          {/* Volume */}
+          <Form.Group className="mb-2">
+            <Form.Label>Volume</Form.Label>
+            <Form.Control
+              type="text"
+              name="volume"
+              value={editForm.volume}
+              onChange={handleEditChange}
+            />
+          </Form.Group>
 
-            <div className="form-group">
-              <label htmlFor="volume" className="form-label">Volume: </label>
-              <input
-                type="text"
-                name="volume"
-                id="volume"
-                value={editForm.volume}
-                onChange={handleEditChange}
-                className="form-control"
-                required
-              />
-            </div>
+          {/* Issue No */}
+          <Form.Group className="mb-2">
+            <Form.Label>Issue Number</Form.Label>
+            <Form.Control
+              type="text"
+              name="issueNo"
+              value={editForm.issueNo}
+              onChange={handleEditChange}
+            />
+          </Form.Group>
 
-            <div className="form-group">
-              <label htmlFor="issueNo" className="form-label">Issue No: </label>
-              <input
-                type="text"
-                id="issueNo"
-                name="issueNo"
-                value={editForm.issueNo}
-                onChange={handleEditChange}
-                className="form-control"
-                required
-              />
-            </div>
-          </div>
+          {/* Publication Year */}
+          <Form.Group className="mb-2">
+            <Form.Label>Publication Year</Form.Label>
+            <Form.Control
+              type="text"
+              name="pubYear"
+              value={editForm.pubYear}
+              onChange={handleEditChange}
+            />
+          </Form.Group>
 
-          <div className="form-group">
-            <label htmlFor="type" className="form-label">Type: </label>
-            <select 
-              name="type" 
-              id="type" 
-              onChange={handleEditChange} 
-              value={editForm.type} 
-              className="form-control form-select"
-              required
+          {/* Issue Type */}
+          <Form.Group className="mb-2">
+            <Form.Label>Issue Type</Form.Label>
+            <Form.Select
+              name="issueType"
+              value={editForm.issueType}
+              onChange={handleEditChange}
             >
-              <option value="">--select--</option>
               <option value="Current_Issue">Current Issue</option>
               <option value="Previous_Issue">Previous Issue</option>
-            </select>
-          </div>
+            </Form.Select>
+          </Form.Group>
 
-          <div className="form-actions">
-            <button type="submit" className="btn btn-success">
-              Save Changes
-            </button>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => setEditId(null)}
-            >
+          {/* Replace PDF File */}
+          <Form.Group className="mb-3">
+            <Form.Label>Replace PDF File (Optional)</Form.Label>
+            <Form.Control type="file" accept=".pdf" onChange={handleFileChange} />
+          </Form.Group>
+
+          {/* Buttons */}
+          <div className="d-flex justify-content-between">
+            <Button variant="secondary" onClick={() => setEditId(null)}>
               Cancel
-            </button>
+            </Button>
+
+            <Button type="submit" variant="primary">
+              ✅ Update PDF
+            </Button>
           </div>
-        </form>
-      </div>
-    </div>
+        </Form>
+      </Modal.Body>
+    </Modal>
   );
 };
 

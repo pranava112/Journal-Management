@@ -68,20 +68,7 @@ const AsideBar = () => {
             </NavLink>
           </ListGroup.Item>
 
-           {/* <ListGroup.Item>
-            <Form.Select 
-              onChange={handleChange} 
-              aria-label="Navigation Select" 
-              className="form-select-dropdown dropdown-navlink" 
-              // id="color1"
-              // id='op'
-            >
-              <option value="" disabled defaultValue>-- Select Option --</option>
-              <option value="/membership" id='op'>📄 Membership</option>
-              <option value="/reviewers" id='op'>📄 Reviewers</option>
-              <option value="/editorial-board" id='op'>📄 Editorial Board</option>
-            </Form.Select>
-          </ListGroup.Item> */}
+          
           <ListGroup.Item className="p-0 mt-2 ps-2">
             
            {/* <h5> News and Events</h5> */}
@@ -91,7 +78,8 @@ const AsideBar = () => {
 
 
 </Card>
-{/* /////////////////////////////////////////////////////////////////////////// */}
+
+
 
       <Card className="mb-4 shadow-sm">
         <Card.Body>
@@ -136,13 +124,6 @@ const AsideBar = () => {
 
 
 {/* /////////////////////////////////////////////////////////// */}
-
-
-
-
-
-
-      
 
        <Card className="text-center shadow-sm my-4" style={{ maxWidth: "300px", margin: "0 auto" }}>
             <Card.Body>

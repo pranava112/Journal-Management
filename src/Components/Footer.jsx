@@ -11,24 +11,30 @@ import axios from 'axios';
 const Footer = () => {
   const [totalCount, setTotalCount] = useState(0);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/api/ijmsabc/visitors/stats")
-      .then((res) => {
-        if (Array.isArray(res.data) && res.data.length > 0) {
-          // ✅ Calculate total visitors (sum of all counts)
-          const total = res.data.reduce((sum, item) => {
-            const value =
-              typeof item.count === "number"
-                ? item.count
-                : parseInt(item.count || 0, 10);
-            return sum + value;
-          }, 0);
-          setTotalCount(total);
-        }
-      })
-      .catch((err) => console.error("Error fetching total visitors:", err));
-  }, []);
+  // useEffect(() => {
+  //   // Determine API base URL based on environment
+  //   const apiBaseUrl = process.env.REACT_APP_API_URL || 
+  //                      (window.location.hostname === 'localhost' 
+  //                        ? "http://localhost:8080" 
+  //                        : "https://api.ijmsabc.org");
+    
+  //   axios
+  //     .get(`${apiBaseUrl}/api/ijmsabc/visitors/stats`)
+  //     .then((res) => {
+  //       if (Array.isArray(res.data) && res.data.length > 0) {
+  //         // ✅ Calculate total visitors (sum of all counts)
+  //         const total = res.data.reduce((sum, item) => {
+  //           const value =
+  //             typeof item.count === "number"
+  //               ? item.count
+  //               : parseInt(item.count || 0, 10);
+  //           return sum + value;
+  //         }, 0);
+  //         setTotalCount(total);
+  //       }
+  //     })
+  //     .catch((err) => console.error("Error fetching total visitors:", err));
+  // }, []);
 
   return (
     <footer className="footer bg-dark text-white py-4 mt-5">
