@@ -20,6 +20,8 @@ import ErrorPage from './ErrorPage'
 import ForgotPassword from '../services/ForgotPassword'
 import Home from '../Components/Home'
 import IndexList from '../News and events/IndexList'
+import IssueView from '../Pdfs/AdminDashBoard/IssueView'
+import IssueViewPrevious from '../Pdfs/AdminDashBoard/IssueViewPrevious'
 import JournalPolicies from '../Header/JournalPolicies'
 import Layout from './Layout'
 import Login from '../services/Login'
@@ -27,6 +29,9 @@ import ManuscriptList from '../Header/ManuscriptList'
 import Membership from '../Header/Membership'
 import MembershipList from '../Pdfs/MembershipList'
 import PdfList from '../Pdfs/AdminDashBoard/PdfList'
+import { PdfProviderAll } from '../Pdfs/AdminDashBoard/PdfContextAll'
+import { PdfProviderPrevious } from '../Pdfs/AdminDashBoard/PdfContextPrevious'
+import PreviousIssues from '../Pdfs/AdminDashBoard/Previous_Issues'
 import Previous_Issues from '../Pdfs/AdminDashBoard/Previous_Issues'
 import PublicationEthics from '../Header/PublicationEthics'
 import React from 'react'
@@ -64,7 +69,8 @@ const Routing = createBrowserRouter([
 
    {path:"/Archives",element:<Archives/>},
    {path:"/Current_Issues",element:< Current_Issues/>},
-   {path:"/Previous_Issues",element:<Previous_Issues/>},
+   {path:"/Previous_Issues",element:<PdfProviderPrevious><PreviousIssues /></PdfProviderPrevious>},
+    {path:"/previous-issue/:year/:volume/:issueNo", element:<PdfProviderPrevious> <IssueViewPrevious /></PdfProviderPrevious>},
    {path:"/AdminDashBoard",element:<AdminDashBoard/>},
    {path:"/Register",element:<Register/>},
    {path:"/Login",element:<Login/>},
@@ -87,11 +93,14 @@ const Routing = createBrowserRouter([
 
 {path:"/VisitorStats", element:(<AdminRouting><VisitorStats/></AdminRouting>)},
 
-{path:"/PdfList",element:(<AdminRouting><PdfList /></AdminRouting>)},
+{path:"/PdfList",element:(<AdminRouting><PdfProviderAll><PdfList /></PdfProviderAll></AdminRouting>)},
+
+     
+    
 
 {path:"/uploadAnnouncement",element:(<AdminRouting><Announcement /></AdminRouting>)},
 
-
+{ path:"/issue/:year/:volume/:issueNo", element:<IssueView /> },
 
 
 {path:"/contactlist",element:(<AdminRouting><ContactList /></AdminRouting>)},

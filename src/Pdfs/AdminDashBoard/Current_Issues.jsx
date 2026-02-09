@@ -1,310 +1,207 @@
-import React, { useEffect, useState } from "react";
-
-import { Accordion } from "react-bootstrap";
-import { GrDocumentPdf } from "react-icons/gr";
-import PdfApi from "./PdfApi";
-
-const CurrentIssues = () => {
-  const [data, setData] = useState([]);
-
-  // ✅ Fetch PDFs from Backend
-  const fetchPdfs = async () => {
-    try {
-      // ✅ Backend URL: GET /api/ijmsabc/pdfs
-      const response = await PdfApi.get("");
-
-      // ✅ Filter: Only Current Issues + IJMSABC Source
-      const filtered = response.data.filter(
-        (pdf) =>
-          pdf.issueType === "Current_Issue" &&
-          pdf.source?.toLowerCase() === "ijmsabc"
-      );
-
-      // ✅ Group by Year → Volume → IssueNo
-      const grouped = filtered.reduce((acc, pdf) => {
-        const year = pdf.pubYear;
-        const { volume, issueNo } = pdf;
-
-        if (!acc[year]) acc[year] = {};
-        if (!acc[year][volume]) acc[year][volume] = {};
-        if (!acc[year][volume][issueNo]) acc[year][volume][issueNo] = [];
-
-        acc[year][volume][issueNo].push(pdf);
-        return acc;
-      }, {});
-
-      // ✅ Convert grouped object into structured array
-      const formattedData = Object.entries(grouped).map(([year, volumes]) => ({
-        year,
-        volumes: Object.entries(volumes).map(([volume, issues]) => ({
-          volume,
-          issues: Object.entries(issues).map(([issueNo, pdfs]) => ({
-            issueNo,
-            pdfs,
-          })),
-        })),
-      }));
-
-      setData(formattedData);
-    } catch (err) {
-      console.error("❌ Error fetching current issues:", err);
-    }
-  };
-
-  useEffect(() => {
-    fetchPdfs();
-  }, []);
-
-  return (
-    <div className="container mt-5">
-      <center>
-        <h2 className="mb-4 sub_title">Current Issues</h2>
-      </center>
-
-      {/* ✅ No Data */}
-      {data.length === 0 ? (
-        <p className="text-muted text-center">
-          Loading Current Issues for IJMSABC...
-          <br />Please wait a moment.
-        </p>
-        
-      ) : (
-        <Accordion defaultActiveKey={data[0]?.year}>
-          {data
-            .sort((a, b) => b.year - a.year)
-            .map((yearObj) => (
-              <Accordion.Item eventKey={yearObj.year} key={yearObj.year}>
-                {/* ✅ Year */}
-                <Accordion.Header>
-                  Year: {yearObj.year}
-                </Accordion.Header>
-
-                <Accordion.Body>
-                  <Accordion>
-                    {yearObj.volumes.map((vol) => (
-                      <Accordion.Item
-                        eventKey={`${yearObj.year}-${vol.volume}`}
-                        key={vol.volume}
-                      >
-                        {/* ✅ Volume */}
-                        <Accordion.Header>
-                          Volume {vol.volume} ({yearObj.year})
-                        </Accordion.Header>
-
-                        <Accordion.Body>
-                          <Accordion>
-                            {vol.issues.map((issue) => (
-                              <Accordion.Item
-                                eventKey={`${yearObj.year}-${vol.volume}-${issue.issueNo}`}
-                                key={issue.issueNo}
-                              >
-                                {/* ✅ Issue */}
-                                <Accordion.Header>
-                                  Issue {issue.issueNo}
-                                </Accordion.Header>
-
-                                <Accordion.Body>
-                                  <ol className="list-group">
-                                    {issue.pdfs.map((pdf) => (
-                                      <li id="li" key={pdf.id}>
-                                        {/* ✅ FIXED: Open PDF INLINE in SAME TAB */}
-                                        <a
-                                          id="anchor"
-                                          href={`https://api.ijmsabc.org/api/ijmsabc/pdfs/view/${pdf.id}`}
-                                          target="_self"
-                                          rel="noreferrer"
-                                        >
-                                          <div>
-                                            <strong>{pdf.title}</strong>
-                                            <br />
-                                            By {pdf.author}
-                                          </div>
-
-                                          <div>
-                                            <GrDocumentPdf id="icon" />
-                                          </div>
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ol>
-                                </Accordion.Body>
-                              </Accordion.Item>
-                            ))}
-                          </Accordion>
-                        </Accordion.Body>
-                      </Accordion.Item>
-                    ))}
-                  </Accordion>
-                </Accordion.Body>
-              </Accordion.Item>
-            ))}
-        </Accordion>
-      )}
-    </div>
-  );
-};
-
-export default CurrentIssues;
-
-
-// // implemented PDF Viewer and inline opening of PDFs in same tab. Also added some styling to the list items and icons.
-
 // import React, { useEffect, useState } from "react";
 
-// import { Accordion } from "react-bootstrap";
-// import { GrDocumentPdf } from "react-icons/gr";
 // import PdfApi from "./PdfApi";
-// import PdfViewer from "./PdfViewer";
+// import { useNavigate } from "react-router-dom";
 
 // const CurrentIssues = () => {
 //   const [data, setData] = useState([]);
+//   const navigate = useNavigate();
 
-//   // ✅ Selected PDF URL for Viewer
-//   const [selectedPdfUrl, setSelectedPdfUrl] = useState(null);
-
-//   // ✅ Fetch PDFs from Backend
 //   const fetchPdfs = async () => {
-//     try {
-//       const response = await PdfApi.get("");
+//     const response = await PdfApi.get("");
 
-//       // ✅ Filter: Only Current Issues + IJMSABC Source
-//       const filtered = response.data.filter(
-//         (pdf) =>
-//           pdf.issueType === "Current_Issue" &&
-//           pdf.source?.toLowerCase() === "ijmsabc"
-//       );
+//     const filtered = response.data.filter(
+//       (pdf) =>
+//         pdf.issueType === "Current_Issue" &&
+//         pdf.source?.toLowerCase() === "ijmsabc"
+//     );
 
-//       // ✅ Group by Year → Volume → IssueNo
-//       const grouped = filtered.reduce((acc, pdf) => {
-//         const year = pdf.pubYear;
-//         const { volume, issueNo } = pdf;
+//     // Group Year → Volume → Issue
+//     const grouped = filtered.reduce((acc, pdf) => {
+//       const year = pdf.pubYear;
+//       const { volume, issueNo } = pdf;
 
-//         if (!acc[year]) acc[year] = {};
-//         if (!acc[year][volume]) acc[year][volume] = {};
-//         if (!acc[year][volume][issueNo]) acc[year][volume][issueNo] = [];
+//       if (!acc[year]) acc[year] = {};
+//       if (!acc[year][volume]) acc[year][volume] = {};
+//       if (!acc[year][volume][issueNo]) acc[year][volume][issueNo] = [];
 
-//         acc[year][volume][issueNo].push(pdf);
-//         return acc;
-//       }, {});
+//       acc[year][volume][issueNo].push(pdf);
+//       return acc;
+//     }, {});
 
-//       // ✅ Convert grouped object into structured array
-//       const formattedData = Object.entries(grouped).map(([year, volumes]) => ({
-//         year,
-//         volumes: Object.entries(volumes).map(([volume, issues]) => ({
-//           volume,
-//           issues: Object.entries(issues).map(([issueNo, pdfs]) => ({
-//             issueNo,
-//             pdfs,
-//           })),
+//     const formatted = Object.entries(grouped).map(([year, volumes]) => ({
+//       year,
+//       volumes: Object.entries(volumes).map(([volume, issues]) => ({
+//         volume,
+//         issues: Object.entries(issues).map(([issueNo, pdfs]) => ({
+//           issueNo,
+//           pdfs,
 //         })),
-//       }));
+//       })),
+//     }));
 
-//       setData(formattedData);
-//     } catch (err) {
-//       console.error("❌ Error fetching current issues:", err);
-//     }
+//     setData(formatted);
 //   };
 
 //   useEffect(() => {
 //     fetchPdfs();
 //   }, []);
 
-//   // ✅ Open PDF inside Viewer
-//   const openPdf = (pdfId) => {
-//     setSelectedPdfUrl(
-//       `https://api.ijmsabc.org/api/ijmsabc/pdfs/view/${pdfId}`
-//     );
-//   };
-
 //   return (
 //     <div className="container mt-5">
-//       <center>
-//         <h2 className="mb-4 sub_title">Current Issues</h2>
-//       </center>
+//       <h2 className="text-center mb-4">Archive Issues</h2>
 
-//       {/* ✅ No Data */}
-//       {data.length === 0 ? (
-//         <p className="text-muted text-center">
-//           No Current Issues available for IJMSABC.
-//         </p>
-//       ) : (
-//         <Accordion defaultActiveKey={data[0]?.year}>
-//           {data
-//             .sort((a, b) => b.year - a.year)
-//             .map((yearObj) => (
-//               <Accordion.Item eventKey={yearObj.year} key={yearObj.year}>
-//                 {/* ✅ Year */}
-//                 <Accordion.Header>
-//                   Year: {yearObj.year}
-//                 </Accordion.Header>
+//       {data
+//         .sort((a, b) => b.year - a.year)
+//         .map((yearObj) => (
+//           <div key={yearObj.year} className="mb-4">
+//             <h4>Year {yearObj.year}</h4>
 
-//                 <Accordion.Body>
-//                   <Accordion>
-//                     {yearObj.volumes.map((vol) => (
-//                       <Accordion.Item
-//                         eventKey={`${yearObj.year}-${vol.volume}`}
-//                         key={vol.volume}
-//                       >
-//                         {/* ✅ Volume */}
-//                         <Accordion.Header>
-//                           Volume {vol.volume} ({yearObj.year})
-//                         </Accordion.Header>
-
-//                         <Accordion.Body>
-//                           <Accordion>
-//                             {vol.issues.map((issue) => (
-//                               <Accordion.Item
-//                                 eventKey={`${yearObj.year}-${vol.volume}-${issue.issueNo}`}
-//                                 key={issue.issueNo}
-//                               >
-//                                 {/* ✅ Issue */}
-//                                 <Accordion.Header>
-//                                   Issue {issue.issueNo}
-//                                 </Accordion.Header>
-
-//                                 <Accordion.Body>
-//                                   <ol className="list-group">
-//                                     {issue.pdfs.map((pdf) => (
-//                                       <li
-//                                         key={pdf.id}
-//                                         id="anchor"
-//                                         className="list-group-item d-flex justify-content-between align-items-center"
-//                                         style={{ cursor: "pointer" }}
-//                                         onClick={() => openPdf(pdf.id)}
-//                                       >
-//                                         <div>
-//                                           <strong>{pdf.title}</strong>
-//                                           <br />
-//                                           By {pdf.author}
-//                                         </div>
-
-//                                         <GrDocumentPdf size={28} id="icon"/>
-//                                       </li>
-//                                     ))}
-//                                   </ol>
-//                                 </Accordion.Body>
-//                               </Accordion.Item>
-//                             ))}
-//                           </Accordion>
-//                         </Accordion.Body>
-//                       </Accordion.Item>
-//                     ))}
-//                   </Accordion>
-//                 </Accordion.Body>
-//               </Accordion.Item>
-//             ))}
-//         </Accordion>
-//       )}
-
-//       {/* ✅ PDF Viewer Section */}
-//       {selectedPdfUrl && (
-//         <PdfViewer
-//           pdfUrl={selectedPdfUrl}
-//           closeViewer={() => setSelectedPdfUrl(null)}
-//         />
-//       )}
+//             {yearObj.volumes.map((vol) =>
+//               vol.issues.map((issue) => (
+//                 <div
+//                   key={`${vol.volume}-${issue.issueNo}`}
+//                   className="issue-link"
+//                   onClick={() =>
+//                     navigate(`/issue/${yearObj.year}/${vol.volume}/${issue.issueNo}`)
+//                   }
+//                 >
+//                   Volume {vol.volume}, Issue {issue.issueNo}
+//                 </div>
+//               ))
+//             )}
+//           </div>
+//         ))}
 //     </div>
 //   );
 // };
 
 // export default CurrentIssues;
+
+// import React from "react";
+// import { useNavigate } from "react-router-dom";
+// import { usePdf } from "./PdfContext";
+
+// const CurrentIssues = () => {
+//   const { groupedData, loading } = usePdf();
+//   const navigate = useNavigate();
+
+//   if (loading) {
+//     return <p className="text-center mt-5">Loading Archive Issues...</p>;
+//   }
+
+//   const value="";
+
+//   if (issue.issueNo===1){
+//     value= "January-march"
+//   }else if(issue.issueNo===2){
+//     value= "April-june"
+//   }else if(issue.issueNo===3){
+//     value= "July-september"
+//   }else if(issue.issueNo===4){
+//     value= "October-december"
+//   }
+
+//   return (
+//     <div className="container mt-5">
+//       <h2 className="text-center mb-4">Current Issues</h2>
+
+//       {groupedData
+//         .sort((a, b) => b.year - a.year)
+//         .map((yearObj) => (
+//           <div key={yearObj.year} className="mb-4">
+//             <h4>Year {yearObj.year}</h4>
+
+//             {yearObj.volumes.map((vol) =>
+//               vol.issues.map((issue) => (
+//                 <div
+//                   key={`${vol.volume}-${issue.issueNo}`}
+//                   className="issue-link"
+//                   onClick={() =>
+//                     navigate(`/issue/${yearObj.year}/${vol.volume}/${issue.issueNo}`)
+//                   }
+//                 >
+//                   Volume {vol.volume}, Issue {issue.issueNo} {value}
+//                 </div>
+//               ))
+//             )}
+//           </div>
+//         ))}
+//     </div>
+//   );
+// };
+
+// export default CurrentIssues;
+
+import "./Issues.css";
+
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { usePdf } from "./PdfContextCurrent";
+
+// 👈 import css
+
+const CurrentIssues = () => {
+  const { groupedData, loading } = usePdf();
+  const navigate = useNavigate();
+
+  if (loading) {
+    return <p className="text-center mt-5">Loading Current Issues...</p>;
+  }
+
+  const getIssuePeriod = (issueNo) => {
+    switch (Number(issueNo)) {
+      case 1:
+        return "(January - March)";
+      case 2:
+        return "(April - June)";
+      case 3:
+        return "(July - September)";
+      case 4:
+        return "(October - December)";
+      default:
+        return "";
+    }
+  };
+
+  return (
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Current Issues</h2>
+
+      {groupedData
+        .sort((a, b) => b.year - a.year)
+        .map((yearObj) => (
+          <div key={yearObj.year} className="mb-4 year-block">
+            <div className="year-title">Year {yearObj.year}</div>
+
+            {yearObj.volumes.map((vol) =>
+              vol.issues.map((issue) => (
+                <div
+                  key={`${vol.volume}-${issue.issueNo}`}
+                  className="issue-link"
+                  onClick={() =>
+                    navigate(
+                      `/issue/${yearObj.year}/${vol.volume}/${issue.issueNo}`
+                    )
+                  }
+                >
+                  <div>
+                    <span className="issue-text">
+                      Volume {vol.volume}, Issue {issue.issueNo}
+                    </span>{" "}
+                    <span className="issue-period">
+                      {getIssuePeriod(issue.issueNo)}
+                    </span>
+                  </div>
+
+                  <div className="issue-arrow">→</div>
+                </div>
+              ))
+            )}
+          </div>
+        ))}
+    </div>
+  );
+};
+
+export default CurrentIssues;
