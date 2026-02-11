@@ -30,7 +30,6 @@ import Membership from '../Header/Membership'
 import MembershipList from '../Pdfs/MembershipList'
 import PdfList from '../Pdfs/AdminDashBoard/PdfList'
 import { PdfProviderAll } from '../Pdfs/AdminDashBoard/PdfContextAll'
-import { PdfProviderPrevious } from '../Pdfs/AdminDashBoard/PdfContextPrevious'
 import PreviousIssues from '../Pdfs/AdminDashBoard/Previous_Issues'
 import Previous_Issues from '../Pdfs/AdminDashBoard/Previous_Issues'
 import PublicationEthics from '../Header/PublicationEthics'
@@ -69,8 +68,8 @@ const Routing = createBrowserRouter([
 
    {path:"/Archives",element:<Archives/>},
    {path:"/Current_Issues",element:< Current_Issues/>},
-   {path:"/Previous_Issues",element:<PdfProviderPrevious><PreviousIssues /></PdfProviderPrevious>},
-    {path:"/previous-issue/:year/:volume/:issueNo", element:<PdfProviderPrevious> <IssueViewPrevious /></PdfProviderPrevious>},
+   {path:"/Previous_Issues",element:<PreviousIssues />},
+    {path:"/previous-issue/:year/:volume/:issueNo", element: <IssueViewPrevious />},
    {path:"/AdminDashBoard",element:<AdminDashBoard/>},
    {path:"/Register",element:<Register/>},
    {path:"/Login",element:<Login/>},

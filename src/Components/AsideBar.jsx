@@ -41,14 +41,14 @@ const AsideBar = () => {
           </ListGroup.Item>
 
           <ListGroup.Item>
-            <NavLink to="/JournalPolicies" className="nav-link p-0" id='hello2'>
+            <NavLink to="/JournalPolicies" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
               Ethics and Policies
             </NavLink>
           </ListGroup.Item>
 
           <ListGroup.Item>
-            <NavLink to="/AuthorGuidelines" className="nav-link p-0" id='hello3'>
+            <NavLink to="/AuthorGuidelines" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
               Author Guidelines
             </NavLink>
@@ -62,7 +62,7 @@ const AsideBar = () => {
           </ListGroup.Item> */}
 
            <ListGroup.Item>
-            <NavLink to="/Downloads" className="nav-link p-0" id='hello3'>
+            <NavLink to="/Downloads" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
               Downloads
             </NavLink>
@@ -97,7 +97,7 @@ const AsideBar = () => {
             <NavLink to="/membership" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
               
-              Membership
+             Go To Membership
             </NavLink>
           </ListGroup.Item>
 
@@ -105,7 +105,7 @@ const AsideBar = () => {
             <NavLink to="/reviewers" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
              
-              Reviewers
+            Go To Reviewers
             </NavLink>
           </ListGroup.Item>
 
@@ -113,7 +113,7 @@ const AsideBar = () => {
             <NavLink to="/editorial-board" className="nav-link p-0" id='hello1'>
               <IoNewspaperOutline className="me-2 icon" />
            
-              Editorial Board
+             Go To Editorial Board
             </NavLink>
           </ListGroup.Item>
 

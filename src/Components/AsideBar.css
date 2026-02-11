@@ -36,16 +36,16 @@
     }
     50% {
         color: white;
-        background-color: #19717c;
+        background-color: #1eb9cd;
     }
     100% {
         color: white;
-        background-color: #019eb1;
+        background-color: #1097a5;
     }
 }
 
 #hello1 {
-    background-color: #7eaeb4;
+    background-color: #019eb1;
     color: white;
     padding: 5px;
     font-size: 23px;
@@ -57,36 +57,6 @@
     text-align: center;
     /* animation: moveAndColor 0.3s infinite alternate;
     -webkit-animation: moveAndColor 0.7s infinite alternate; */
-}
-
-#hello2 {
-    background-color: #7eaeb4;
-    color: white;
-    padding: 5px;
-    font-size: 23px;
-    /*background-color: gainsboro;
-    */
-    margin-top: 5px;
-    padding: 10px;
-    font-weight: bold;
-    text-align: center;
-    /* animation: moveAndColor 0.4s infinite alternate;
-    -webkit-animation: moveAndColor 0.6s infinite alternate; */
-}
-
-#hello3 {
-    background-color: #7eaeb4;
-    color: white;
-    padding: 5px;
-    font-size: 23px;
-    /*background-color: gainsboro;
-    */
-    margin-top: 5px;
-    padding: 10px;
-    font-weight: bold;
-    text-align: center;
-    /* animation: moveAndColor 0.5s infinite alternate;
-    -webkit-animation: moveAndColor 0.5s infinite alternate; */
 }
 
 .icon {

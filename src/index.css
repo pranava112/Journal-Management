@@ -491,3 +491,12 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+
+
+/* ////////////////////////////////////////////
+ */
+
+#issue:hover {
+    /* background-color: white; */
+    color: yellow;
+}
