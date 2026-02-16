@@ -21,7 +21,9 @@ const Layout = () => {
 
       <Container fluid className="py-3">
         <Row>
-          
+           {/* <Col lg={3} md={4} sm={12}>
+            <AsideBar />
+          </Col> */}
           <Col lg={9} md={8} sm={12} className="mb-3">
             <div className="content-area p-3 shadow-sm bg-white rounded">
               <Outlet />
