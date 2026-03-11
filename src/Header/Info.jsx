@@ -4,7 +4,7 @@ const Info = () => {
   return (
     <>
       <div className='info-bar  py-1 px-2 '>
-        <h3>ISSN No:****_****</h3>
+        <h3>ISSN No: 3108-2688 (Print)</h3>
         <h3>Email us : ijmsabc@gmail.com</h3>
       </div>
     </>
