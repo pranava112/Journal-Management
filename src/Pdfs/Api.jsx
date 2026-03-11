@@ -16,13 +16,15 @@
 import axios from "axios";
 
 const Api = axios.create({
-  baseURL: "https://backendapi.ijmsabc.org/wp-json",
+  // baseURL: "https://backendapi.ijmsabc.org/wp-json",
+
+  baseURL: "https://api.ijmsabc.org/api/ijmsabc", // ✅ Ensure it matches the Spring Boot backend
+  
 });
 
 export default Api;
 
- // baseURL: "https://api.ijmsabc.org/api/ijmsabc", // ✅ Ensure it matches the Spring Boot backend
-  
+ 
 
  // curl http://160.250.205.87:8080/api/ijmsabc/pdfs
 
