@@ -20,7 +20,7 @@ const AboutTheJournal = () => {
              
               <tr>
                 <td className="fw-bold">ISSN</td>
-                <td>****-****</td>
+                <td>3108-2688 (Print)</td>
               </tr>
               
               
@@ -88,8 +88,9 @@ const AboutTheJournal = () => {
                   Conclave (IJMSABC) <br />
                   <b>Address:</b> House No. 11-31, Nandivelugu, Tenali Mandal,
                   Guntur District, Andhra Pradesh-522306 <br />
-                  <b>Mobile:</b> +91 8143123534 <br />
-                  <b>Email:</b> ijmsabc@gmail.com, vvottiprolu@mgmu.ac.in <br />
+                  {/* <b>Mobile:</b> +91 8143123534 <br /> */}
+                  <b>Email:</b> ijmsabc@gmail.com, 
+                  {/* vvottiprolu@mgmu.ac.in  */}<br />
                   <b>Website:</b>{" "}
                   <a
                     href="http://www.ijmsabc.org"

@@ -67,9 +67,9 @@ const Contact = () => {
           <p>Tenali Mandal</p>
           <p>Guntur District</p>
           <p>Andhra Pradesh-522306</p>
-          <p><strong>Mobile:</strong> +91 8143123534</p>
+          {/* <p><strong>Mobile:</strong> +91 8143123534</p> */}
           <p><strong>Email:</strong> ijmsabc@gmail.com</p>
-          <p><strong>Email:</strong> vvottiprolu@mgmu.ac.in</p>
+          {/* <p><strong>Email:</strong> vvottiprolu@mgmu.ac.in</p> */}
           <p><strong>Website:</strong> <a href="https://www.ijmsabc.org/" target="_blank" rel="noopener noreferrer">www.ijmsabc.org</a></p>
         </Col>
         <hr />

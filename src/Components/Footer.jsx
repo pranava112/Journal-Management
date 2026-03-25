@@ -5,11 +5,13 @@ import { FaFacebook, FaInstagram, FaPhone, FaTwitter } from 'react-icons/fa';
 import React, { useEffect, useState } from 'react';
 
 import { CiLinkedin } from 'react-icons/ci';
+import { NavLink } from 'react-router-dom';
 import VisitorCount from './VisitorCount';
 import axios from 'axios';
 
 const Footer = () => {
   const [totalCount, setTotalCount] = useState(0);
+
 
   // useEffect(() => {
   //   // Determine API base URL based on environment
@@ -44,8 +46,17 @@ const Footer = () => {
           {/* Contact Info */}
           <Col md={4} className="mb-3 mb-md-0">
             <div className="phone-wrapper d-flex justify-content-center justify-content-md-start align-items-center">
-              <FaPhone className="me-2" />
-              <span className="phone">+91-8143123534</span>
+              {/* <FaPhone className="me-2" />
+              <span className="phone">+91-8143123534</span> */}
+             
+              
+              
+               
+               <ul type='none'>
+                <li> <NavLink to='/' >Home</NavLink></li>
+                <li><NavLink to='/Contact'>Contact us</NavLink></li>
+                <li><NavLink to='/About'>About</NavLink></li>
+               </ul>
             </div>
           </Col>
           
